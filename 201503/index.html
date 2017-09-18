@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://ios-animations-by-emails.com/posts/2015-march -->
+<html class="gr__ios-animations-by-emails_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>iOS Animations by Emails | Creating animations with CAReplicatorLayer</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link href="./index_files/css" rel="stylesheet" type="text/css">
+<link href="./index_files/css(1)" rel="stylesheet" type="text/css">
+<link href="./index_files/css(2)" rel="stylesheet" type="text/css">
+
+<meta name="description" content="A Monthly iOS Animations Newsletter. iOS animation showcases and experiments delivered to your inbox monthly. From the author of iOS Animations by Tutorials.">
+<meta name="keywords" content="iOS, Swift, animation, newsletter, magazine, book, Core Animation, CABasicAnimation, Apple, OSX">
+<meta name="author" content="Marin Todorov">
+
+<link href="./index_files/style.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="./index_files/imgeffect.css">
+<script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="./index_files/jquery.min.js"></script>
+
+<link rel="stylesheet" href="./index_files/github.css">
+
+<!-- start gallery Script -->
+	<script type="text/javascript" src="./index_files/jquery.easing.min.js"></script>	
+	<script type="text/javascript" src="./index_files/jquery.mixitup.min.js"></script>
+
+   	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+</head>
+
+<body data-gr-c-s-loaded="true">
+<style>
+	.leftnav {float:left;}
+	.wrap {max-width: 900px!important;}
+	.wrap p, .wrap h2 {text-align: left!important;}
+	.wrap ul {margin-left: 40px; margin-bottom: 20px;list-style-type: circle; margin-top: 10px;}
+	.wrap ul li {font-size: 1.1em; margin-bottom: 10px;}
+	.wrap h2 {margin-top: 0px!important; font-size: 2.5em;}
+	img {margin-left: 10%; max-width: 80%; border: 1px solid gray; margin-top: 10px; margin-bottom: 20px;}
+	.wrap h3 {margin-top: 20px; font-size: 1.8em; margin-bottom: 20px;}
+	.wrap code { 
+		background: #efefef; border: 1px solid #ccc; padding:1px; padding-left: 3px; padding-right: 2px; margin-right: 2px;
+		 }
+	pre {
+		background: #efefef; border: 1px solid #ccc;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+	pre code {
+		display: block; 
+		margin-bottom: 5px;
+		background: transparent!important; 
+		border: 0px solid #ccc!important;
+	}
+	.wrap strong {font-weight: bold;}
+	.wrap a {color:#1BBC9B;} 
+	.wrap h4 { margin-top: 10px; font-size: 1.4em; margin-bottom: 10px; margin-left:8px;}
+	.editorial {font-size: 1.2em; color:#666; margin-bottom: 60px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; width: 80%; margin-left:8%; }
+	.editorial p {margin-bottom: 15px; text-align: justify!important;}
+	.about a {color: white; text-decoration: underline;}
+	.about img {border:0px solid transparent;}
+	.about p {padding-bottom: 10px!important;}
+	.bottommenu a {color:#1BBC9B!important;}
+	.contact p {font-size:1.2em;}
+	.contact ul {margin-top:30px!important;}
+</style>
+		<!----start-header----------->
+				<div class="header_bg">
+					<div class="wrap">
+						<div class="header">
+							<!----start-nav-------->	
+							<div class="leftnav nav">
+								<ul>
+								   <li><a href="http://www.ios-animations-by-emails.com/" target="_blank">www.ios-animations-by-emails.com</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<div class="nav">
+								<ul>
+								   <li><a>2015, March</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<!-----end-nav-------->
+							<div class="clear"> </div>
+						</div>
+					</div>
+				</div>
+		<!------end-header------------>
+		<!-- start slider -->
+<div class="slider_bg" id="top">
+		<div class="wrap">
+				<!---start-da-slider----->
+						<div class="da-slide">
+								<h2 style="text-align: center!important;"><span class="classy">Creating animations with CAReplicatorLayer</span></h2>
+							
+		</div>
+	</div>
+</div>
+<!-----end-slider-------->
+
+<!-- first block -->
+<div class="wrap" id="portfolio">
+	<div class="main">
+
+		<!---start-content----->
+		<div class="gallery" style="padding: 5em 1em">
+			<div class="editorial">
+				<p><strong>Note:</strong> Sep 2015 - This tutorial has been updated for iOS9/Swift2.</p>
+
+<p>This is iOS Animations by Emails for March 2015. It features a tutorial, which will guide you through creating 3 cool animations from scratch by using CAReplicatorLayer. You may never heard of it but that’s cool - it’s an obscure but powerful CoreAnimation class.</p>
+
+<p>I want to take a moment to thank everyone who kept spreading the word about <strong>iOS Animations by Emails</strong> and helped our animation community grow almost 1,000 strong during this last month. Big thanks to all who tweeted about launch of my book <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials</a> - you guys are the best!</p>
+
+<p>I hope that when you read through this month’s tutorial you will be happy that I take my sweet time to prepare those :] Enjoy!</p>
+
+
+				<p style="margin-top:20px;font-style: italic;text-align:right!important;">- Marin Todorov</p>
+			</div>
+			
+			<div class="clear"> </div>
+			<div class="container">
+				
+				
+
+<h2>Tutorial: Creating animations with CAReplicatorLayer</h2>
+
+<p><code>This tutorial is designed for Xcode 7/Swift2 or a compatible version.</code></p>
+
+<p><code>CAReplicatorLayer</code> is absolutely my favorite layer so I'm really glad to introduce you to creating animations with it.</p>
+
+<p>In this tutorial I’ll guide you through creating 3 different animations using the power of the replicator layer.</p>
+
+<p>You will start by reproducing the “volume bars” animation from the built-in in iOS Music app (the moving bars on the right next to the song called “Pyramid Song”):</p>
+
+<p><img src="./index_files/music-app-playing.gif" alt=""></p>
+
+<p>Then you will move on to creating a custom activity indicator and for the grand finale you will create an animation to render the <a href="http://www.raywenderlich.com/">raywenderlich.com</a> logo on screen in an unusual way:</p>
+
+<p><img src="./index_files/rw-logo.gif" alt=""></p>
+
+<p><a name="tutorial"></a></p>
+
+<p>
+</p><div style="background: url(../images/banner.jpg); height: 150px; border:1px solid black; padding-top: 40px; text-align: center;font-size: 16px; color: #efefef;">
+
+Get a cool iOS animation article like this one in your inbox each month - with full Swift source code! <br>By the author of <a href="http://www.ios-animations-by-tutorials.com/" target="_blank">iOS Animations by Tutorials</a>.
+
+<br><br>
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="http://doodledoodle.us2.list-manage.com/subscribe/post?u=09cf12f9fda2bee302951124b&amp;id=c8bcd4cf03" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+<div class="mc-field-group" style="text-align: center;">
+	<input type="email" value="Your email address" name="EMAIL" class="required email" id="mce-EMAIL" onfocus="if(this.value == &#39;Your email address&#39;) { this.value = &#39;&#39;; }" onblur="if(this.value == &#39;&#39;) { this.value = &#39;Your email address&#39;; }">
+	<a href="http://ios-animations-by-emails.com/posts/2015-march#subscribe" id="mc-embedded-subscribe">Subscribe</a>
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_09cf12f9fda2bee302951124b_c8bcd4cf03" tabindex="-1" value=""></div>
+    <div class="clear"></div>
+    <p></p>
+    </div>
+</form>
+</div>
+
+<span style="font-size: 12px;">No spam, ever. Your email address is safe with us and you can unsubscribe at any time.</span>
+
+</div>
+<p></p>
+
+<h3>1. Basic replicator animation</h3>
+
+<p><code>CAReplicatorLayer</code> is a container layer - you add content to it and the replicator layer replicates that content. If you put in a single shape - the replicator layer will display several shapes on screen.</p>
+
+<p>The cool thing is that you can instruct the replicator in advance how much geometry offset you want between the content copies, how the alpha or color tint should change from one copy to the other. This allows you to create pretty cool effects and animations.</p>
+
+<p>For the first part of this tutorial you are going to replicate this animation from the iOS Music app:</p>
+
+<p><img src="./index_files/music-app-playing.gif" alt=""></p>
+
+<p>This animation features a red bar that animates up and down and there are two copies of that animation showing with a bit of geometrical and temporal offset. Let’s start!</p>
+
+<p>Create a new Xcode project and select the Single View template. Once you save the project open <strong>ViewController.swift</strong>.</p>
+
+<p>Add to <strong>viewDidLoad()</strong>:</p>
+
+<pre><code class="hljs">animation1()
+</code></pre>
+
+<p>And add an empty method in the <code>ViewController</code> class:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">animation1</span><span class="hljs-params">()</span></span> {
+
+}
+</code></pre>
+
+<p>Let’s start by creating the replicator layer, insert into <code>animation1()</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> r = <span class="hljs-type">CAReplicatorLayer</span>()
+r.bounds = <span class="hljs-type">CGRect</span>(x: <span class="hljs-number">0.0</span>, y: <span class="hljs-number">0.0</span>, width: <span class="hljs-number">60.0</span>, height: <span class="hljs-number">60.0</span>)
+r.position = view.center
+r.backgroundColor = <span class="hljs-type">UIColor</span>.lightGrayColor().<span class="hljs-type">CGColor</span>
+view.layer.addSublayer(r)
+</code></pre>
+
+<p>You create a new instance of <code>CAReplicatorLayer</code> and set its bounds and position. To make sure where the layer appears you give it a light gray background color and then you add it to the view controller’s view.</p>
+
+<p>Run the app now and you will see the layer show up like a silver square:</p>
+
+<p><img src="./index_files/gray-view.png" alt=""></p>
+
+<p>Now let’s create the first bar (the original bar so to say), add to <code>animation1()</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> bar = <span class="hljs-type">CALayer</span>()
+bar.bounds = <span class="hljs-type">CGRect</span>(x: <span class="hljs-number">0.0</span>, y: <span class="hljs-number">0.0</span>, width: <span class="hljs-number">8.0</span>, height: <span class="hljs-number">40.0</span>)
+bar.position = <span class="hljs-type">CGPoint</span>(x: <span class="hljs-number">10.0</span>, y: <span class="hljs-number">75.0</span>)
+bar.cornerRadius = <span class="hljs-number">2.0</span>
+bar.backgroundColor = <span class="hljs-type">UIColor</span>.redColor().<span class="hljs-type">CGColor</span>
+
+r.addSublayer(bar)
+</code></pre>
+
+<p>This code creates a red rectangle with rounded corners and positions it to the left side of the replicator layer. Run the app one more time to see your progress:</p>
+
+<p><img src="./index_files/red-bar.png" alt=""></p>
+
+<p>The bar appears outside the replicator layer because you will be animating it up and down. The start position for that animation is just below the replicator bounds - that's why the bar seems a bit "off".</p>
+
+<p>Speaking of animating the bar add the animation code to do that:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> move = <span class="hljs-type">CABasicAnimation</span>(keyPath: <span class="hljs-string">"position.y"</span>)
+move.toValue = bar.position.y - <span class="hljs-number">35.0</span>
+move.duration = <span class="hljs-number">0.5</span>
+move.autoreverses = <span class="hljs-built_in">true</span>
+move.repeatCount = <span class="hljs-type">Float</span>.infinity
+
+bar.addAnimation(move, forKey: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>This will make the bar repeatedly move up and down, up and down... This is a great start and even if it doesn’t look that impressive right now you are in fact almost ready with your final animation!</p>
+
+<p>Time for replicator power! Add this line to your code:</p>
+
+<pre><code class="hljs">r.instanceCount = 3
+</code></pre>
+
+<p>This tells the replicator that you want 3 copies of your content on screen - including your original one. If you run the app right now you won’t see any change because all 3 copies appear at the same location and animate synchronously all at the same time. To offset each copy a bit to the right add:</p>
+
+<pre><code class="hljs">r.instanceTransform = CATransform3DMakeTranslation(20.0, 0.0, 0.0)
+</code></pre>
+
+<p>This way you tell the replicator layer what transform to apply to each copy of the content. You set <code>instanceTransform</code> to offset each copy by 20 points; when you run the app you should see 3 red bars next to each other:</p>
+
+<p><img src="./index_files/3-red-bars.png" alt=""></p>
+
+<p>Ha! Your original red bar and two clones are all animating up and down, up and down... Cool! The last step to achieve the desired animation effect is to give each bar a bit of delay so they don’t move in unison. Add one last line of code:</p>
+
+<pre><code class="hljs">r.instanceDelay = 0.33
+</code></pre>
+
+<p><code>instanceDelay</code> is the temporal offset between each copy that the replicator layer renders. The animation you apply to your original bar will have 0.33 seconds delay for the 2nd bar and 0.66 for the 3rd bar respectively.</p>
+
+<p>Run the app and check the result - you should see the bars jump around just like in the original animation.</p>
+
+<p>To wrap up you need to do two quick changes:</p>
+
+<ul>
+<li>to see only the top parts of the red bars clip the content of the replicator layer; add <code>r.masksToBounds = true</code>;</li>
+<li>find the line where you set the <code>backgroundColor</code> of the replicator layer and delete it. You don’t need the gray background any more.</li>
+</ul>
+
+<p>These should give you the final animation:</p>
+
+<p><img src="./index_files/red-bars-final.gif" alt=""></p>
+
+<p>If you want to play around with the animation have a go at changing <code>instanceCount</code>, <code>instanceTransform</code> and <code>instanceDelay</code>. Pretty cool, eh?</p>
+
+<h3>2. Activity indicator</h3>
+
+<p>Let’s move to more serious replicator animations! Scroll to <code>viewDidLoad()</code> and replace <code>animation1()</code> with:</p>
+
+<pre><code class="hljs">animation2()
+</code></pre>
+
+<p>As you probably already guessed your next step is to add an empty method for your next animation:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">animation2</span><span class="hljs-params">()</span></span> {
+
+}
+</code></pre>
+
+<p>In this part of the tutorial you are going to create an activity indicator. For fun you are going to create a bit more elaborate animation than the one featured by the build-in iOS activity view.</p>
+
+<p>Start by adding a replicator layer to the view controller’s view, add to <code>animation2()</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> r = <span class="hljs-type">CAReplicatorLayer</span>()
+r.bounds = <span class="hljs-type">CGRect</span>(x: <span class="hljs-number">0.0</span>, y: <span class="hljs-number">0.0</span>, width: <span class="hljs-number">200.0</span>, height: <span class="hljs-number">200.0</span>)
+r.cornerRadius = <span class="hljs-number">10.0</span>
+r.backgroundColor = <span class="hljs-type">UIColor</span>(white: <span class="hljs-number">0.0</span>, alpha: <span class="hljs-number">0.75</span>).<span class="hljs-type">CGColor</span>
+r.position = view.center
+
+view.layer.addSublayer(r)
+</code></pre>
+
+<p>In exactly the same way as before you create an empty replicator layer with gray background. This time you will keep the background color to mimic a HUD activity.</p>
+
+<p>Next add a simple layer that draws a white rectangle on screen:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> dot = <span class="hljs-type">CALayer</span>()
+dot.bounds = <span class="hljs-type">CGRect</span>(x: <span class="hljs-number">0.0</span>, y: <span class="hljs-number">0.0</span>, width: <span class="hljs-number">14.0</span>, height: <span class="hljs-number">14.0</span>)
+dot.position = <span class="hljs-type">CGPoint</span>(x: <span class="hljs-number">100.0</span>, y: <span class="hljs-number">40.0</span>)
+dot.backgroundColor = <span class="hljs-type">UIColor</span>(white: <span class="hljs-number">0.8</span>, alpha: <span class="hljs-number">1.0</span>).<span class="hljs-type">CGColor</span>
+dot.borderColor = <span class="hljs-type">UIColor</span>(white: <span class="hljs-number">1.0</span>, alpha: <span class="hljs-number">1.0</span>).<span class="hljs-type">CGColor</span>
+dot.borderWidth = <span class="hljs-number">1.0</span>
+dot.cornerRadius = <span class="hljs-number">2.0</span>
+
+r.addSublayer(dot)
+</code></pre>
+
+<p>You create a 14 x 14 rectangle and give it a 2 pt corner radius. At the end you add the <code>dot</code> layer to the replicator. Run the app now to see how everything looks like so far:</p>
+
+<p><img src="./index_files/gray-rect.png" alt=""></p>
+
+<p>Now configure the replicator to render 15 dots and rotate each one by an angle equal to 2π/15 (e.g. 15 times this angle will complete a full circle):</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> nrDots: <span class="hljs-type">Int</span> = <span class="hljs-number">15</span>
+
+r.instanceCount = nrDots
+<span class="hljs-keyword">let</span> angle = <span class="hljs-type">CGFloat</span>(<span class="hljs-number">2</span>*<span class="hljs-type">M_PI</span>) / <span class="hljs-type">CGFloat</span>(nrDots)
+r.instanceTransform = <span class="hljs-type">CATransform3DMakeRotation</span>(angle, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>)
+</code></pre>
+
+<p>You set <code>instanceCount</code> to 15 and you set a rotation transform using a <code>2π/15</code> angle.</p>
+
+<p><strong>Note</strong>: If you feel like things are getting complicated consult Chapters 8 through 11 about layer animations and Chapters 12 to 14 about specialized layers from <a href="http://www.ios-animations-by-tutorials.com/"><strong>iOS Animations by Tutorials</strong></a>.</p>
+
+<p>Run the app again and feast your eyes upon this magnificent beauty:</p>
+
+<p><img src="./index_files/activity-1.png" alt=""></p>
+
+<p>You can easily experiment with the vision of your activity indicator if you just change <code>nrDots</code> to 10, 25, or any other value. The replicator obediently  calculates the geometry and renders the dot clones:</p>
+
+<p><img src="./index_files/variations.png" alt=""></p>
+
+<p>Let's now make the dots shrink over a period of 1.5 seconds. Make a scale animation and apply it to the original dot:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> duration: <span class="hljs-type">CFTimeInterval</span> = <span class="hljs-number">1.5</span>
+
+<span class="hljs-keyword">let</span> shrink = <span class="hljs-type">CABasicAnimation</span>(keyPath: <span class="hljs-string">"transform.scale"</span>)
+shrink.fromValue = <span class="hljs-number">1.0</span>
+shrink.toValue = <span class="hljs-number">0.1</span>
+shrink.duration = duration
+shrink.repeatCount = <span class="hljs-type">Float</span>.infinity
+
+dot.addAnimation(shrink, forKey: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>This will result in a hypnotic animation making all dots animate and disappear synchronously over and over again. (Make yourself a favor and don't stare too long into this particular animation)</p>
+
+<p>As you hopefully remember the trick to make the animation move is to give a bit of delay to each copy, add:</p>
+
+<pre><code class="hljs">r.instanceDelay = duration/Double(nrDots)
+</code></pre>
+
+<p>This will get your animation rotating nicely. The very first iteration of the animation is a bit strange though - all dots are visible at first and just after the first iteration of the animation they start disappearing as desired.</p>
+
+<p>To fix this you will scale down the original dot before all the animations start kicking in, add this last line of code to <code>animation2()</code>:</p>
+
+<pre><code class="hljs">dot.transform = CATransform3DMakeScale(0.01, 0.01, 0.01)
+</code></pre>
+
+<p>This will result in a slick and polished animation:</p>
+
+<p><img src="./index_files/activity-final.gif" alt=""></p>
+
+<p>Wow, that animation was easier to create than expected wasn't it? If you experiment a bit with the basic activity indicator code above you can create all kinds of effects easily, give that a try!</p>
+
+<h3>3. Follow the leader</h3>
+
+<p>The final and most amusing animation of the three featured in this tutorial is called Follow the leader. For this animation you will animate your original layer over a path and let its clones run after it and try to catch it.</p>
+
+<p>Scroll to <code>viewDidLoad()</code> and replace <code>animation2()</code> with:</p>
+
+<pre><code class="hljs">animation3()
+</code></pre>
+
+<p>As you probably already guessed your next step is to add an empty method for your final animation:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">animation3</span><span class="hljs-params">()</span></span> {
+
+}
+</code></pre>
+
+<p>For this animation you will need one more method. Using the PaintCode app I quickly created a bezier path, which you will use for your animation. Add this method to <code>ViewController</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">rw</span><span class="hljs-params">()</span></span> -&gt; <span class="hljs-type">CGPath</span> {
+    <span class="hljs-comment">//// Bezier Drawing</span>
+    <span class="hljs-keyword">let</span> bezierPath = <span class="hljs-type">UIBezierPath</span>()
+    bezierPath.moveToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">31.5</span>, <span class="hljs-number">71.5</span>))
+    bezierPath.addLineToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">31.5</span>, <span class="hljs-number">23.5</span>))
+    bezierPath.addCurveToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">58.5</span>, <span class="hljs-number">38.5</span>), 
+        controlPoint1: <span class="hljs-type">CGPointMake</span>(<span class="hljs-number">31.5</span>, <span class="hljs-number">23.5</span>), 
+        controlPoint2: <span class="hljs-type">CGPointMake</span>(<span class="hljs-number">62.46</span>, <span class="hljs-number">18.69</span>))
+    bezierPath.addCurveToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">53.5</span>, <span class="hljs-number">45.5</span>), 
+        controlPoint1: <span class="hljs-type">CGPointMake</span>(<span class="hljs-number">57.5</span>, <span class="hljs-number">43.5</span>), 
+        controlPoint2: <span class="hljs-type">CGPointMake</span>(<span class="hljs-number">53.5</span>, <span class="hljs-number">45.5</span>))
+    bezierPath.addLineToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">43.5</span>, <span class="hljs-number">48.5</span>))
+    bezierPath.addLineToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">53.5</span>, <span class="hljs-number">66.5</span>))
+    bezierPath.addLineToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">62.5</span>, <span class="hljs-number">51.5</span>))
+    bezierPath.addLineToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">70.5</span>, <span class="hljs-number">66.5</span>))
+    bezierPath.addLineToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">86.5</span>, <span class="hljs-number">23.5</span>))
+    bezierPath.addLineToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">86.5</span>, <span class="hljs-number">78.5</span>))
+    bezierPath.addLineToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">31.5</span>, <span class="hljs-number">78.5</span>))
+    bezierPath.addLineToPoint(<span class="hljs-type">CGPointMake</span>(<span class="hljs-number">31.5</span>, <span class="hljs-number">71.5</span>))
+    bezierPath.closePath()
+
+    <span class="hljs-keyword">var</span> t = <span class="hljs-type">CGAffineTransformMakeScale</span>(<span class="hljs-number">3.0</span>, <span class="hljs-number">3.0</span>)
+    <span class="hljs-keyword">return</span> <span class="hljs-type">CGPathCreateCopyByTransformingPath</span>(bezierPath.<span class="hljs-type">CGPath</span>, &amp;t)!
+}
+</code></pre>
+
+<p>This method creates a bezier path in code and returns a CGPath copy of it - this CGPath you will use to create a keyframe animation.</p>
+
+<p>Scroll to <code>animation3()</code> and add inside:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> r = <span class="hljs-type">CAReplicatorLayer</span>()
+r.bounds = view.bounds
+r.backgroundColor = <span class="hljs-type">UIColor</span>(white: <span class="hljs-number">0.0</span>, alpha: <span class="hljs-number">0.75</span>).<span class="hljs-type">CGColor</span>
+r.position = view.center
+
+view.layer.addSublayer(r)
+</code></pre>
+
+<p>This time you create an empty replicator layer as big as the view controller's view and add it on screen. Just as before first you need to add an original layer for the replicator to work with - add:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> dot = <span class="hljs-type">CALayer</span>()
+dot.bounds = <span class="hljs-type">CGRect</span>(x: <span class="hljs-number">0.0</span>, y: <span class="hljs-number">0.0</span>, width: <span class="hljs-number">10.0</span>, height: <span class="hljs-number">10.0</span>)
+dot.backgroundColor = <span class="hljs-type">UIColor</span>(white: <span class="hljs-number">0.8</span>, alpha: <span class="hljs-number">1.0</span>).<span class="hljs-type">CGColor</span>
+dot.borderColor = <span class="hljs-type">UIColor</span>(white: <span class="hljs-number">1.0</span>, alpha: <span class="hljs-number">1.0</span>).<span class="hljs-type">CGColor</span>
+dot.borderWidth = <span class="hljs-number">1.0</span>
+dot.cornerRadius = <span class="hljs-number">5.0</span>
+dot.shouldRasterize = <span class="hljs-built_in">true</span>
+dot.rasterizationScale = <span class="hljs-type">UIScreen</span>.mainScreen().scale
+
+r.addSublayer(dot)
+</code></pre>
+
+<p>You create a small silver rectangle and give it corner radius of half the rectangle width so you end up with a small circle. You add the circle to the replicator. If you run the app right now you will see the circle show up in the top left corner of the screen.</p>
+
+<p>Let's animate the circle over a path:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> move = <span class="hljs-type">CAKeyframeAnimation</span>(keyPath: <span class="hljs-string">"position"</span>)
+move.path = rw()
+move.repeatCount = <span class="hljs-type">Float</span>.infinity
+move.duration = <span class="hljs-number">4.0</span>
+dot.addAnimation(move, forKey: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>This animation animates the circle over the path returned by the <code>rw()</code> method. The movement takes 4 seconds and repeats indefinitely.</p>
+
+<p><strong>Note</strong>: If you want to learn more about how layer keyframe animations work with paths read Chapter 15, Stroke and Path Animations from <a href="http://www.ios-animations-by-tutorials.com/"><strong>iOS Animations by Tutorials 2nd Ed.</strong></a>.</p>
+
+<p>If you run the app right now you will see the circle run around like crazy but you probably won't recognize the path it follows.</p>
+
+<p>Let's make things more obvious by putting the replicator layer to work, add this code:</p>
+
+<pre><code class="hljs">r.instanceCount = 20
+r.instanceDelay = 0.1
+</code></pre>
+
+<p>This will add 19 more copies of the circle and let them run after the original one:</p>
+
+<p><img src="./index_files/rw-1.gif" alt=""></p>
+
+<p>Cool! The animation starts looking much like your favorite <a href="http://www.raywenderlich.com/">raywenderlich.com</a> logo.</p>
+
+<p>Let's make the circles green to mimic the colors of the raywenderlich.com website. Add this code to add tinting to the replicator content:</p>
+
+<pre><code class="hljs">r.instanceColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0).CGColor
+</code></pre>
+
+<p>Setting <code>instanceColor</code> multiplies the original content color by the color you provide. In this case you set the multiply color to bright green so if you run the app you will see one <strong>very green</strong> animation :)))</p>
+
+<p>The interesting part is that you can also vary the <code>instanceColor</code> from copy to copy. It's real easy to say that you want the green tint to become darker and darker with each circle. Add this last line of code:</p>
+
+<pre><code class="hljs">r.instanceGreenOffset = -0.03
+</code></pre>
+
+<p>This will make the replicator decrease by <code>0.03</code> the green component of the color tint of each next circle. The final animation looks like this:</p>
+
+<p><img src="./index_files/rw-final.gif" alt=""></p>
+
+<p>Do I hear anyone cracking open a new Xcode project and starting on a Snake game clone? :]</p>
+
+<p>This is the final animation for this month's tutorial! There's even more to <code>CAReplicatorLayer</code> so if you are curious to experiment consult <a href="https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CAReplicatorLayer_class/index.html#//apple_ref/swift/cl/CAReplicatorLayer">the Apple docs</a>. One topic we didn't touch at all in this tutorial is animating the properties of the <code>CAReplicatorLayer</code> class itself (instead of animating the content layers) - that's a whole new topic!</p>
+
+<p>If you create some nice animations with <code>CAReplicatorLayer</code> don't forget to ping me on twitter <a href="http://www.twitter.com/icanzilb">@icanzilb</a> and show me. That's all for this tutorial, but don't forget to check out the animation links at the bottom!</p>
+
+
+				
+			</div>
+		</div>
+	</div><!-- container -->
+
+	<div class="clear"> </div>
+
+</div>
+
+<!-- second block -->
+
+<div class="about" id="about">
+	<div class="wrap">
+		
+
+<h2>Spring Swift Bundle (<s>108$</s> 99$)</h2>
+
+<p><a href="http://www.raywenderlich.com/store/swift-by-tutorials-bundle-2?source=underplot"><img src="./index_files/swift-bundle.png" alt="spring-bundle.png"></a></p>
+
+<p>If you missed the launch of iOS Animations by Tutorials you can still get it on discount if you buy both the new <strong>Watchkit by Tutorials</strong> book and <strong>iOS Animations by Tutorials</strong> together in the <a href="http://www.raywenderlich.com/store/swift-by-tutorials-bundle-2?source=underplot">Spring Swift Bundle</a>.</p>
+
+<p>And in case you already have iOS Animations by Tutorials why not check out some of the <a href="http://www.raywenderlich.com/store?source=underplot">other Swift books I co-authored</a>?</p>
+
+
+	</div>
+</div>
+
+<!-- third block -->
+<div class="contact" id="contact">
+	<div class="wrap" style="margin-bottom: 80px;">
+		
+
+<h2>Cool animation links</h2>
+
+<p>To end this issue with a bang here are some of the coolest animation libraries and blog posts I've read lately.</p>
+
+<ul>
+<li><p><a href="http://www.raywenderlich.com/94302/implement-circular-image-loader-animation-cashapelayer">Circular Image Loader Animation with CAShapeLayer</a> - an awesome and slick image loader, check out the animated gif at the top .</p></li>
+<li><p><a href="https://github.com/dasdom/BreakOutToRefresh">Break Out to Refresh</a> - This is actually a SpriteKit library but I think it’s a great example of creative use of animations so have a look at that nifty pull to refresh control.</p></li>
+<li><p><a href="https://github.com/FahimF/FloatLabelFields">Float Label Fields in Swift</a> - A text field is another uncommon place to stick in an animation, but have a look at this floating label pattern implemented in Swift by Fahim Farook .</p></li>
+<li><p><a href="https://github.com/nghialv/MaterialKit#mktextfield">Material Kit</a> - If you want even more animated UI controls check out the Material Kit repo. Material Kit provides modern and slick appearance for a number of different controls.</p></li>
+</ul>
+
+		
+		<hr style="margin-top: 60px;">
+		
+		<p style="margin-top:80px;color:#666;font-size:1em;text-align:center!important;" class="editorial">
+			· Do you know of a cool new animation Swift library or interesting blog post?<br>
+			· Do you want to sponsor an issue of iOS Animations by Emails?<br>
+			· Do you want to write an animation tutorial for iOS Animations by Emails?<br>
+			&nbsp; If so check out my contacts in the footer. Thanks!</p>
+	</div>
+
+
+     <div class="footer-bottom">
+	    <div class="bottommenu copy" style="margin-bottom:40px;">
+		    <p class="copy">
+<style>
+	a.icon { width: 44px; border: 0px solid transparent; }
+	a.icon img {border: 0px solid transparent; width:44px;margin-left: 20px!important; }
+	.footer-bottom hr {border:0px solid transparent; border-bottom: 1px solid #999; width: 200px; margin-bottom: 20px;}
+	.wrap hr {border:0px solid transparent; border-bottom: 1px solid #666; width: 200px; margin-bottom: 20px;}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/document.write("<a class='icon' href='mai"+"lto:marin"+"@ios-animations-"+"by-em"+"ails.c"+"om"+"'><img src='../images/email.png'><\/a>");/*]]&gt;*/
+</script><a class="icon" href="mailto:marin@ios-animations-by-emails.com"><img src="./index_files/email.png"></a>
+
+<a class="icon" href="https://twitter.com/icanzilb" target="_blank"><img src="./index_files/twitter.png"></a>
+<a class="icon" href="http://www.linkedin.com/in/marintodorov/" target="_blank"><img src="./index_files/linkedin.png"></a>
+<a class="icon" href="https://github.com/icanzilb" target="_blank"><img src="./index_files/github.png"></a>
+</p><div class="clear"> </div>
+
+		    <p></p>
+		    <hr>
+		    <p class="copy">
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Sponsor%20iOS%20Animations%20by%20Emails">Sponsor</a> · 
+			    <a href="http://www.ios-animations-by-emails.com/">Subscribe to the newsletter</a> · 
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Contact">Contact</a> · 
+			    <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials</a>
+		    </p>
+	    </div>
+     	<div class="wrap">
+        <div class="copy" style="margin-top:60px;">
+		    <p class="copy" style="font-size:0.8em;text-align:center!important;">© 2014 Template by  <a href="http://w3layouts.com/" target="_blank">w3layouts</a> </p>
+		</div>
+		<script type="text/javascript">
+							$(document).ready(function() {
+								
+								var defaults = {
+						  			containerID: 'toTop', // fading element id
+									containerHoverID: 'toTopHover', // fading element hover id
+									scrollSpeed: 1200,
+									easingType: 'linear' 
+						 		};
+								
+								
+								$().UItoTop({ easingType: 'easeOutQuart' });
+								
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+	
+							});
+							
+	$( "#mc-embedded-subscribe" ).click(function() {
+		var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+		if (regexEmail.test($('#mce-EMAIL').val())) {
+	    	$('#mc-embedded-subscribe-form').submit();
+			return
+		} else {
+			alert("Please enter valid email address in the subscription field.")	
+		}
+	});
+
+						</script>
+						
+<script>
+if (document.location.href.indexOf("localhost") == -1) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7623080-20', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+
+<script src="./index_files/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+		</div>
+	</div>
+
+</div></body></html>
