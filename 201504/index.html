@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://ios-animations-by-emails.com/posts/2015-april -->
+<html class="gr__ios-animations-by-emails_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>iOS Animations by Emails | Text animations with Ophiuchus</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link href="./index_files/css" rel="stylesheet" type="text/css">
+<link href="./index_files/css(1)" rel="stylesheet" type="text/css">
+<link href="./index_files/css(2)" rel="stylesheet" type="text/css">
+
+<meta name="description" content="A Monthly iOS Animations Newsletter. iOS animation showcases and experiments delivered to your inbox monthly. From the author of iOS Animations by Tutorials.">
+<meta name="keywords" content="iOS, Swift, animation, newsletter, magazine, book, Core Animation, CABasicAnimation, Apple, OSX">
+<meta name="author" content="Marin Todorov">
+
+<link href="./index_files/style.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="./index_files/imgeffect.css">
+<script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="./index_files/jquery.min.js"></script>
+
+<link rel="stylesheet" href="./index_files/github.css">
+
+<!-- start gallery Script -->
+	<script type="text/javascript" src="./index_files/jquery.easing.min.js"></script>	
+	<script type="text/javascript" src="./index_files/jquery.mixitup.min.js"></script>
+
+   	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+</head>
+
+<body data-gr-c-s-loaded="true">
+	
+	<div style="width:100%; background: #efefef; color: red; text-align: center; padding:10px;">
+	This is a read-only archive of the iOS Animations by Tutorials newsletter. &raquo;<a href="https://icanzilb.github.io/ios-animations-by-emails">Table of contents</a>
+</div>
+
+<style>
+	.leftnav {float:left;}
+	.wrap {max-width: 900px!important;}
+	.wrap p, .wrap h2 {text-align: left!important;}
+	.wrap ul {margin-left: 40px; margin-bottom: 20px;list-style-type: circle; margin-top: 10px;}
+	.wrap ul li {font-size: 1.1em; margin-bottom: 10px;}
+	.wrap h2 {margin-top: 0px!important; font-size: 2.5em;}
+	img {margin-left: 10%; max-width: 80%; border: 1px solid gray; margin-top: 10px; margin-bottom: 20px;}
+	.wrap h3 {margin-top: 20px; font-size: 1.8em; margin-bottom: 20px;}
+	.wrap code { 
+		background: #efefef; border: 1px solid #ccc; padding:1px; padding-left: 3px; padding-right: 2px; margin-right: 2px;
+		 }
+	pre {
+		background: #efefef; border: 1px solid #ccc;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+	pre code {
+		display: block; 
+		margin-bottom: 5px;
+		background: transparent!important; 
+		border: 0px solid #ccc!important;
+	}
+	.wrap strong {font-weight: bold;}
+	.wrap a {color:#1BBC9B;} 
+	.wrap h4 { margin-top: 10px; font-size: 1.4em; margin-bottom: 10px; margin-left:8px;}
+	.editorial {font-size: 1.2em; color:#666; margin-bottom: 60px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; width: 80%; margin-left:8%; }
+	.editorial p {margin-bottom: 15px; text-align: justify!important;}
+	.about a {color: white; text-decoration: underline;}
+	.about img {border:0px solid transparent;}
+	.about p {padding-bottom: 10px!important;}
+	.bottommenu a {color:#1BBC9B!important;}
+	.contact p {font-size:1.2em;}
+	.contact ul {margin-top:30px!important;}
+</style>
+		<!----start-header----------->
+				<div class="header_bg">
+					<div class="wrap">
+						<div class="header">
+							<!----start-nav-------->	
+							<div class="leftnav nav">
+								<ul>
+								   <li><a href="http://www.ios-animations-by-emails.com/" target="_blank">www.ios-animations-by-emails.com</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<div class="nav">
+								<ul>
+								   <li><a>2015, April</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<!-----end-nav-------->
+							<div class="clear"> </div>
+						</div>
+					</div>
+				</div>
+		<!------end-header------------>
+		<!-- start slider -->
+<div class="slider_bg" id="top">
+		<div class="wrap">
+				<!---start-da-slider----->
+						<div class="da-slide">
+								<h2 style="text-align: center!important;"><span class="classy">Text animations with Ophiuchus</span></h2>
+							
+		</div>
+	</div>
+</div>
+<!-----end-slider-------->
+
+<!-- first block -->
+<div class="wrap" id="portfolio">
+	<div class="main">
+
+		<!---start-content----->
+		<div class="gallery" style="padding: 5em 1em">
+			<div class="editorial">
+				<p><strong>Note:</strong> Sep 2015 - This tutorial has been updated for iOS9/Swift2.</p>
+
+<p>This is iOS Animations by Emails for April 2015. It features a tutorial on a cool animation library called Ophiuchus.</p>
+
+<p>I discovered a number of very cool animation libraries this month - it's been a true animations galore on Github! Until the very last moment I started writing this newsletter I was hesitating, which library to cover in this month's issue but Ophiuchus made the cut because I came up with a very cool tutorial project that does an <em>homage to Steve Jobs and the Think Different campaign</em>.</p>
+
+
+				<p style="margin-top:20px;font-style: italic;text-align:right!important;">- Marin Todorov</p>
+			</div>
+			
+			<div class="clear"> </div>
+			<div class="container">
+				
+				
+
+<h2>Tutorial: Text animations with Ophiuchus</h2>
+
+<p><code>This tutorial is designed for Xcode 7/Swift 2 or a compatible version.</code></p>
+
+<p><a href="https://github.com/Yalantis/Preloader.Ophiuchus">Ophiuchus</a> is an open source library from Yalantis - the makers of a number of open source libs on GitHub related to animations. Here are some of their open source stuff, which definitely look very polished:</p>
+
+<ul>
+<li><a href="https://github.com/Yalantis/FoldingTabBar.iOS">a folding tab bar</a></li>
+<li><a href="https://github.com/Yalantis/Side-Menu.iOS">animated side menu</a></li>
+<li><a href="https://github.com/Yalantis/Pull-to-Refresh.Rentals-iOS">slick pull to refresh control</a> </li>
+</ul>
+
+<p>I chose to cover Ophiuchus in this month’s issue because it really goes beyond the call of duty to combine APIs from different frameworks to create an incredibly fine animation. At the same time the animations are very flexible and you can adjust them to your very own needs.</p>
+
+<p>Here’s an example of an Ophiuchus animation from their GitHub readme:</p>
+
+<p><img src="./index_files/yalantis.gif" alt=""></p>
+
+<p>As you can see this is a non- trivial animation that can really give your app a “style boost”.</p>
+
+<p>In this tutorial you are going to learn how to use Ophiuchus to create a Think Different homage:</p>
+
+<p><img src="./index_files/think-different-complete.gif" alt=""></p>
+
+<p><a name="tutorial"></a></p>
+
+<p>
+</p><div style="background: url(../images/banner.jpg); height: 150px; border:1px solid black; padding-top: 40px; text-align: center;font-size: 16px; color: #efefef;">
+
+Get a cool iOS animation article like this one in your inbox each month - with full Swift source code! <br>By the author of <a href="http://www.ios-animations-by-tutorials.com/" target="_blank">iOS Animations by Tutorials</a>.
+
+<br><br>
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="http://doodledoodle.us2.list-manage.com/subscribe/post?u=09cf12f9fda2bee302951124b&amp;id=c8bcd4cf03" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+<div class="mc-field-group" style="text-align: center;">
+	<input type="email" value="Your email address" name="EMAIL" class="required email" id="mce-EMAIL" onfocus="if(this.value == &#39;Your email address&#39;) { this.value = &#39;&#39;; }" onblur="if(this.value == &#39;&#39;) { this.value = &#39;Your email address&#39;; }">
+	<a href="http://ios-animations-by-emails.com/posts/2015-april#subscribe" id="mc-embedded-subscribe">Subscribe</a>
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_09cf12f9fda2bee302951124b_c8bcd4cf03" tabindex="-1" value=""></div>
+    <div class="clear"></div>
+    <p></p>
+    </div>
+</form>
+</div>
+
+<span style="font-size: 12px;">No spam, ever. Your email address is safe with us and you can unsubscribe at any time.</span>
+
+</div>
+<p></p>
+
+<h3>1. Getting started with Ophiuchus</h3>
+
+<p>Create a new Single View Xcode project and call it <strong>ThinkDifferent</strong>. Import the cocoapod called “Ophiuchus” and launch the resulting Xcode workspace file.</p>
+
+<p>Create an Objective-C bridging header and import the Ophiuchus classes you are going to use:</p>
+
+<pre><code class="hljs swift">#include <span class="hljs-string">"YALLabel.h"</span>
+#include <span class="hljs-string">"YALPathFillAnimation.h"</span>
+</code></pre>
+
+<p><strong>Note:</strong> If you aren’t familiar with Cocoapods have a look at <strong>Chapter 25, Getting started with Pop</strong> from <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials 2nd Ed.</a> - it walks you through installing a Cocoapod in your Xcode project and how to create an Objective-C bridging header.</p>
+
+<p>Open the <strong>target General properties</strong> and disable Portrait mode:</p>
+
+<p><img src="./index_files/project-orientation.png" alt=""></p>
+
+<p>As the final step of the project setup set the default view controller to have <strong>black background</strong>:</p>
+
+<p><img src="./index_files/project-setup.png" alt=""></p>
+
+<p>It’s time to write some code!</p>
+
+<p>Let’s add a single piece of text on screen so you can get your hands dirty with <code>YALLabel</code>. Since you are going to be creating many labels for your animation later on - let’s create a factory method that makes a label.</p>
+
+<p>In <strong>ViewController.swift</strong> add a new method to the <code>ViewController</code> class:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">labelWithText</span><span class="hljs-params">(text: String)</span></span> -&gt; <span class="hljs-type">YALLabel</span> {
+
+    <span class="hljs-keyword">let</span> label = <span class="hljs-type">YALLabel</span>(frame: view.bounds)
+    label.center = view.center
+
+    label.text = text
+    label.fontName = <span class="hljs-string">"HelveticaNeue"</span>
+    label.fontSize = <span class="hljs-number">70.0</span>
+
+    <span class="hljs-keyword">return</span> label
+}
+</code></pre>
+
+<p>This code creates a <code>YALLabel</code> instance as big as the screen and centers it. You set the font to <em>HelveticaNeue</em> and the text size to 70pt (this will make the text fill up nicely an iPhone 6’s screen width)</p>
+
+<p>As you can see the API is a bit different than <code>UILabel</code> but it’s easy to pick up.</p>
+
+<p>Now let’s use the custom drawing capabilities of <code>YALLabel</code>. Insert the following code in <code>labelWithText(_:)</code> just before the <strong>return</strong> line:</p>
+
+<pre><code class="hljs">label.strokeColor = UIColor(red: 1.0, green: 1.0, blue: 0.5, alpha: 0.85)
+label.strokeWidth = 2
+label.fillColor = UIColor.redColor()
+label.backgroundFillColor = UIColor(white: 0.25, alpha: 1.0)
+</code></pre>
+
+<p>Keep that thought and add the code to display the label on screen:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">override</span> <span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidAppear</span><span class="hljs-params">(animated: Bool)</span></span> {
+    <span class="hljs-keyword">super</span>.viewDidAppear(animated)
+
+    <span class="hljs-keyword">let</span> label = labelWithText(<span class="hljs-string">"Think Different"</span>)
+    view.addSubview(label)
+}
+</code></pre>
+
+<p>Run the project and let’s have a look at the result:</p>
+
+<p><img src="./index_files/label-initial.png" alt=""></p>
+
+<p>The text stroke width is 2pt and the stroke color is the light yellow you set to <code>strokeColor</code>. Each character is filled with the red color you set to <code>fillColor</code>.</p>
+
+<p>So far so good! But what does the <code>backgroundFillColor</code> do?</p>
+
+<p>This is the background color of each character <strong>when it’s not filled</strong>. Right now you can’t see the background color because all characters are 100% filled with red - but in few moments when you start animating the fill you will observe how <code>fillColor</code> and <code>backgroundFillColor</code> work together.</p>
+
+<h3>2. Add the basic animation flow</h3>
+
+<p>Now you need to add a bunch of code to make the separate phrases of the final animation come in and go out of the screen. If you worked through the <strong>View animations section</strong> of <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials</a> you should be very familiar with what you are about to do in this part of the tutorial.</p>
+
+<p>Add a new helper method to <code>ViewController</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">delay</span><span class="hljs-params">(seconds seconds: Double, completion:<span class="hljs-params">()</span></span></span>-&gt;()) {
+    <span class="hljs-keyword">let</span> popTime = dispatch_time(<span class="hljs-type">DISPATCH_TIME_NOW</span>, <span class="hljs-type">Int64</span>( <span class="hljs-type">Double</span>(<span class="hljs-type">NSEC_PER_SEC</span>) * seconds ))
+
+    dispatch_after(popTime, dispatch_get_main_queue()) {
+        completion()
+    }
+}
+</code></pre>
+
+<p>This is a simple method that executes a code closure after a given delay. It’ll help you schedule the different stages of the animation.</p>
+
+<p>Back in <code>labelWithText(_:)</code> add one last piece of code - just above the <strong>return</strong> line:</p>
+
+<pre><code class="hljs">label.transform = CGAffineTransformMakeTranslation(0.0, -view.frame.size.height/2 - 40)
+</code></pre>
+
+<p>You apply a translation transform to your label so it will be position just above the screen edge like so:</p>
+
+<p><img src="./index_files/label-above.png" alt=""></p>
+
+<p>Next - you will add a method to animate the label down to the center of the screen and then continue animating until it reaches the bottom of the screen. Then you would remove the label since a new one will be already coming at the same time from the top.</p>
+
+<p>Add this new method to create the movement animation:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">animateLabel</span><span class="hljs-params">(label: YALLabel)</span></span> {
+
+    <span class="hljs-type">UIView</span>.animateWithDuration(<span class="hljs-number">1.0</span>, delay: <span class="hljs-number">0.0</span>, options: .<span class="hljs-type">CurveEaseOut</span>, animations: {
+
+        label.transform = <span class="hljs-type">CGAffineTransformIdentity</span>
+
+        }, completion: <span class="hljs-built_in">nil</span>)
+
+    <span class="hljs-type">UIView</span>.animateWithDuration(<span class="hljs-number">1.0</span>, delay: <span class="hljs-number">2.5</span>, options: .<span class="hljs-type">CurveEaseIn</span>, animations: {
+        label.transform = <span class="hljs-type">CGAffineTransformMakeTranslation</span>(<span class="hljs-number">0.0</span>, <span class="hljs-keyword">self</span>.view.frame.size.height/<span class="hljs-number">2</span>)
+        label.alpha = <span class="hljs-number">0.25</span>
+
+        }, completion: {<span class="hljs-number">_</span> <span class="hljs-keyword">in</span>
+            label.removeFromSuperview()
+    })
+
+}
+</code></pre>
+
+<p>You create two view animations. The former resets the label transform, which will move it to the center of the screen. The latter creates a translation transform to move the label to the bottom of the screen; the completion parameter simply removes the label from the view.</p>
+
+<p>You can see your progress so far by adding this line to <code>viewDidAppear(_:)</code>:</p>
+
+<pre><code class="hljs">animateLabel(label)
+</code></pre>
+
+<p>Run the project and you will see the basic movement animation:</p>
+
+<p><img src="./index_files/label-movement.gif" alt=""></p>
+
+<p>It’s a nice animation and it sets the ground for the even cooler text fill animation that you will get to code in a moment!</p>
+
+<p>To wrap up this lengthy preparation phase do the following changes.</p>
+
+<p>First replace <code>viewDidAppear(_:)</code> with:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">override</span> <span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidAppear</span><span class="hljs-params">(animated: Bool)</span></span> {
+    <span class="hljs-keyword">super</span>.viewDidAppear(animated)
+
+    <span class="hljs-keyword">let</span> text = [
+        <span class="hljs-string">"Here’s to"</span>, <span class="hljs-string">"the crazy ones."</span>, <span class="hljs-string">"The rebels."</span>, <span class="hljs-string">"The troublemakers."</span>, <span class="hljs-string">"The ones who see"</span>, <span class="hljs-string">"things differently."</span>,
+        <span class="hljs-string">"While some"</span>, <span class="hljs-string">"may see them"</span>, <span class="hljs-string">"as the crazy ones,"</span>, <span class="hljs-string">"we see genius."</span>, <span class="hljs-string">"Because the people"</span>, <span class="hljs-string">"who are crazy"</span>, <span class="hljs-string">"enough"</span>,
+        <span class="hljs-string">"to think they can"</span>, <span class="hljs-string">"change the world,"</span>, <span class="hljs-string">"are the ones"</span>, <span class="hljs-string">"who do."</span>
+    ]
+
+    animate(text)
+}
+</code></pre>
+
+<p>In this new implementation you create an array of phrases of the shortest variant of the Think Different ad. (source: <a href="http://en.wikipedia.org/wiki/Think_different#Text">http://en.wikipedia.org/wiki/Think_different#Text</a>)</p>
+
+<p>Finally you pass the complete text to a method called <code>animate(_:)</code> and yes - the method does not exist yet; let’s add it now:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">animate</span><span class="hljs-params">(<span class="hljs-keyword">var</span> strings: [String])</span></span> {
+    <span class="hljs-keyword">if</span> strings.<span class="hljs-built_in">count</span> == <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">return</span>
+    }
+
+    <span class="hljs-keyword">let</span> label = labelWithText(strings.removeAtIndex(<span class="hljs-number">0</span>))
+    view.addSubview(label)
+
+}
+</code></pre>
+
+<p>The <code>animate(_:)</code> method will keep calling itself until it has animated all phrases on screen - that’s why you start it off with a check if there’s any phrases left in the <code>strings</code> parameter.</p>
+
+<p>If there’s at least one phrase left - you get it from the <code>strings</code> parameter and create a label to display it.</p>
+
+<p>Next you will animate the label (your animation code is already written), add:</p>
+
+<pre><code class="hljs swift">delay(seconds: <span class="hljs-number">0.1</span>, completion: {
+    <span class="hljs-keyword">self</span>.animateLabel(label)
+})
+</code></pre>
+
+<p>This will run the movement animation in <code>animateLabel(_:)</code> on the current piece of text. When this animation is almost finished you will show the next piece of text - add to <code>animate(_:)</code>:</p>
+
+<pre><code class="hljs swift">delay(seconds: <span class="hljs-number">2.2</span>, completion: {
+    <span class="hljs-keyword">self</span>.animate(strings)
+})
+</code></pre>
+
+<p>This will keep calling <code>animate(_:)</code> every <code>2.2</code> seconds - this will be enough time for your animations to run on each of the phrases before it disappears.</p>
+
+<p>Build and run and enjoy the animation so far:</p>
+
+<p><img src="./index_files/movement-complete.gif" alt=""></p>
+
+<h3>3. YALPathFillAnimation</h3>
+
+<p>In this part you will finally get to work with <code>YALPathFillAnimation</code> and create some cool fill animations.</p>
+
+<p>Each <code>YALLabel</code> has three properties called:</p>
+
+<ul>
+<li><code>strokeLayer</code></li>
+<li><code>fillLayer</code></li>
+<li>and <code>backgroundLayer</code></li>
+</ul>
+
+<p>Those three layers ultimately inherit <code>CAShapeLayer</code> so you can animate their progress, color, and so on. The three layers draw the stroke, fill, and  background of <code>YALLabel</code>.</p>
+
+<p>The class <code>YALPathFillAnimation</code> helps you easily animate the text’s fill so you are going to use it to create a basic animation going.</p>
+
+<p>First you will fetch the fill layers for each character in the currently visible text. Add to <code>animateLabel(_:)</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> letters = label.fillLayer!.sublayers <span class="hljs-keyword">as</span>! [<span class="hljs-type">YALProgressAnimatingLayer</span>]
+</code></pre>
+
+<p>The sub-layers of <code>YALLabel</code>’s fillLayer will give you an array of the fill layers for each letter. Each of those layers is a <code>YALProgressAnimatingLayer</code> - a class that inherits from <code>CAShapeLayer</code> and allows you to animate a shape’s fill.</p>
+
+<p>Now you can enumerate over the character layers and run a fill animation on each - add:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">for</span> letter <span class="hljs-keyword">in</span> letters {
+    <span class="hljs-keyword">let</span> fill = <span class="hljs-type">YALPathFillAnimation</span>(path: letter.mask.path, andDirectionAngle: <span class="hljs-number">180.0</span>)
+    fill.duration = <span class="hljs-number">1.5</span>
+    fill.timingFunction = <span class="hljs-type">CAMediaTimingFunction</span>(name: kCAMediaTimingFunctionEaseOut)
+    letter.mask.addAnimation(fill, forKey: <span class="hljs-built_in">nil</span>)
+}
+</code></pre>
+
+<p>For each letter you create a <code>YALPathFillAnimation</code> which takes the character’s mask path and a direction angle. The latter parameter allows you to decide the direction the fill animates. If you use an angle of <code>0.0</code> degrees the fill animates upwards, for a <code>180.0</code> degree angle the fill animates downwards.</p>
+
+<p><code>YALPathFillAnimation</code> inherits from <code>CABasicAnimation</code> so you can use all properties you are used to tweak in your layer animations like <code>duration</code>, <code>timingFunction</code>, <code>fillMode</code>, etc.</p>
+
+<p><strong>Note:</strong> If you need a refresher on layer animations, <code>fillMode</code>, <code>timingFunction</code> and the like you can do a quick read of <strong>Chapter 8, Getting Started with Layer Animations</strong> from <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials 2nd Ed.</a>.</p>
+
+<p>This initial version of the fill animation looks like this:</p>
+
+<p><img src="./index_files/fill-animation-initial.gif" alt=""></p>
+
+<p>Cool! You’re heading in the right direction - a couple more tweaks and you will have the final animation ready.</p>
+
+<h4>Time offsetting</h4>
+
+<p>Next - you will give each character’s fill animation a bit of time offset. Just before the <code>for</code> loop insert:</p>
+
+<pre><code class="hljs swift">    <span class="hljs-keyword">let</span> deltaTimeOffset = <span class="hljs-number">2.0</span> / <span class="hljs-type">Double</span>(letters.<span class="hljs-built_in">count</span>)
+    <span class="hljs-keyword">var</span> timeOffset = <span class="hljs-type">CACurrentMediaTime</span>() + <span class="hljs-number">0.5</span>
+</code></pre>
+
+<p>You divide the total animation time of <code>2.0</code> seconds over the number of characters and store the result in <code>deltaTimeOffset</code>.</p>
+
+<p>You will keep adding <code>deltaTimeOffset</code> to <code>timeOffset</code> after you kick off the animation for each character to get the proper begin time for each animation.</p>
+
+<p>Find the line: <code>letter.mask.addAnimation(fill, forKey: nil)</code> and just <strong>before that line</strong> insert:</p>
+
+<pre><code class="hljs">fill.fillMode = kCAFillModeBackwards
+fill.beginTime = timeOffset
+timeOffset += deltaTimeOffset
+</code></pre>
+
+<p>This code will make the text appear filled with its background color (because it will appear 0% filled thanks to the animation’s fill mode) and each character animation will get time offset by <code>deltaTimeOffset</code>.</p>
+
+<p>Run the project:</p>
+
+<p><img src="./index_files/fill-wave.gif" alt=""></p>
+
+<p>The time offset you apply to each animation creates an “animation wave” effect - things are starting to look cool!</p>
+
+<h4>Left to right and vice versa</h4>
+
+<p>To make the effect a bit more varied let’s change the direction of the fill wave for each phrase.</p>
+
+<p>First add a new class property, which you will use as a flag for the animation direction:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">var</span> isOdd = <span class="hljs-built_in">true</span>
+</code></pre>
+
+<p>Find the line: <code>let letters = label.fillLayer!.sublayers as! [YALProgressAnimatingLayer]</code>.</p>
+
+<p>Replace it with:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> letters = (isOdd ? label.fillLayer!.sublayers : label.fillLayer!.sublayers!.<span class="hljs-built_in">reverse</span>())  <span class="hljs-keyword">as</span>! [<span class="hljs-type">YALProgressAnimatingLayer</span>]
+isOdd = !isOdd
+</code></pre>
+
+<p>You alternate the natural text flow with its reverse for each phrase animation. When you run the project now you will see the “fill wave” go once from left to right then from right to left and so on.</p>
+
+<p>You can randomize or shuffle the characters in the text any way you want for even crazier effects.</p>
+
+<h4>Adding rainbow effect</h4>
+
+<p>In this final part of the tutorial you will change the fill color of each of the characters to a different color to achieve a “rainbow effect” and make the animation even cooler.</p>
+
+<p>To generate all the different colors to use for each character you are going to use <code>UIColor(hue:, saturation: , brightness: , alpha: )</code>. This convenience initializer takes in a hue value between <code>0.0</code> and <code>1.0</code>, which determines a color’s position on the color wheel:</p>
+
+<p><img src="./index_files/hue-wheel.jpg" alt=""></p>
+
+<p>Your plan how to get all colors is very simple - divide <code>1.0</code> over the amount of characters to get the delta between each two letter’s hue values. Then before creating the animation for each character change its <code>fillColor</code> to create the rainbow.</p>
+
+<p>Back in <code>animateLabel(_:)</code> insert these two lines <strong>just before</strong> the <code>for</code> loop:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> deltaHue: <span class="hljs-type">CGFloat</span> = <span class="hljs-number">1.0</span> / <span class="hljs-type">CGFloat</span>(letters.<span class="hljs-built_in">count</span>)
+<span class="hljs-keyword">var</span> currentHue: <span class="hljs-type">CGFloat</span> = <span class="hljs-number">0.0</span>
+</code></pre>
+
+<p>For each phrase you will start from hue <code>0.0</code> (red color) and will have <code>deltaHue</code> difference between the hue of each letter with the last letter eventually having hue <code>1.0</code> (red color again).</p>
+
+<p>Now let’s add the code to do that, immediately after the line of the <code>for</code> loop insert:</p>
+
+<pre><code class="hljs">letter.fillColor = UIColor(hue: currentHue, saturation: 1.0, brightness: 1.0, alpha: 1.0).CGColor
+currentHue += deltaHue
+</code></pre>
+
+<p>This code sets each character’s fill color and increases <code>currentHue</code> to the value for the next character in the phrase. Easy peasy!</p>
+
+<p>Run the project one more time to check the final rainbow animation:</p>
+
+<p><img src="./index_files/think-different-complete.gif" alt=""></p>
+
+<p>And the animation is finished! I hope you enjoyed the ride and definitely check out the <a href="https://github.com/Yalantis/Preloader.Ophiuchus">Ophiuchus</a> GitHub repository.</p>
+
+<p>For the ones enjoying the idea of the Think Different homage - there’s one last optional step. Add this piece of code to <code>viewDidAppear(_:)</code> and watch the complete animation till the end:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> apple = <span class="hljs-type">UILabel</span>(frame: view.bounds)
+apple.font = <span class="hljs-type">UIFont</span>(name: <span class="hljs-string">"HelveticaNeue"</span>, size: <span class="hljs-number">160.0</span>)
+apple.textColor = <span class="hljs-type">UIColor</span>(white: <span class="hljs-number">1.0</span>, alpha: <span class="hljs-number">0.5</span>)
+apple.text = <span class="hljs-string">""</span>
+apple.textAlignment = <span class="hljs-type">NSTextAlignment</span>.<span class="hljs-type">Center</span>
+apple.alpha = <span class="hljs-number">0.0</span>
+view.addSubview(apple)
+
+<span class="hljs-type">UIView</span>.animateWithDuration(<span class="hljs-number">5.0</span>, delay: <span class="hljs-number">40.0</span>, options: [], animations: {
+    apple.alpha = <span class="hljs-number">1.0</span>
+    }, completion: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>This is how the completed animation looks like:</p>
+
+<iframe src="./index_files/124335387.html" width="550" height="348" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+
+
+				
+			</div>
+		</div>
+	</div><!-- container -->
+
+	<div class="clear"> </div>
+
+</div>
+
+<!-- second block -->
+
+<div class="about" id="about">
+	<div class="wrap">
+		
+
+<h2>iOS Animations by Tutorials 2nd Ed.</h2>
+
+<p><a href="http://www.ios-animations-by-tutorials.com/"><img src="./index_files/iAT-Print@2x.png" alt="iAT-Print.png"></a></p>
+
+<p><a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials 2nd Ed</a> is coming out September 2015 and is fully updated to Swift 2 and Xcode 7. As if this isn't an awesome enough update it also includes new chapters and projects to work on!</p>
+
+<p>If you own the PDF version right now or buy before the release of 2nd edition - you will get the update for free on book release day!</p>
+
+<p>Do you like books that self-update from Obj-C to Swift or simply to the latest iOS/ Xcode version? I thought you did. All books you buy from the <a href="http://www.raywenderlich.com/store?source=underplot">raywenderlich.com store</a> do - check ‘em out!</p>
+
+
+	</div>
+</div>
+
+<!-- third block -->
+<div class="contact" id="contact">
+	<div class="wrap" style="margin-bottom: 80px;">
+		
+
+<h2>Cool animation links</h2>
+
+<p>As I wrote in the introduction - this month there have been simply too many really cool animation posts and libraries. I’ve selected few to share with you:</p>
+
+<ul>
+<li><p><a href="https://github.com/adad184/MMTweenAnimation">Custom tween animations for POP</a> - if you enjoyed the new three chapters about Facebook’s POP in <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials</a> definitely check this library which gives you Bounce, Cubic, Elastic, Quad, Sine and much more animation easings.</p></li>
+<li><p><a href="https://github.com/evgenyneu/SpringAnimationCALayer">CALayer spring animation</a> - A very simple but useful library, which allows you to easily create spring animations for your layers.</p></li>
+<li><p><a href="https://github.com/fastred/MotionBlur">Motion Blur animation</a> - Nothing more to say than “motion blur” - how cool is that?</p></li>
+<li><p><a href="https://github.com/felix-dumit/FSDAirportFlipLabel">Airport Label</a> - Do you love these old airport or train station split-flap displays? Say no more - this library gives you the effect for free and it looks gorgeous!</p></li>
+<li><p><a href="https://github.com/terminatorover/RGCardViewLayout">Card Collection View Layout</a> - This lib offers you a layout class to make your collection view cells look like a hand of cards. Very slick.</p></li>
+</ul>
+
+		
+		<hr style="margin-top: 60px;">
+		
+		<p style="margin-top:80px;color:#666;font-size:1em;text-align:center!important;" class="editorial">
+			· Do you know of a cool new animation Swift library or interesting blog post?<br>
+			· Do you want to sponsor an issue of iOS Animations by Emails?<br>
+			· Do you want to write an animation tutorial for iOS Animations by Emails?<br>
+			&nbsp; If so check out my contacts in the footer. Thanks!</p>
+	</div>
+
+
+     <div class="footer-bottom">
+	    <div class="bottommenu copy" style="margin-bottom:40px;">
+		    <p class="copy">
+<style>
+	a.icon { width: 44px; border: 0px solid transparent; }
+	a.icon img {border: 0px solid transparent; width:44px;margin-left: 20px!important; }
+	.footer-bottom hr {border:0px solid transparent; border-bottom: 1px solid #999; width: 200px; margin-bottom: 20px;}
+	.wrap hr {border:0px solid transparent; border-bottom: 1px solid #666; width: 200px; margin-bottom: 20px;}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/document.write("<a class='icon' href='mai"+"lto:marin"+"@ios-animations-"+"by-em"+"ails.c"+"om"+"'><img src='../images/email.png'><\/a>");/*]]&gt;*/
+</script><a class="icon" href="mailto:marin@ios-animations-by-emails.com"><img src="./index_files/email.png"></a>
+
+<a class="icon" href="https://twitter.com/icanzilb" target="_blank"><img src="./index_files/twitter.png"></a>
+<a class="icon" href="http://www.linkedin.com/in/marintodorov/" target="_blank"><img src="./index_files/linkedin.png"></a>
+<a class="icon" href="https://github.com/icanzilb" target="_blank"><img src="./index_files/github.png"></a>
+</p><div class="clear"> </div>
+
+		    <p></p>
+		    <hr>
+		    <p class="copy">
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Sponsor%20iOS%20Animations%20by%20Emails">Sponsor</a> · 
+			    <a href="http://www.ios-animations-by-emails.com/">Subscribe to the newsletter</a> · 
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Contact">Contact</a> · 
+			    <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials</a>
+		    </p>
+	    </div>
+     	<div class="wrap">
+        <div class="copy" style="margin-top:60px;">
+		    <p class="copy" style="font-size:0.8em;text-align:center!important;">© 2014 Template by  <a href="http://w3layouts.com/" target="_blank">w3layouts</a> </p>
+		</div>
+		<script type="text/javascript">
+							$(document).ready(function() {
+								
+								var defaults = {
+						  			containerID: 'toTop', // fading element id
+									containerHoverID: 'toTopHover', // fading element hover id
+									scrollSpeed: 1200,
+									easingType: 'linear' 
+						 		};
+								
+								
+								$().UItoTop({ easingType: 'easeOutQuart' });
+								
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+	
+							});
+							
+	$( "#mc-embedded-subscribe" ).click(function() {
+		var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+		if (regexEmail.test($('#mce-EMAIL').val())) {
+	    	$('#mc-embedded-subscribe-form').submit();
+			return
+		} else {
+			alert("Please enter valid email address in the subscription field.")	
+		}
+	});
+
+						</script>
+						
+<script>
+if (document.location.href.indexOf("localhost") == -1) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7623080-20', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+
+<script src="./index_files/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+		</div>
+	</div>
+
+</div></body></html>

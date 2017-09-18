@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://ios-animations-by-emails.com/posts/welcome-issue -->
+<html class="gr__ios-animations-by-emails_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>iOS Animations by Emails | Creating an activity indicator using CAShapeLayer, blur effect and vibrancy</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link href="./index_files/css" rel="stylesheet" type="text/css">
+<link href="./index_files/css(1)" rel="stylesheet" type="text/css">
+<link href="./index_files/css(2)" rel="stylesheet" type="text/css">
+
+<meta name="description" content="A Monthly iOS Animations Newsletter. iOS animation showcases and experiments delivered to your inbox monthly. From the author of iOS Animations by Tutorials.">
+<meta name="keywords" content="iOS, Swift, animation, newsletter, magazine, book, Core Animation, CABasicAnimation, Apple, OSX">
+<meta name="author" content="Marin Todorov">
+
+<link href="./index_files/style.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="./index_files/imgeffect.css">
+<script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="./index_files/jquery.min.js"></script>
+
+<link rel="stylesheet" href="./index_files/github.css">
+
+<!-- start gallery Script -->
+	<script type="text/javascript" src="./index_files/jquery.easing.min.js"></script>	
+	<script type="text/javascript" src="./index_files/jquery.mixitup.min.js"></script>
+
+   	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+</head>
+
+<body data-gr-c-s-loaded="true">
+	
+<div style="width:100%; background: #efefef; color: red; text-align: center; padding:10px;">
+	This is a read-only archive of the iOS Animations by Tutorials newsletter. &raquo;<a href="https://icanzilb.github.io/ios-animations-by-emails">Table of contents</a>
+</div>
+
+	
+<style>
+	.leftnav {float:left;}
+	.wrap {max-width: 900px!important;}
+	.wrap p, .wrap h2 {text-align: left!important;}
+	.wrap ul {margin-left: 40px; margin-bottom: 20px;list-style-type: circle; margin-top: 10px;}
+	.wrap ul li {font-size: 1.1em; margin-bottom: 10px;}
+	.wrap h2 {margin-top: 0px!important; font-size: 2.5em;}
+	img {margin-left: 10%; max-width: 80%; border: 1px solid gray; margin-top: 10px; margin-bottom: 20px;}
+	.wrap h3 {margin-top: 20px; font-size: 1.8em; margin-bottom: 20px;}
+	.wrap code { 
+		background: #efefef; border: 1px solid #ccc; padding:1px; padding-left: 3px; padding-right: 2px; margin-right: 2px;
+		 }
+	pre {
+		background: #efefef; border: 1px solid #ccc;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+	pre code {
+		display: block; 
+		margin-bottom: 5px;
+		background: transparent!important; 
+		border: 0px solid #ccc!important;
+	}
+	.wrap strong {font-weight: bold;}
+	.wrap a {color:#1BBC9B;} 
+	.wrap h4 { margin-top: 10px; font-size: 1.4em; margin-bottom: 10px; margin-left:8px;}
+	.editorial {font-size: 1.2em; color:#666; margin-bottom: 60px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; width: 80%; margin-left:8%; }
+	.editorial p {margin-bottom: 15px; text-align: justify!important;}
+	.about a {color: white; text-decoration: underline;}
+	.about img {border:0px solid transparent;}
+	.about p {padding-bottom: 10px!important;}
+	.bottommenu a {color:#1BBC9B!important;}
+	.contact p {font-size:1.2em;}
+	.contact ul {margin-top:30px!important;}
+</style>
+		<!----start-header----------->
+				<div class="header_bg">
+					<div class="wrap">
+						<div class="header">
+							<!----start-nav-------->	
+							<div class="leftnav nav">
+								<ul>
+								   <li><a href="http://www.ios-animations-by-emails.com/" target="_blank">www.ios-animations-by-emails.com</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<div class="nav">
+								<ul>
+								   <li><a>Welcome Issue</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<!-----end-nav-------->
+							<div class="clear"> </div>
+						</div>
+					</div>
+				</div>
+		<!------end-header------------>
+		<!-- start slider -->
+<div class="slider_bg" id="top">
+		<div class="wrap">
+				<!---start-da-slider----->
+						<div class="da-slide">
+								<h2 style="text-align: center!important;"><span class="classy">Creating an activity indicator using CAShapeLayer, blur effect and vibrancy</span></h2>
+							
+		</div>
+	</div>
+</div>
+<!-----end-slider-------->
+
+<!-- first block -->
+<div class="wrap" id="portfolio">
+	<div class="main">
+
+		<!---start-content----->
+		<div class="gallery" style="padding: 5em 1em">
+			<div class="editorial">
+				<p>This is the welcome issue of iOS Animations by Emails. It features a short tutorial about an activity indicator animation using blur and vibrancy I developed for my app <a href="http://doodledoodle.io/">Doodle Doodle</a> and it looks into couple techniques I did not have a chance to cover in the <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials 2nd Ed.</a> book.</p>
+
+<p>When you finish reading through the tutorial at the bottom you will find a bunch of cool animation links. Enjoy!</p>
+
+
+				<p style="margin-top:20px;font-style: italic;text-align:right!important;">- Marin Todorov</p>
+			</div>
+			
+			<div class="clear"> </div>
+			<div class="container">
+				
+				
+
+<h2>Tutorial: Creating a modern activity indicator</h2>
+
+<p><code>This tutorial is designed for Xcode 7/Swift 2 or a compatible version.</code></p>
+
+<p>While I was working on the Doodle Doodle app I’ve prepared a number of video walkthroughs to show the users how to use and how to install the Doodle Doodle keyboard extension. I uploaded the videos on Vimeo and I was fascinated by the activity spinner they show you while you wait for your newly uploaded video to be processed:</p>
+
+<p><img src="./index_files/vimeo-spinner.jpg" alt=""></p>
+
+<p><a name="tutorial"></a></p>
+
+<p>That’s how I decided to create a similar activity indicator in Swift and code it from scratch for my app. I changed the visual to fit better iOS and here’s what I ended up with:</p>
+
+<p><img src="./index_files/swiftspinner.png" alt=""></p>
+
+<p>In this post I’ll take you through the process of creating part of this activity indicator, which I called <code>SwiftSpinner</code>.</p>
+
+<h3>Spring animations for layers</h3>
+
+<p>If you’ve read iOS Animations by Tutorials or have comparable Swift animations experience you know that it is very easy to create spring animations for your views in UIKit. Let's look into combining layer spring animations, blur effect and vibrancy to create a beautiful activity indicator.</p>
+
+<p>Create a new Xcode project and choose as project template <strong>iOS/Application/Single View Application</strong>. Select <strong>Swift</strong> as language and call the project <strong>LayerSprings</strong>. Save it anywhere you like.</p>
+
+<p>First you will add a view and an arc shape on screen.</p>
+
+<p>Open <strong>ViewController.swift</strong> and add three class constants:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> size = <span class="hljs-type">CGSize</span>(width: <span class="hljs-number">200.0</span>, height: <span class="hljs-number">200.0</span>)
+<span class="hljs-keyword">let</span> circleView = <span class="hljs-type">UIView</span>()
+<span class="hljs-keyword">let</span> circleLayer = <span class="hljs-type">CAShapeLayer</span>()
+</code></pre>
+
+<p>You declare the view (<code>circleView</code>), which you will add to the view controller and a shape layer (<code>circleLayer</code>) that will display the arc.</p>
+
+<p>So far so good - next add the code to draw the arc in a new <code>viewDidAppear</code> method:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">override</span> <span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidAppear</span><span class="hljs-params">(animated: Bool)</span></span> {
+  <span class="hljs-keyword">super</span>.viewDidAppear(animated)
+
+  circleView.frame.size = size
+
+  circleLayer.frame.size = size
+  circleLayer.position = circleView.center
+  circleLayer.path = <span class="hljs-type">UIBezierPath</span>(ovalInRect: circleView.frame).<span class="hljs-type">CGPath</span>
+  circleLayer.lineWidth = <span class="hljs-number">6.0</span>
+  circleLayer.strokeStart = <span class="hljs-number">0.0</span>
+  circleLayer.strokeEnd = <span class="hljs-number">0.4</span>
+  circleLayer.lineCap = kCALineCapRound
+  circleLayer.fillColor = <span class="hljs-type">UIColor</span>.clearColor().<span class="hljs-type">CGColor</span>
+  circleLayer.strokeColor = <span class="hljs-type">UIColor</span>.orangeColor().<span class="hljs-type">CGColor</span>
+}
+</code></pre>
+
+<p>This code sets the desired size of <code>circleView</code> and then configures the shape layer to draw an orange arc. Note that you do not need a full circle but an arc so you can animate it to rotate around.</p>
+
+<p>More about shape layers for animations and all the properties above you can learn in Chapter 13, <strong>Shapes and Masks</strong> and also in Chapter 15, <strong>Stroke and Path Animations</strong> in iOS Animations by Tutorials.</p>
+
+<p>Now that the shape is finished you can add it to the layer of <code>circleView</code>:</p>
+
+<pre><code class="hljs">circleView.layer.addSublayer(circleLayer)
+</code></pre>
+
+<p>Finally position and add the view in the view controller:</p>
+
+<pre><code class="hljs">circleView.center = view.center
+circleView.backgroundColor = UIColor(white: 0.95, alpha: 1.0)
+view.addSubview(circleView)
+</code></pre>
+
+<p>The view will appear in the center of the screen and have a light background to help you observe the animations later on. Build and run to see where you got so far:</p>
+
+<p><img src="./index_files/orange-arc.png" alt=""></p>
+
+<p>Perfect - now you can apply a spring animation to the view and animate the shape layer too!</p>
+
+<p>Next add a new method which will animate the arc:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">animate</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">let</span> newTransform = <span class="hljs-type">CATransform3DRotate</span>(circleLayer.transform, <span class="hljs-type">CGFloat</span>(<span class="hljs-type">M_PI_4</span>), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>)
+
+    <span class="hljs-keyword">let</span> rotation = <span class="hljs-type">CASpringAnimation</span>(keyPath: <span class="hljs-string">"transform"</span>)
+    rotation.fromValue = <span class="hljs-type">NSValue</span>(<span class="hljs-type">CATransform3D</span>: circleLayer.transform)
+    rotation.toValue = <span class="hljs-type">NSValue</span>(<span class="hljs-type">CATransform3D</span>: newTransform)
+    rotation.damping = <span class="hljs-number">7</span>
+    rotation.duration = rotation.settlingDuration
+    rotation.delegate = <span class="hljs-keyword">self</span>
+    circleLayer.addAnimation(rotation, forKey: <span class="hljs-built_in">nil</span>)
+
+    circleLayer.transform = newTransform
+}
+</code></pre>
+
+<p>Here you use the new in iOS9 class <code>CASpringAnimation</code> to make a spring animation for the layer <code>circleLayer</code>. First you take the current transform of <code>circleLayer</code> and rotate it by 45 ° to make the final rotation of the animation and store it in <code>newTransform</code>.</p>
+
+<p>Then you create a new <code>CASpringAnimation</code> to animate the layer's <code>transform</code> property. You set the start and end values and a damping of <code>7</code>. (If you'd like to fine tune the animation to your own taste try increasing or decreasing this value.) Finally you add the animation to <code>circleLayer</code> and set <code>ViewController</code> as the delegate.</p>
+
+<p>Once the animation has completed you simply want to run it again in order to produce a smooth continuous animation. Override this animation delegate method to catch the animation completion:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">override</span> <span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">animationDidStop</span><span class="hljs-params">(anim: CAAnimation, finished flag: Bool)</span></span> {
+    animate()
+}
+</code></pre>
+
+<p>Finally to start the animation in first place add to <code>viewDidAppear(_:)</code>:</p>
+
+<pre><code class="hljs">animate()
+</code></pre>
+
+<p>Now run the project to see the effect:</p>
+
+<p><img src="./index_files/spinner-rotate.gif" alt=""></p>
+
+<p>Before you move on to the next part - remove the silver background of <code>circleView</code> and enjoy how sleek the animation looks.</p>
+
+<h3>Adding blur and vibrancy</h3>
+
+<p>One of the topics that I did not have the time to write about in iOS Animations by Tutorials (but wanted to) was creating cool animations that involve blur and vibrancy effects.</p>
+
+<p>Since you already got your arc animation running I’ll lead you shortly through adding blur and translucency to that animation. And if that gets you hungry for more - at the end of the tutorial there’s a link to the complete <code>SwiftSpinner</code> repository on <a href="https://github.com/icanzilb/SwiftSpinner">GitHub</a> for you to explore.</p>
+
+<p>First you need to add few more class variables:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">var</span> blurEffect = <span class="hljs-type">UIBlurEffect</span>(style: .<span class="hljs-type">Dark</span>)
+<span class="hljs-keyword">var</span> blurView: <span class="hljs-type">UIVisualEffectView</span>!
+<span class="hljs-keyword">var</span> vibrancyView: <span class="hljs-type">UIVisualEffectView</span>!
+</code></pre>
+
+<p>You start by creating a <code>UIBlurEffect</code> - this is the effect model  and it does not show anything on screen by itself. Further you have a <code>blurView</code>, which is an effect view that actually displays the blur effect and <code>vibrancyView</code>, which will add the vibrancy effect.</p>
+
+<p>Next you need to initialize the effect views and add them to the view hierarchy. Add the blur effect view at the bottom of <code>viewDidAppear</code>:</p>
+
+<pre><code class="hljs">blurView = UIVisualEffectView(effect: blurEffect)
+blurView.frame = view.bounds
+view.addSubview(blurView)
+</code></pre>
+
+<p>This creates a new effect view and initializes it with the dark blur effect from <code>blurEffect</code>. Run the project right now to see what this code does.</p>
+
+<p><img src="./index_files/spinner-rotate-blur.gif" alt=""></p>
+
+<p>If you look carefully at the image above you can see the arc animating behind the blur. Cool!</p>
+
+<p>Now let’s add vibrancy to the blur view, add to <code>viewDidAppear</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> vibrancyEffect = <span class="hljs-type">UIVibrancyEffect</span>(forBlurEffect: blurEffect)
+vibrancyView = <span class="hljs-type">UIVisualEffectView</span>(effect: vibrancyEffect)
+vibrancyView.frame = view.bounds
+view.addSubview(vibrancyView)
+</code></pre>
+
+<p>You create a vibrancy effect (<code>vibrancyEffect</code>) for the existing blur effect (<code>blurEffect</code>). Then you create the effect view (<code>vibrancyView</code>) to display this vibrancy effect.</p>
+
+<p>If you run now you won’t see any difference - this is because the vibrancy effect view works only if it has some content. As the last step of this tutorial you will move the arc animation to the vibrancy view to create the final effect.</p>
+
+<p>First find this line and delete it from the code: <s>view.addSubview(circleView)</s>. Then append to <code>viewDidAppear</code>:</p>
+
+<pre><code class="hljs">vibrancyView.contentView.addSubview(circleView)
+</code></pre>
+
+<p>This will add the arc to the vibrancy effect view. You can check the resulting effect:</p>
+
+<p><img src="./index_files/spinner-rotate-vibrant.gif" alt=""></p>
+
+<p>Please note that in the Simulator the vibrancy effect doesn’t work very well. You will see the effect in its full glory if you add an image behind the blur view and run the app on a device.</p>
+
+<p>Here’s how the completed <code>SwiftSpinner</code> animation looks on a device:</p>
+
+<p><img src="./index_files/swiftspinner-completed.gif" alt=""></p>
+
+<h3>SwiftSpinner library</h3>
+
+<p>If you want to have a look at the completed activity spinner I developed for my <a href="http://doodledoodle.io/">Doodle Doodle</a> app you have two options how to get it.</p>
+
+<h4>As source code from GitHub</h4>
+
+<p>Just clone the repo or download it as a zip file from: <a href="https://github.com/icanzilb/SwiftSpinner">https://github.com/icanzilb/SwiftSpinner</a></p>
+
+<p>Read through the repo README for details.</p>
+
+<h4>As a CocoaPod</h4>
+
+<p>You need at least Cocoapods 0.36 installed (this is currently a pre-release version) - this version allows you to use framework based Swift cocoapods.</p>
+
+<ul>
+<li>add to your Podfile: <code>pod 'SwiftSpinner'</code></li>
+<li>install/update your project’s pods</li>
+<li>in your view controller add: <code>import SwiftSpinner</code></li>
+<li>to display the activity: <code>SwiftSpinner.show("Connecting...")</code></li>
+</ul>
+
+<p>Read through the <a href="http://cocoadocs.org/docsets/SwiftSpinner/0.6.0/">cocoadocs documentation</a>.</p>
+
+<h3>Where to go from here?</h3>
+
+<p>Congrats! You learned how to cheat and get some spring animations going for your layers and how to add blur and vibrancy to your effects.</p>
+
+<p>If you are eager to get more random animation goodness check the links at the bottom.</p>
+
+
+				
+			</div>
+		</div>
+	</div><!-- container -->
+
+	<div class="clear"> </div>
+
+</div>
+
+<!-- second block -->
+
+<div class="about" id="about">
+	<div class="wrap">
+		
+
+<h2>iOS Animations by Tutorials 2nd Edition!</h2>
+
+<p><a href="http://www.ios-animations-by-tutorials.com/"><img src="./index_files/iAT-print.png" alt="iAT-print.png"></a></p>
+
+<p><a href="http://www.ios-animations-by-tutorials.com/"><strong>iOS Animations by Tutorials 2nd Edition</strong></a> is coming out September 2015! If you own the PDF already or buy it right now - you will get the 2nd Edition update for free! The whole book has been updated for iOS 9 and Swift 2 plus few new chapters are coming your way!</p>
+
+<p>And in case you already have bought iOS Animations by Tutorials why not check out some of the <a href="http://www.raywenderlich.com/store?source=underplot">other Swift books I co-authored</a>?</p>
+
+
+	</div>
+</div>
+
+<!-- third block -->
+<div class="contact" id="contact">
+	<div class="wrap" style="margin-bottom: 80px;">
+		
+
+<h2>Cool animation links</h2>
+
+<p>To end this issue with a bang here are some of the coolest animation libraries and blog posts I've stumbled upon lately.</p>
+
+<ul>
+<li><p><a href="http://www.raywenderlich.com/90488/calayer-in-ios-with-swift-10-examples">CALayer in iOS with Swift: 10 Examples</a> - a grand tour of layers in iOS/Swift. Not much animation code but it teaches you a lot about layers.</p></li>
+<li><p><a href="http://www.thinkandbuild.it/implementing-the-twitter-ios-app-ui/">Implementing the Twitter iOS app UI</a> - a nice tutorial, which takes you through creating an interactive animation including dynamic blur.</p></li>
+<li><p><a href="https://github.com/rhcad/ShapeAnimation-Swift">Vector animation framework in Swift for iOS.</a> - this library looks really interesting but it takes some getting used to its syntax. Have a look at the demo images and see if you want to dig deeper.</p></li>
+<li><p><a href="https://github.com/Yalantis/Side-Menu.iOS">Side Menu iOS</a> - if you are a fan of side menus with cool animations this library is a top choice.</p></li>
+</ul>
+
+		
+		<hr style="margin-top: 60px;">
+		
+		<p style="margin-top:80px;color:#666;font-size:1em;text-align:center!important;" class="editorial">
+			· Do you know of a cool new animation Swift library or interesting blog post?<br>
+			· Do you want to sponsor an issue of iOS Animations by Emails?<br>
+			· Do you want to write an animation tutorial for iOS Animations by Emails?<br>
+			&nbsp; If so check out my contacts in the footer. Thanks!</p>
+	</div>
+
+
+     <div class="footer-bottom">
+	    <div class="bottommenu copy" style="margin-bottom:40px;">
+		    <p class="copy">
+<style>
+	a.icon { width: 44px; border: 0px solid transparent; }
+	a.icon img {border: 0px solid transparent; width:44px;margin-left: 20px!important; }
+	.footer-bottom hr {border:0px solid transparent; border-bottom: 1px solid #999; width: 200px; margin-bottom: 20px;}
+	.wrap hr {border:0px solid transparent; border-bottom: 1px solid #666; width: 200px; margin-bottom: 20px;}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/document.write("<a class='icon' href='mai"+"lto:marin"+"@ios-animations-"+"by-em"+"ails.c"+"om"+"'><img src='../images/email.png'><\/a>");/*]]&gt;*/
+</script><a class="icon" href="mailto:marin@ios-animations-by-emails.com"><img src="./index_files/email.png"></a>
+
+<a class="icon" href="https://twitter.com/icanzilb" target="_blank"><img src="./index_files/twitter.png"></a>
+<a class="icon" href="http://www.linkedin.com/in/marintodorov/" target="_blank"><img src="./index_files/linkedin.png"></a>
+<a class="icon" href="https://github.com/icanzilb" target="_blank"><img src="./index_files/github.png"></a>
+</p><div class="clear"> </div>
+
+		    <p></p>
+		    <hr>
+		    <p class="copy">
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Sponsor%20iOS%20Animations%20by%20Emails">Sponsor</a> · 
+			    <a href="http://www.ios-animations-by-emails.com/">Subscribe to the newsletter</a> · 
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Contact">Contact</a> · 
+			    <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials</a>
+		    </p>
+	    </div>
+     	<div class="wrap">
+        <div class="copy" style="margin-top:60px;">
+		    <p class="copy" style="font-size:0.8em;text-align:center!important;">© 2014 Template by  <a href="http://w3layouts.com/" target="_blank">w3layouts</a> </p>
+		</div>
+		<script type="text/javascript">
+							$(document).ready(function() {
+								
+								var defaults = {
+						  			containerID: 'toTop', // fading element id
+									containerHoverID: 'toTopHover', // fading element hover id
+									scrollSpeed: 1200,
+									easingType: 'linear' 
+						 		};
+								
+								
+								$().UItoTop({ easingType: 'easeOutQuart' });
+								
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+	
+							});
+							
+	$( "#mc-embedded-subscribe" ).click(function() {
+		var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+		if (regexEmail.test($('#mce-EMAIL').val())) {
+	    	$('#mc-embedded-subscribe-form').submit();
+			return
+		} else {
+			alert("Please enter valid email address in the subscription field.")	
+		}
+	});
+
+						</script>
+						
+<script>
+if (document.location.href.indexOf("localhost") == -1) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7623080-20', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+
+<script src="./index_files/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+		</div>
+	</div>
+
+</div></body></html>

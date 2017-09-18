@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://ios-animations-by-emails.com/posts/2015-may -->
+<html class="gr__ios-animations-by-emails_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>iOS Animations by Emails | Transitions with CoreImage</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link href="./index_files/css" rel="stylesheet" type="text/css">
+<link href="./index_files/css(1)" rel="stylesheet" type="text/css">
+<link href="./index_files/css(2)" rel="stylesheet" type="text/css">
+
+<meta name="description" content="A Monthly iOS Animations Newsletter. iOS animation showcases and experiments delivered to your inbox monthly. From the author of iOS Animations by Tutorials.">
+<meta name="keywords" content="iOS, Swift, animation, newsletter, magazine, book, Core Animation, CABasicAnimation, Apple, OSX">
+<meta name="author" content="Marin Todorov">
+
+<link href="./index_files/style.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="./index_files/imgeffect.css">
+<script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="./index_files/jquery.min.js"></script>
+
+<link rel="stylesheet" href="./index_files/github.css">
+
+<!-- start gallery Script -->
+	<script type="text/javascript" src="./index_files/jquery.easing.min.js"></script>	
+	<script type="text/javascript" src="./index_files/jquery.mixitup.min.js"></script>
+
+   	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+</head>
+
+<body data-gr-c-s-loaded="true">
+	
+		<div style="width:100%; background: #efefef; color: red; text-align: center; padding:10px;">
+	This is a read-only archive of the iOS Animations by Tutorials newsletter. &raquo;<a href="https://icanzilb.github.io/ios-animations-by-emails">Table of contents</a>
+</div>
+
+<style>
+	.leftnav {float:left;}
+	.wrap {max-width: 900px!important;}
+	.wrap p, .wrap h2 {text-align: left!important;}
+	.wrap ul {margin-left: 40px; margin-bottom: 20px;list-style-type: circle; margin-top: 10px;}
+	.wrap ul li {font-size: 1.1em; margin-bottom: 10px;}
+	.wrap h2 {margin-top: 0px!important; font-size: 2.5em;}
+	img {margin-left: 10%; max-width: 80%; border: 1px solid gray; margin-top: 10px; margin-bottom: 20px;}
+	.wrap h3 {margin-top: 20px; font-size: 1.8em; margin-bottom: 20px;}
+	.wrap code { 
+		background: #efefef; border: 1px solid #ccc; padding:1px; padding-left: 3px; padding-right: 2px; margin-right: 2px;
+		 }
+	pre {
+		background: #efefef; border: 1px solid #ccc;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+	pre code {
+		display: block; 
+		margin-bottom: 5px;
+		background: transparent!important; 
+		border: 0px solid #ccc!important;
+	}
+	.wrap strong {font-weight: bold;}
+	.wrap a {color:#1BBC9B;} 
+	.wrap h4 { margin-top: 10px; font-size: 1.4em; margin-bottom: 10px; margin-left:8px;}
+	.editorial {font-size: 1.2em; color:#666; margin-bottom: 60px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; width: 80%; margin-left:8%; }
+	.editorial p {margin-bottom: 15px; text-align: justify!important;}
+	.about a {color: white; text-decoration: underline;}
+	.about img {border:0px solid transparent;}
+	.about p {padding-bottom: 10px!important;}
+	.bottommenu a {color:#1BBC9B!important;}
+	.contact p {font-size:1.2em;}
+	.contact ul {margin-top:30px!important;}
+</style>
+		<!----start-header----------->
+				<div class="header_bg">
+					<div class="wrap">
+						<div class="header">
+							<!----start-nav-------->	
+							<div class="leftnav nav">
+								<ul>
+								   <li><a href="http://www.ios-animations-by-emails.com/" target="_blank">www.ios-animations-by-emails.com</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<div class="nav">
+								<ul>
+								   <li><a>2015, May</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<!-----end-nav-------->
+							<div class="clear"> </div>
+						</div>
+					</div>
+				</div>
+		<!------end-header------------>
+		<!-- start slider -->
+<div class="slider_bg" id="top">
+		<div class="wrap">
+				<!---start-da-slider----->
+						<div class="da-slide">
+								<h2 style="text-align: center!important;"><span class="classy">Transitions with CoreImage</span></h2>
+							
+		</div>
+	</div>
+</div>
+<!-----end-slider-------->
+
+<!-- first block -->
+<div class="wrap" id="portfolio">
+	<div class="main">
+
+		<!---start-content----->
+		<div class="gallery" style="padding: 5em 1em">
+			<div class="editorial">
+				<p><strong>Note:</strong> Sep 2015 - This tutorial has been updated for iOS9/Swift2.</p>
+
+<p>This is iOS Animations by Emails for May 2015. It features a tutorial on using CoreImage to create mind blowing transitions on iOS.</p>
+
+<p>Hello from <strong>Barcelona</strong>! I’m working from here in the month of May so if you’re around - please hit reply to this email or ping me at <a href="http://www.twitter.com/icanzilb">@icanzilb</a> to grab some beers together or to show me your favorite spots in the city.</p>
+
+<p>Additionally if you liked iOS Animations by Tutorials - could you be a good sport and leave a <strong>rating on Amazon</strong>? It’ll take you a couple of minutes but it will help me tremendously: <a href="http://www.amazon.com/iOS-Animations-Tutorials-Updated-Setting/dp/194287801X/ref=oosr">http://www.amazon.com/iOS-Animations-Tutorials-Updated-Setting/dp/194287801X/ref=oosr</a></p>
+
+<p>Thanks!</p>
+
+
+				<p style="margin-top:20px;font-style: italic;text-align:right!important;">- Marin Todorov</p>
+			</div>
+			
+			<div class="clear"> </div>
+			<div class="container">
+				
+				
+
+<h2>Tutorial: Transitions with CoreImage</h2>
+
+<p><code>This tutorial is designed for Xcode 7/Swift 2 or a compatible version.</code></p>
+
+<p>In <strong>Chapter 3, Transitions</strong> of <em>iOS Animations by Tutorials</em> I cover the built-in transitions you can use to animate in or out your views.</p>
+
+<p>Speaking frankly those transitions are somewhat limited. You can choose between animating the position of the content, cross dissolve, or flip over.</p>
+
+<p>The <code>CATransition</code> class has a property called <code>filter</code>, which allows you to use a <code>CoreImage</code> filter to create a more impressive transition animation.</p>
+
+<p>This works pretty well on <strong>OS X</strong> - you can create any <code>CoreImage</code> transition filter and just assign it to the <code>filter</code> property of your transition animation.</p>
+
+<p>On <strong>iOS</strong> the <code>filter</code> property doesn’t seem to do anything. There is a lot of discussion about it online but it seems that the property just does not work.</p>
+
+<p>Luckily it’s not that difficult to create your own view transition animation, which uses a <code>CoreImage</code> transition filter. The <a href="https://developer.apple.com/library/mac/documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html#//apple_ref/doc/uid/TP30001185-CH3-BAJGIDBF">11 steps instructions</a> how to do that are somewhat hidden in the Core Image Programming Guide and serve as the base of this month’s newsletter issue.</p>
+
+<p>By the end of the tutorial you will have developed a <code>UIImageView</code> subclass that allows you to change its image via a <code>CoreImage</code> powered transition like the one below:</p>
+
+<p><img src="./index_files/transition-final.gif" alt=""></p>
+
+<p><a name="tutorial"></a></p>
+
+<p>
+</p><div style="background: url(../images/banner.jpg); height: 150px; border:1px solid black; padding-top: 40px; text-align: center;font-size: 16px; color: #efefef;">
+
+Get a cool iOS animation article like this one in your inbox each month - with full Swift source code! <br>By the author of <a href="http://www.ios-animations-by-tutorials.com/" target="_blank">iOS Animations by Tutorials</a>.
+
+<br><br>
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="http://doodledoodle.us2.list-manage.com/subscribe/post?u=09cf12f9fda2bee302951124b&amp;id=c8bcd4cf03" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+<div class="mc-field-group" style="text-align: center;">
+	<input type="email" value="Your email address" name="EMAIL" class="required email" id="mce-EMAIL" onfocus="if(this.value == &#39;Your email address&#39;) { this.value = &#39;&#39;; }" onblur="if(this.value == &#39;&#39;) { this.value = &#39;Your email address&#39;; }">
+	<a href="http://ios-animations-by-emails.com/posts/2015-may#subscribe" id="mc-embedded-subscribe">Subscribe</a>
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_09cf12f9fda2bee302951124b_c8bcd4cf03" tabindex="-1" value=""></div>
+    <div class="clear"></div>
+    <p></p>
+    </div>
+</form>
+</div>
+
+<span style="font-size: 12px;">No spam, ever. Your email address is safe with us and you can unsubscribe at any time.</span>
+
+</div>
+<p></p>
+
+<h3>Getting started</h3>
+
+<p>Do avoid asking you to create an Xcode project and setting up the UI with Auto Layout I’ve prepared a starter project for you.</p>
+
+<p>Download <a href="http://www.ios-animations-by-emails.com/assets/2015-may/CITransitions-Starter.zip">CITransitions-Starter.zip</a>, extract the contents of the archive, and open <strong>CITransitions.xcodeproj</strong>.</p>
+
+<p>If you run the project right now nothing much happens - you see a photo appear centered on screen:</p>
+
+<p><img src="./index_files/phone-image-cenered.jpg" alt=""></p>
+
+<p>Besides having an image view pop on screen the project is a vanilla single view template. If you look at the Project Navigator you will also spot few images - two photos and 3 different mask images, which you will use later on:</p>
+
+<p><img src="./index_files/imported-photos.png" alt=""></p>
+
+<p>Next you will get your hands dirty by extending <code>UIImageView</code> and adding few basic features to it.</p>
+
+<h3>TransitionImageView</h3>
+
+<p>From Xcode’s main menu select <strong>File/New/File...</strong> and then <strong>iOS/Source/Cocoa Touch Class</strong>. Name your class <strong>TransitionImageView</strong>, make it a subclass of <code>UIImageView</code> and save it.</p>
+
+<p>Replace the contents of the new file with this code:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">import</span> <span class="hljs-type">UIKit</span>
+<span class="hljs-keyword">import</span> <span class="hljs-type">CoreImage</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TransitionImageView</span>: <span class="hljs-title">UIImageView</span> </span>{
+
+    <span class="hljs-preprocessor">@IBInspectable</span> <span class="hljs-keyword">var</span> duration: <span class="hljs-type">Double</span> = <span class="hljs-number">2.0</span>
+
+    private <span class="hljs-keyword">let</span> <span class="hljs-built_in">filter</span> = <span class="hljs-type">CIFilter</span>(name: <span class="hljs-string">"CICopyMachineTransition"</span>)!
+
+    private <span class="hljs-keyword">var</span> transitionStartTime: <span class="hljs-type">CFTimeInterval</span> = <span class="hljs-number">0.0</span>
+    private <span class="hljs-keyword">var</span> transitionTimer: <span class="hljs-type">NSTimer</span>?
+
+}
+</code></pre>
+
+<p>You create four new properties:</p>
+
+<ul>
+<li><p><code>duration</code> is the transition duration in seconds, it’s marked as <code>@IBInspectable</code> so you can experiment easily with different durations from within Interface Builder.</p></li>
+<li><p><code>filter</code> holds the <code>CoreImage</code> filter you are going to use for each transition. The copy machine transition is a classic amusing transition no tutorial can go without. You’ll see that it’s lots of fun :]</p></li>
+<li><p><code>transitionStartTime</code> you will use this property to keep track when the currently running transition started.</p></li>
+<li><p><code>transitionTimer</code> - to build your own custom animation you will use a timer that will fire when each frame of the animation needs to be rendered.</p></li>
+</ul>
+
+<p>That’s a great start! I would only like to elaborate a bit more on that <code>filter</code> business...</p>
+
+<h4>CoreImage filters crash course</h4>
+
+<p><code>CoreImage</code> filters are very powerful and allow you to create interesting image effects quite easily. Filters usually take in a source image and output a modified version of that image. For example if you apply a Sepia tone filter to a photo the source and result could look like this:</p>
+
+<p><img src="./index_files/sepia.jpg" alt=""></p>
+
+<p>Most filters feature a number of parameters you can adjust to your taste. In the Sepia tone example above you can configure how much should the colors be desaturated compared to the original, and how much should the image be colorized with the Sepia color.</p>
+
+<p>In addition to simple filters there is a list of special ones called <strong>“transitions”</strong>.</p>
+
+<p>They convert <strong>one image</strong> into <strong>another image</strong>. In fact those filters generate <strong>all frames</strong> of an animation that converts the source image into the target image.</p>
+
+<p>So in practice you can create a transition filter and ask it - “provided the source and target images give me the animation frame at 60% through the animation”. (Or any other arbitrary percentage of completion through the animation of course.)</p>
+
+<p>To build an animation using the filter - you need to keep asking the filter repeatedly for the next frame of the animation and set it as the image of your image view class:</p>
+
+<p><img src="./index_files/transition-example.jpg" alt=""></p>
+
+<p>This sounds like a good plan.</p>
+
+<p>Before diving into code you need to make few tweaks in Interface Builder. Open <strong>Main.storyboard</strong> - you should see the image view like so:</p>
+
+<p><img src="./index_files/photo-centered.jpg" alt=""></p>
+
+<p>Before trying any transitions you need to set this image view to be in fact an instance of your new <code>TransitionImageView</code> class. Select the image view and set the class from the Assistant Editor:</p>
+
+<p><img src="./index_files/set-class.png" alt=""></p>
+
+<p>To make sure it all went well - switch to the Attributes Inspector and check if you see your <code>@IBInspectable</code> <code>duration</code> property in there:</p>
+
+<p><img src="./index_files/duration-property.png" alt=""></p>
+
+<p>Open <strong>ViewController.swift</strong> and add an outlet to the image view:</p>
+
+<pre><code class="hljs swift"><span class="hljs-preprocessor">@IBOutlet</span> <span class="hljs-keyword">weak</span> <span class="hljs-keyword">var</span> imageView: <span class="hljs-type">TransitionImageView</span>!
+</code></pre>
+
+<p>Back in <strong>Main.storyboard</strong> while holding the Ctrl key drag with your mouse from your ViewController object to the image view. From the popup menu select <strong>imageView</strong> to connect the outlet.</p>
+
+<p><img src="./index_files/connect-outlet.jpg" alt=""></p>
+
+<p>Your UI is completed and you can move on to adding the transition code.</p>
+
+<h3>Configuring the transition filter</h3>
+
+<p>Newly created filters on iOS come with a pre-defined set of parameters. This is handy because you can easily try filters out and fine tune them later on to your liking.</p>
+
+<p>The minimum input you need to provide to a transition filter are the source and target images. Open <strong>TransitionImageView.swift</strong> and add a new method to your class:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">transitionToImage</span><span class="hljs-params">(toImage: UIImage?)</span></span> {
+
+    guard <span class="hljs-keyword">let</span> image = image, <span class="hljs-keyword">let</span> toImage = toImage <span class="hljs-keyword">else</span> {
+      fatalError(<span class="hljs-string">"You need to have set an image, provide a new image and a mask to fire up a transition"</span>)
+    }
+
+    <span class="hljs-built_in">filter</span>.setValue(<span class="hljs-type">CIImage</span>(image: image),  forKey: kCIInputImageKey)
+    <span class="hljs-built_in">filter</span>.setValue(<span class="hljs-type">CIImage</span>(image: toImage),  forKey: kCIInputTargetImageKey)
+
+}
+</code></pre>
+
+<p><code>transitionToImage</code> takes a single parameter, which is the target image of the transition. This method will configure the filter and kick off the animation.</p>
+
+<p>Let’s look at the code. First you make sure there is an image already set to the image view and that the <code>toImage</code> parameter is not <code>nil</code>.</p>
+
+<p>Then you set the existing image as the source image of <code>filter</code> by calling <code>setValue(_, forKey:)</code> and setting the key to <code>kCIInputImageKey</code>.</p>
+
+<p>Notice that the CoreImage classes work with <code>CIImage</code> (and not <code>UIImage</code> or <code>CGImageRef</code>).</p>
+
+<p>Finally you also set the target image of <code>filter</code>, you assign the <code>toImage</code> parameter (converted to a <code>CIImage</code>) to the key <code>kCIInputTargetImageKey</code>.</p>
+
+<p>Cool! So far you’ve configured the source and target images of the transition. Now you need to create a timer and start grabbing frames and feeding them to your image view.</p>
+
+<h3>Creating an NSTimer animation</h3>
+
+<p>Add to <code>transitionToImage:</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> timer = transitionTimer <span class="hljs-keyword">where</span> timer.valid {
+    timer.invalidate()
+}
+</code></pre>
+
+<p>This check will reset a currently running timer if you call <code>transitionToImage:</code> while a transition is already in progress. The code calls <code>timer.invalidate()</code>, which resets the existing transition and will allow you to start a new one.</p>
+
+<p>Next you will store the start time of the new transition. Add:</p>
+
+<pre><code class="hljs">transitionStartTime = CACurrentMediaTime()
+</code></pre>
+
+<p><code>CACurrentMediaTime()</code> gives you the current absolute time in seconds (including milliseconds precision after the floating point). You will need the animation start time when you calculate the progress through the transition.</p>
+
+<p>Finally you can fire off the animation timer:</p>
+
+<pre><code class="hljs swift">transitionTimer = <span class="hljs-type">NSTimer</span>(timeInterval: <span class="hljs-number">1.0</span>/<span class="hljs-number">30.0</span>,
+    target: <span class="hljs-keyword">self</span>, selector: <span class="hljs-type">Selector</span>(<span class="hljs-string">"timerFired:"</span>),
+    userInfo: toImage,
+    repeats: <span class="hljs-built_in">true</span>)
+<span class="hljs-type">NSRunLoop</span>.currentRunLoop().addTimer(transitionTimer!, 
+    forMode: <span class="hljs-type">NSDefaultRunLoopMode</span>)
+</code></pre>
+
+<p>The repeat interval for the timer is <code>1.0/30.0</code> seconds, i.e. it will fire <code>30</code> times per second. You can try higher frame rates but keep in mind that CoreImage will need to run your filter that many times per second too and that might be heavy on the device.</p>
+
+<p>You set the selector of your timer to be <code>timerFired:</code> method on your <code>ViewController</code> class. You still don’t have such a method but you will add it in a moment.</p>
+
+<p>There’s one final detail - an <code>NSTimer</code> has a <code>userInfo</code> property. This property is of type <code>AnyObject?</code> so you can assign anything you want to it. You can use it to store any information for later use. In your case you store the final <code>UIImage</code> of the transition - you will use it when the transition ends to set the final frame of the animation.</p>
+
+<h3>Grabbing animation frames</h3>
+
+<p>Next you need to add the method to grab an animation frame each time the timer fires. Add the stub for it like so:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">timerFired</span><span class="hljs-params">(timer: NSTimer)</span></span> {
+}
+</code></pre>
+
+<p>First you need to know how far are you through the transition animation. You need a value in the range <code>[0..1]</code> to express the animation progress.</p>
+
+<p>Add into <code>timerFired:</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> progress = (<span class="hljs-type">CACurrentMediaTime</span>() - transitionStartTime) / duration
+</code></pre>
+
+<p>You get the time that passed since the transition started and divide that over the total duration. This should give you a value between <code>0.0</code> and <code>1.0</code> expressing your progress through the transition.</p>
+
+<p>Next you need to let the filter know the current progress. Add:</p>
+
+<pre><code class="hljs swift"><span class="hljs-built_in">filter</span>.setValue(progress, forKey: kCIInputTimeKey)
+</code></pre>
+
+<p>You set the progress to the key <code>kCIInputTimeKey</code> so the next time you grab the filter’s output it will know which frame of the transition you want.</p>
+
+<p>At this point you are ready to update the current <code>image</code> of the image view with the filter’s output. Just grab the filter result from its <code>outputImage</code> property and set it to the image view:</p>
+
+<pre><code class="hljs swift">image = <span class="hljs-type">UIImage</span>(<span class="hljs-type">CIImage</span>: <span class="hljs-built_in">filter</span>.outputImage!,
+    scale: <span class="hljs-type">UIScreen</span>.mainScreen().scale,
+    orientation: <span class="hljs-type">UIImageOrientation</span>.<span class="hljs-type">Up</span>)
+</code></pre>
+
+<p>You create a new <code>UIImage</code> out of the <code>CIImage</code> filter result, and apply the proper screen scale and orientation.</p>
+
+<p>This code should already power your image view class with a cool transition but let’s add couple more lines to wrap up the <code>timerFired:</code> method.</p>
+
+<p>Add:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">if</span> <span class="hljs-type">CACurrentMediaTime</span>() &gt; transitionStartTime + duration {
+    image = timer.userInfo <span class="hljs-keyword">as</span>? <span class="hljs-type">UIImage</span>
+    timer.invalidate()
+}
+</code></pre>
+
+<p>This code checks if more time has passed that the transition duration and if so it:</p>
+
+<ul>
+<li><p>sets the final image of the transition by grabbing it from the <code>userInfo</code> property of the timer (you stored it there for future use).</p></li>
+<li><p>invalidates the timer, which stops feeding new frames to the image view.</p></li>
+</ul>
+
+<p>Okay, that's a wrap-up! Let’s try how does the transition look like!</p>
+
+<h3>Your first CoreImage transition</h3>
+
+<p>Yes - you guessed it! You never actually call <code>transitionToImage:</code>.</p>
+
+<p>Let's make the image view transition to a new image when you tap the screen.</p>
+
+<p>Open <strong>ViewController.swift</strong> and add to <code>viewDidLoad:</code>:</p>
+
+<pre><code class="hljs swift">view.addGestureRecognizer(
+    <span class="hljs-type">UITapGestureRecognizer</span>(target: <span class="hljs-keyword">self</span>, action: <span class="hljs-type">Selector</span>(<span class="hljs-string">"didTap"</span>))
+)
+</code></pre>
+
+<p>You add a gesture recognizer to the view controller's view and tell it to call <code>didTap</code> any time the user taps the view. Cool - now add <code>didTap</code> and a helper class property:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">var</span> currentImageName = <span class="hljs-string">""</span>
+
+<span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">didTap</span><span class="hljs-params">()</span></span> {
+    currentImageName = (currentImageName == <span class="hljs-string">"Photo2.jpg"</span>) ? <span class="hljs-string">"Photo1.jpg"</span> : <span class="hljs-string">"Photo2.jpg"</span>
+    imageView.transitionToImage(<span class="hljs-type">UIImage</span>(named: currentImageName))
+}
+</code></pre>
+
+<p>Each time you tap the screen <code>didTap</code> will change the image alternating between <code>Photo1.jpg</code> and <code>Photo2.jpg</code>. This will make testing multiple times much easier.</p>
+
+<p>Alrighty! You are all ready to go.</p>
+
+<p>One final note - from now on you need to <strong><code>test on your device</code></strong>. The Simulator isn't that good in the kind of effects you are creating in this tutorial so you will need to build and run on your device.</p>
+
+<p>Run the app and tap the screen. You will see your first CoreImage transition:</p>
+
+<p><img src="./index_files/copymachine.gif" alt=""></p>
+
+<p>The filter animation resembles the kind of light you see moving under the lid of a working copy machine - isn’t that a funny one? :]</p>
+
+<p>You will develop more elaborate transition in the tutorial's next part. For the moment let's see how to adjust couple of parameters on your current transition animation.</p>
+
+<p>Under the code where you set the source and target images add 2 new lines to set the filter’s extent and color:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> extent = <span class="hljs-type">CIVector</span>(x: <span class="hljs-number">0.0</span>, y: <span class="hljs-number">0.0</span>, 
+    z: image.size.width * <span class="hljs-number">2.0</span>, w: image.size.height * <span class="hljs-number">2.0</span>)
+
+<span class="hljs-keyword">let</span> color = <span class="hljs-type">CIColor</span>(red: <span class="hljs-number">0.6</span>, green: <span class="hljs-number">1.0</span>, blue: <span class="hljs-number">1.0</span>)
+
+<span class="hljs-built_in">filter</span>.setValue(extent, forKey: kCIInputExtentKey)
+<span class="hljs-built_in">filter</span>.setValue(color, forKey: kCIInputColorKey)
+</code></pre>
+
+<ul>
+<li><p><code>extent</code> defines a vector that makes the effect cover the whole area of the image. E.g. the Copy Machine light will go all the way to the right edge instead of the default mid-way. When you create the vector you multiply the width and height by <code>2.0</code> because the assets are provided in @2x size.</p></li>
+<li><p><code>color</code> is a white-blue <code>CIColor</code> which will give the copier light a colder blue tint.</p></li>
+</ul>
+
+<p>Finally you set the two values to the <code>kCIInputExtentKey</code> and <code>kCIInputColorKey</code> filter input keys.</p>
+
+<p>Run again the project on your device and tap few times the screen to see the adjusted transition - you can see the cold blue light go all the way to the end of the screen.</p>
+
+<p>Neat!</p>
+
+<p>If you are curious to see what are all the parameters the Copy Machine transition supports you can have a look at the <a href="https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html#//apple_ref/doc/filter/ci/CICopyMachineTransition">CICopyMachineTransition documentation</a> online.</p>
+
+<h3>More elaborate transition animations</h3>
+
+<p>There are a number of different transition filters. You can create a variety of animations by using each of them and adjusting their parameters. For the list of available filters and how to configure them have a look at the <a href="https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html#//apple_ref/doc/uid/TP30000136-SW239">online documentation</a>.</p>
+
+<p>In the rest of the tutorial you gonna have a quick look at <code>CIDisintegrateWithMaskTransition</code>, which allows you to create really cool transitions.</p>
+
+<p>Open <strong>TransitionImageView.swift</strong> and add a new property:</p>
+
+<pre><code class="hljs swift"><span class="hljs-preprocessor">@IBInspectable</span> <span class="hljs-keyword">var</span> maskImage: <span class="hljs-type">UIImage</span>?
+</code></pre>
+
+<p><code>CIDisintegrateWithMaskTransition</code> uses a mask image so you add a property to keep that mask image safely stored.</p>
+
+<p>Next find the <code>filter</code> property declaration and change it to this:</p>
+
+<pre><code class="hljs swift">private <span class="hljs-keyword">let</span> <span class="hljs-built_in">filter</span> = <span class="hljs-type">CIFilter</span>(name: <span class="hljs-string">"CIDisintegrateWithMaskTransition"</span>)!
+</code></pre>
+
+<p>The new filter you are going to use has a different name so you need to initialize the filter with it.</p>
+
+<p>Now scroll down to <code>transitionWithImage:</code>. Change the <code>if</code> condition at the beginning of the method to also check for a <code>maskImage</code> like so:</p>
+
+<pre><code class="hljs swift">guard <span class="hljs-keyword">let</span> image = image, <span class="hljs-keyword">let</span> toImage = toImage, <span class="hljs-keyword">let</span> maskImage = maskImage <span class="hljs-keyword">else</span> {
+</code></pre>
+
+<p>Next - remove the extent and color filter parameters from the code:</p>
+
+<p><s>
+let extent = CIVector(x: 0.0, y: 0.0, z: image!.size.width * 2.0, w: image!.size.height * 2.0)</s></p><s>
+
+<p>let color = CIColor(red: 0.6, green: 1.0, blue: 1.0)</p>
+
+<p>filter.setValue(extent, forKey: kCIInputExtentKey)</p>
+
+</s><p><s>filter.setValue(color, forKey: kCIInputColorKey)
+</s></p>
+
+<p>The <code>CIDisintegrateWithMaskTransition</code> does not use color or extent parameters and if you leave them in you will get a crash from <code>CoreImage</code>.</p>
+
+<p>In the place of the code you just deleted add this to set the transition mask image:</p>
+
+<pre><code class="hljs swift"><span class="hljs-built_in">filter</span>.setValue(<span class="hljs-type">CIImage</span>(image: maskImage), forKey: kCIInputMaskImageKey)
+</code></pre>
+
+<p>This is all you need to change in your class to use the new transition filter. Before running the project switch to Interface Builder and set the Mask Image property on your view to <strong>Mask2.png</strong>.</p>
+
+<p><img src="./index_files/set-mask.png" alt=""></p>
+
+<p>Run the project again and you will observe a totally different and extremely cool transition:</p>
+
+<p><img src="./index_files/heart-transition.jpg" alt=""></p>
+
+<p>What <code>CIDisintegrateWithMaskTransition</code> does is take the image mask:</p>
+
+<p><img src="./index_files/heart-mask.jpg" alt=""></p>
+
+<p>and show parts of the target image progressively from the dark areas on the mask image to the white areas of the mask image. The image below demonstrates how this works for your current transition:</p>
+
+<p><img src="./index_files/mask-progress.jpg" alt=""></p>
+
+<p>You can see how in the beginning of the transition only the black and very dark parts of the mask image are taken into account. Then the transition progressively includes dark gray, gray, and silver areas. Finally all of the mask image is considered as a mask including all shades of gray and finally white color.</p>
+
+<p>This mask image demonstrates the effect very well because it’s one solid gradient and you can clearly see how the animation is built.</p>
+
+<p>Try the two other mask images I included in the assets. <strong>Mask1.jpg</strong> which looks like this:</p>
+
+<p><img src="./index_files/circle-mask.jpg" alt=""></p>
+
+<p>will produce a transition like this:</p>
+
+<p><img src="./index_files/circle-transition.jpg" alt=""></p>
+
+<p>And finally <strong>Mask3.jpg</strong>:</p>
+
+<p><img src="./index_files/tiles-mask.jpg" alt=""></p>
+
+<p>will produce a very cool falling tiles animation - check it out!</p>
+
+<p><img src="./index_files/transition-final.gif" alt=""></p>
+
+<p>As you can see - even only <code>CIDisintegrateWithMaskTransition</code> single handedly allows you to create an infinite amount of transition animations! And there’s plenty more that <code>CoreImage</code> offers.</p>
+
+<p>Don’t forget to browse through the list of <a href="https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html#//apple_ref/doc/uid/TP30000136-SW239">transition filters</a>.</p>
+
+<h3>Where to go from here?</h3>
+
+<p>One cool idea to consider is to create a <code>ViewController</code> transition by using a <code>CoreImage</code> transition filter. For example you can extend the project in <strong>Chapter 23, Interactive UINavigationController Transitions</strong> to feature a <code>CoreImage</code> transition.</p>
+
+<p>It’s not a difficult task since the gesture recognizer in that project already gives you the progress through the pan gesture as a value in the range <code>[0..1]</code>.</p>
+
+<p>You can take screenshots of the old and new view controllers and then use the two images to create a CoreImage powered presentation transition.</p>
+
+<p>If you get to do some work in that direction ping me by replying to this email or on Twitter at <a href="http://www.twitter.com/icanzilb">@icanzilb</a>.</p>
+
+
+				
+			</div>
+		</div>
+	</div><!-- container -->
+
+	<div class="clear"> </div>
+
+</div>
+
+<!-- second block -->
+
+<div class="about" id="about">
+	<div class="wrap">
+		
+
+<h2>Don’t get left behind with  Watch development</h2>
+
+<p><a href="http://www.raywenderlich.com/store?source=underplot"><img src="http://touch-code-magazine.com/img/banners/banner_300x250.png" alt="iAT-Print.png" hidden="" style="display: none !important;"></a></p>
+
+<p>Got your <strong>Apple watch</strong> already?</p>
+
+<p>Either way you can start developing apps for the  Watch. Check out <a href="http://www.raywenderlich.com/store/watchkit-by-tutorials?source=underplot"><strong>WatchKit by Tutorials</strong></a> and books on <a href="http://www.raywenderlich.com/store?source=underplot">every major Apple development topic</a> at the raywenderlich.com online store.</p>
+
+
+	</div>
+</div>
+
+<!-- third block -->
+<div class="contact" id="contact">
+	<div class="wrap" style="margin-bottom: 80px;">
+		
+
+<h2>Cool animation links</h2>
+
+<p>Here it comes the list of animation looks I stumbled upon during April:</p>
+
+<ul>
+<li><p><a href="https://github.com/278204/GooeyMenu">Gooey Menu</a> - Download this repo and check out the demo app - it features an extremely slick menu animation. An inspiring piece of code.</p></li>
+<li><p><a href="https://github.com/Ramotion/animated-tab-bar">Animated Tab Bar</a> - This lib really put a smile on my face - it add simple animations to your tab bar items. It’s a detail that really makes an app stand up.</p></li>
+<li><p><a href="https://github.com/Yalantis/Persei/">Animated Top Menu</a> - Another animation library from Yalantis (those guys love animations), this time an pull out top menu.</p></li>
+<li><p><a href="https://github.com/solomidSF/YRCoverFlowLayout">CoverFlow Collection View Layout</a> - A CoverFlow style layout for collection views - looks very good!</p></li>
+</ul>
+
+		
+		<hr style="margin-top: 60px;">
+		
+		<p style="margin-top:80px;color:#666;font-size:1em;text-align:center!important;" class="editorial">
+			· Do you know of a cool new animation Swift library or interesting blog post?<br>
+			· Do you want to sponsor an issue of iOS Animations by Emails?<br>
+			· Do you want to write an animation tutorial for iOS Animations by Emails?<br>
+			&nbsp; If so check out my contacts in the footer. Thanks!</p>
+	</div>
+
+
+     <div class="footer-bottom">
+	    <div class="bottommenu copy" style="margin-bottom:40px;">
+		    <p class="copy">
+<style>
+	a.icon { width: 44px; border: 0px solid transparent; }
+	a.icon img {border: 0px solid transparent; width:44px;margin-left: 20px!important; }
+	.footer-bottom hr {border:0px solid transparent; border-bottom: 1px solid #999; width: 200px; margin-bottom: 20px;}
+	.wrap hr {border:0px solid transparent; border-bottom: 1px solid #666; width: 200px; margin-bottom: 20px;}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/document.write("<a class='icon' href='mai"+"lto:marin"+"@ios-animations-"+"by-em"+"ails.c"+"om"+"'><img src='../images/email.png'><\/a>");/*]]&gt;*/
+</script><a class="icon" href="mailto:marin@ios-animations-by-emails.com"><img src="./index_files/email.png"></a>
+
+<a class="icon" href="https://twitter.com/icanzilb" target="_blank"><img src="./index_files/twitter.png"></a>
+<a class="icon" href="http://www.linkedin.com/in/marintodorov/" target="_blank"><img src="./index_files/linkedin.png"></a>
+<a class="icon" href="https://github.com/icanzilb" target="_blank"><img src="./index_files/github.png"></a>
+</p><div class="clear"> </div>
+
+		    <p></p>
+		    <hr>
+		    <p class="copy">
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Sponsor%20iOS%20Animations%20by%20Emails">Sponsor</a> · 
+			    <a href="http://www.ios-animations-by-emails.com/">Subscribe to the newsletter</a> · 
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Contact">Contact</a> · 
+			    <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials</a>
+		    </p>
+	    </div>
+     	<div class="wrap">
+        <div class="copy" style="margin-top:60px;">
+		    <p class="copy" style="font-size:0.8em;text-align:center!important;">© 2014 Template by  <a href="http://w3layouts.com/" target="_blank">w3layouts</a> </p>
+		</div>
+		<script type="text/javascript">
+							$(document).ready(function() {
+								
+								var defaults = {
+						  			containerID: 'toTop', // fading element id
+									containerHoverID: 'toTopHover', // fading element hover id
+									scrollSpeed: 1200,
+									easingType: 'linear' 
+						 		};
+								
+								
+								$().UItoTop({ easingType: 'easeOutQuart' });
+								
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+	
+							});
+							
+	$( "#mc-embedded-subscribe" ).click(function() {
+		var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+		if (regexEmail.test($('#mce-EMAIL').val())) {
+	    	$('#mc-embedded-subscribe-form').submit();
+			return
+		} else {
+			alert("Please enter valid email address in the subscription field.")	
+		}
+	});
+
+						</script>
+						
+<script>
+if (document.location.href.indexOf("localhost") == -1) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7623080-20', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+
+<script src="./index_files/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+		</div>
+	</div>
+
+</div></body></html>

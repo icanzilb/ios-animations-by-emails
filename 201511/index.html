@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)http://www.ios-animations-by-emails.com/posts/2015-november -->
+<html class="gr__ios-animations-by-emails_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>iOS Animations by Emails | Uberworks</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link href="./index_files/css" rel="stylesheet" type="text/css">
+<link href="./index_files/css(1)" rel="stylesheet" type="text/css">
+<link href="./index_files/css(2)" rel="stylesheet" type="text/css">
+
+<meta name="description" content="A Monthly iOS Animations Newsletter. iOS animation showcases and experiments delivered to your inbox monthly. From the author of iOS Animations by Tutorials.">
+<meta name="keywords" content="iOS, Swift, animation, newsletter, magazine, book, Core Animation, CABasicAnimation, Apple, OSX">
+<meta name="author" content="Marin Todorov">
+
+<link href="./index_files/style.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="./index_files/imgeffect.css">
+<script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="./index_files/jquery.min.js"></script>
+
+<link rel="stylesheet" href="./index_files/github.css">
+
+<!-- start gallery Script -->
+	<script type="text/javascript" src="./index_files/jquery.easing.min.js"></script>	
+	<script type="text/javascript" src="./index_files/jquery.mixitup.min.js"></script>
+
+   	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+<script type="text/javascript" charset="utf-8" async="" src="./index_files/tweet.0208435ebbf1bf42bb6971d1bc6165a0.js"></script></head>
+
+<body data-gr-c-s-loaded="true">
+	
+	<div style="width:100%; background: #efefef; color: red; text-align: center; padding:10px;">
+	This is a read-only archive of the iOS Animations by Tutorials newsletter. &raquo;<a href="https://icanzilb.github.io/ios-animations-by-emails">Table of contents</a>
+</div>
+
+<style>
+	.leftnav {float:left;}
+	.wrap {max-width: 900px!important;}
+	.wrap p, .wrap h2 {text-align: left!important;}
+	.wrap ul {margin-left: 40px; margin-bottom: 20px;list-style-type: circle; margin-top: 10px;}
+	.wrap ul li {font-size: 1.1em; margin-bottom: 10px;}
+	.wrap h2 {margin-top: 0px!important; font-size: 2.5em;}
+	img {margin-left: 10%; max-width: 80%; border: 1px solid gray; margin-top: 10px; margin-bottom: 20px;}
+	.wrap h3 {margin-top: 20px; font-size: 1.8em; margin-bottom: 20px;}
+	.wrap code { 
+		background: #efefef; border: 1px solid #ccc; padding:1px; padding-left: 3px; padding-right: 2px; margin-right: 2px;
+		 }
+	pre {
+		background: #efefef; border: 1px solid #ccc;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+	pre code {
+		display: block; 
+		margin-bottom: 5px;
+		background: transparent!important; 
+		border: 0px solid #ccc!important;
+	}
+	.wrap strong {font-weight: bold;}
+	.wrap a {color:#1BBC9B;} 
+	.wrap h4 { margin-top: 10px; font-size: 1.4em; margin-bottom: 10px; margin-left:8px;}
+	.editorial {font-size: 1.2em; color:#666; margin-bottom: 60px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; width: 80%; margin-left:8%; }
+	.editorial p {margin-bottom: 15px; text-align: justify!important;}
+	.about a {color: white; text-decoration: underline;}
+	.about img {border:0px solid transparent;}
+	.about p {padding-bottom: 10px!important;}
+	.bottommenu a {color:#1BBC9B!important;}
+	.contact p {font-size:1.2em;}
+	.contact ul {margin-top:30px!important;}
+</style>
+		<!----start-header----------->
+				<div class="header_bg">
+					<div class="wrap">
+						<div class="header">
+							<!----start-nav-------->	
+							<div class="leftnav nav">
+								<ul>
+								   <li><a href="http://www.ios-animations-by-emails.com/" target="_blank">www.ios-animations-by-emails.com</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<div class="nav">
+								<ul>
+								   <li><a>2015, November</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<!-----end-nav-------->
+							<div class="clear"> </div>
+						</div>
+					</div>
+				</div>
+		<!------end-header------------>
+		<!-- start slider -->
+<div class="slider_bg" id="top">
+		<div class="wrap">
+				<!---start-da-slider----->
+						<div class="da-slide">
+								<h2 style="text-align: center!important;"><span class="classy">Uberworks</span></h2>
+							
+		</div>
+	</div>
+</div>
+<!-----end-slider-------->
+
+<!-- first block -->
+<div class="wrap" id="portfolio">
+	<div class="main">
+
+		<!---start-content----->
+		<div class="gallery" style="padding: 5em 1em">
+			<div class="editorial">
+				<p>Hello everyone!</p>
+
+<p>I skipped an issue of this newsletter because I was hard at work on <a href="http://www.raywenderlich.com/store/ios-animations-by-tutorials?source=underplot">iOS Animations by Tutorials 2nd edition</a> and the brand new <a href="http://www.raywenderlich.com/store/2d-ios-tvos-games-by-tutorials?source=underplot">2D iOS &amp; tvOS Games by Tutorials</a> (formerly iOS Games by Tutorials). If you want to learn more about either topic do check the links provided :]</p>
+
+<p>In the last few months I gave a number of animation workshops and presentations and it seems like people really love my <code>CAReplicatorLayer</code> demos. That's why I decided to create another little lighthearted replication demo for this month's issue.</p>
+
+<p>Enjoy!</p>
+
+
+				<p style="margin-top:20px;font-style: italic;text-align:right!important;">- Marin Todorov</p>
+			</div>
+			
+			<div class="clear"> </div>
+			<div class="container">
+				
+				
+
+<h2>Tutorial: Uberworks</h2>
+
+<p><code>This tutorial is designed for Xcode 7.1 and Swift 2</code></p>
+
+<p>The story of this month's project goes back to the time before I started this newsletter. In fact, I was in DC for RWDevCon where I was to announce iOS Animations by Tutorials and this newsletter to the world. I got a beautifully crafted email with subject "Forget your keys" from Uber and it featured a fireworks animation I instantly felt in love with. You can see the same animation embedded in this tweet:</p>
+
+<twitterwidget class="twitter-tweet twitter-tweet-rendered" id="twitter-widget-0" style="position: static; visibility: visible; display: block; transform: rotate(0deg); max-width: 100%; width: 500px; min-width: 220px; margin-top: 10px; margin-bottom: 10px;" data-tweet-id="616246381670461440"></twitterwidget>
+
+<script async="" src="./index_files/widgets.js" charset="utf-8"></script>
+
+<p>So - this fireworks animation has been on my to do list for about 8 months and now it's the time to look into recreating it using Core Animation and <code>CAReplicatorLayer</code>.</p>
+
+<p><a name="tutorial"></a></p>
+
+<p>
+</p><div style="background: url(../images/banner.jpg); height: 150px; border:1px solid black; padding-top: 40px; text-align: center;font-size: 16px; color: #efefef;">
+
+Get a cool iOS animation article like this one in your inbox each month - with full Swift source code! <br>By the author of <a href="http://www.ios-animations-by-tutorials.com/" target="_blank">iOS Animations by Tutorials</a>.
+
+<br><br>
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="http://doodledoodle.us2.list-manage.com/subscribe/post?u=09cf12f9fda2bee302951124b&amp;id=c8bcd4cf03" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+<div class="mc-field-group" style="text-align: center;">
+	<input type="email" value="Your email address" name="EMAIL" class="required email" id="mce-EMAIL" onfocus="if(this.value == &#39;Your email address&#39;) { this.value = &#39;&#39;; }" onblur="if(this.value == &#39;&#39;) { this.value = &#39;Your email address&#39;; }">
+	<a href="http://www.ios-animations-by-emails.com/posts/2015-november#subscribe" id="mc-embedded-subscribe">Subscribe</a>
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_09cf12f9fda2bee302951124b_c8bcd4cf03" tabindex="-1" value=""></div>
+    <div class="clear"></div>
+    <p></p>
+    </div>
+</form>
+</div>
+
+<span style="font-size: 12px;">No spam, ever. Your email address is safe with us and you can unsubscribe at any time.</span>
+
+</div>
+<p></p>
+
+<h3>Getting started</h3>
+
+<p>To avoid asking you to create an Xcode project and import libraries I’ve prepared a starter project for you. Download <a href="http://www.ios-animations-by-emails.com/assets/2015-november/Uberworks-starter.zip">Uberworks-starter.zip</a>,
+extract the contents of the archive, and open <strong>Uberworks.xcodeproj</strong>.</p>
+
+<p>The project contains an empty black view controller to start with and the EasyAnimation library. (More about EasyAnimation you can learn in the <a href="http://ios-animations-by-emails.com/posts/2015-june">June issue</a>)</p>
+
+<p>To recreate the fireworks you are going to create few animations and you are going to add all the necessary code in <strong>ViewController.swift</strong>.</p>
+
+<p>Let's get to coding!</p>
+
+<h3>Creating a light trail</h3>
+
+<p>First you are going to create the light trail that the firework leaves behind while it's being shot in the air.</p>
+
+<p>Add a helper method to <strong>ViewController</strong>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">animatedLineFrom</span><span class="hljs-params">(from: CGPoint, to: CGPoint)</span></span> -&gt; <span class="hljs-type">CAShapeLayer</span> {
+  <span class="hljs-keyword">let</span> linePath = <span class="hljs-type">UIBezierPath</span>()
+  linePath.moveToPoint(from)
+  linePath.addLineToPoint(to)
+
+}
+</code></pre>
+
+<p><code>animatedLineFrom(_:to:)</code> will create a shape layer and return it to you to add in the layer hieararchy. This method will also create and run the animations on the layer so you can just display it straight away.</p>
+
+<p>The first chunk of code, already in, creates a bezier path to describe the shape you will draw on screen. For the firework trail you draw just a striaght line from point <code>from</code> to point <code>to</code> provided as parameters.</p>
+
+<p>Now add the code to create the layer at the bottom of <code>animatedLineFrom(_:to:)</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> line = <span class="hljs-type">CAShapeLayer</span>()
+line.path = linePath.<span class="hljs-type">CGPath</span>
+line.lineCap = kCALineCapRound
+line.strokeColor = <span class="hljs-type">UIColor</span>.cyanColor().<span class="hljs-type">CGColor</span>
+
+<span class="hljs-keyword">return</span> line
+</code></pre>
+
+<p>This code creates a layer to draw the line you've setup in cyan color and returns it as the result of the method.</p>
+
+<p>Now let's give it that a try. In <code>viewDidLoad()</code> add:</p>
+
+<pre><code class="hljs">view.layer.addSublayer(
+    animatedLineFrom(CGPoint(x: 160, y: 550), to: view.center)
+)
+</code></pre>
+
+<p>This code creates a cyan line and adds it on screen:</p>
+
+<p><img src="./index_files/line.png" alt=""></p>
+
+<p>Next - we are going to animate the beginning and end of the line to recreate the light trail animation. Back in <code>animatedLineFrom(_:to:)</code> insert just before <code>return line</code>:</p>
+
+<pre><code class="hljs swift">line.strokeEnd = <span class="hljs-number">0.0</span>
+<span class="hljs-type">UIView</span>.animateWithDuration(<span class="hljs-number">1.0</span>, delay: <span class="hljs-number">0.0</span>, options: [.<span class="hljs-type">CurveEaseOut</span>], animations: {
+    line.strokeEnd = <span class="hljs-number">1.0</span>
+}, completion: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>This will set the end point of the line at the beginning (e.g. the line will be drawn 0% through). Then it will animate the end point back to the end of the path to draw (e.g. it will animate the line from being drawn 0% to 100%).</p>
+
+<p>More details about how <code>strokeEnd</code> and <code>strokeBegin</code> work you can find in <strong>Chapter 15, Stroke and Path animations</strong> of iOS Animations by Tutorials.</p>
+
+<p>Run the app to see the effect of animating <code>strokeEnd</code>:</p>
+
+<p><img src="./index_files/draw-line.gif" alt=""></p>
+
+<p>Now to make that animation resemble a trail that disappears after a short interval of time add a second animation:</p>
+
+<pre><code class="hljs swift"><span class="hljs-type">UIView</span>.animateWithDuration(<span class="hljs-number">0.75</span>, delay: <span class="hljs-number">0.9</span>, options: [.<span class="hljs-type">CurveEaseOut</span>], animations: {
+    line.strokeStart = <span class="hljs-number">1.0</span>
+}, completion: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>This will animate the beginning of the line towards the end to make the line disappaer:</p>
+
+<p><img src="./index_files/draw-line2.gif" alt=""></p>
+
+<p>Cool - the first part of a firework animation is complete!</p>
+
+<h3>Your first firework</h3>
+
+<p>Now we come to the more interesting part of any firework - the explosion!</p>
+
+<p>For the explosion you are going to use a replicator layer. If you are not familiar with the <code>CAReplicatorLayer</code> class I recommend <strong>Chapter 16, Replicating Animations</strong> from iOS Animations by Tutorials.</p>
+
+<p>Add a new helper method to <strong>ViewController</strong>, which will create a firework ready to be added to the view hierarchy:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">firework1</span><span class="hljs-params">(at atPoint: CGPoint)</span></span> -&gt; <span class="hljs-type">CAReplicatorLayer</span> {
+    <span class="hljs-keyword">let</span> replicator = <span class="hljs-type">CAReplicatorLayer</span>()
+    replicator.position = atPoint
+
+    <span class="hljs-keyword">return</span> replicator
+}
+</code></pre>
+
+<p>This method stub creates an empty replicator layer and returns it. You will add all the animation code in this method just before the <code>return replicator</code> line.</p>
+
+<p>Let's start by creating a line path for each of the exploding particles (just like you created a line path earlier). Add in <code>firework1(at:)</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-comment">//line path</span>
+<span class="hljs-keyword">let</span> f11linePath = <span class="hljs-type">UIBezierPath</span>()
+f11linePath.moveToPoint(<span class="hljs-type">CGPoint</span>(x: <span class="hljs-number">0</span>, y: -<span class="hljs-number">10</span>))
+f11linePath.addLineToPoint(<span class="hljs-type">CGPoint</span>(x: <span class="hljs-number">0</span>, y: -<span class="hljs-number">100</span>))
+</code></pre>
+
+<p><code>f11linePath</code> stands for "the path of the first line of the first type of firework" :) The rest of the code is the same as before.</p>
+
+<p>Now, again just like before, add a shape layer to draw the line on screen:</p>
+
+<pre><code class="hljs swift"><span class="hljs-comment">//line 1</span>
+<span class="hljs-keyword">let</span> f11line = <span class="hljs-type">CAShapeLayer</span>()
+f11line.path = f11linePath.<span class="hljs-type">CGPath</span>
+f11line.strokeColor = <span class="hljs-type">UIColor</span>.cyanColor().<span class="hljs-type">CGColor</span>
+replicator.addSublayer(f11line)
+</code></pre>
+
+<p>You create the line layer and set its color to cyan and finally you add it to the replicator layer.</p>
+
+<p>Now scroll back to <code>viewDidLoad()</code> and append the code to create a firework:</p>
+
+<pre><code class="hljs swift">delay(seconds: <span class="hljs-number">1.0</span>, completion: {
+  <span class="hljs-keyword">self</span>.view.layer.addSublayer(<span class="hljs-keyword">self</span>.firework1(at: <span class="hljs-keyword">self</span>.view.center))
+})
+</code></pre>
+
+<p>This should give you the first line of the explosion, appearing right on time:</p>
+
+<p><img src="./index_files/draw-line3.gif" alt=""></p>
+
+<p>Now let's use the superpowers of <code>CAReplicatorLayer</code>; back in <code>firework1at(_:)</code> append:</p>
+
+<pre><code class="hljs">replicator.instanceCount = 20
+replicator.instanceTransform = CATransform3DMakeRotation(CGFloat(M_PI/10), 0, 0, 1)
+</code></pre>
+
+<p>This will replicate your explosion line and make the replications arrange in a circular shape like so:</p>
+
+<p><img src="./index_files/draw-line4.gif" alt=""></p>
+
+<p>You have probably guessed that the next animation you are about to add is one that animates <code>strokeEnd</code> just like you did before. Add this code to do that:</p>
+
+<pre><code class="hljs swift">f11line.strokeEnd = <span class="hljs-number">0</span>
+<span class="hljs-type">UIView</span>.animateWithDuration(<span class="hljs-number">1.0</span>, delay: <span class="hljs-number">0.33</span>, options: [.<span class="hljs-type">CurveEaseOut</span>], animations: {
+    f11line.strokeEnd = <span class="hljs-number">1.0</span>
+}, completion: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>You're doing nice progress, have a look at that smooth explosion:</p>
+
+<p><img src="./index_files/draw-line5.gif" alt=""></p>
+
+<p>Now - let's add a second pattern in the explosion. This is going to be another shape layer that you are going to add to the replicator so the code is mostly identical to what you already did.</p>
+
+<p>Insert:</p>
+
+<pre><code class="hljs swift"><span class="hljs-comment">//line path 2</span>
+<span class="hljs-keyword">let</span> f12linePath = <span class="hljs-type">UIBezierPath</span>()
+f12linePath.moveToPoint(<span class="hljs-type">CGPoint</span>(x: <span class="hljs-number">0</span>, y: -<span class="hljs-number">25</span>))
+f12linePath.addLineToPoint(<span class="hljs-type">CGPoint</span>(x: <span class="hljs-number">0</span>, y: -<span class="hljs-number">100</span>))
+f12linePath.applyTransform(<span class="hljs-type">CGAffineTransformMakeRotation</span>(<span class="hljs-type">CGFloat</span>(<span class="hljs-type">M_PI</span>/<span class="hljs-number">20</span>)))
+</code></pre>
+
+<p>You draw a line just like before but this time you give a little bit of rotation too - this will make sure that the second line does not appear over the first line.</p>
+
+<p>Add the code to create the second shape layer and add it to the replication:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> f12line = <span class="hljs-type">CAShapeLayer</span>()
+f12line.path = f12linePath.<span class="hljs-type">CGPath</span>
+f12line.lineDashPattern = [<span class="hljs-number">20</span>, <span class="hljs-number">2</span>]
+f12line.strokeColor = <span class="hljs-type">UIColor</span>.cyanColor().<span class="hljs-type">CGColor</span>
+replicator.addSublayer(f12line)
+
+f12line.strokeEnd = <span class="hljs-number">0</span>
+</code></pre>
+
+<p>Just like before you create a line layer and you set its color to cyan. This time around you ask the shape layer to draw a dashed line - you set the pattern to be: 20 points on, 2 points off (e.g. the layer will draw for 20 points, then will skip 2, and then will draw another 20, etc.)</p>
+
+<p>You set <code>strokeEnd</code> to 0 and the layer is ready for an animation. Add:</p>
+
+<pre><code class="hljs swift"><span class="hljs-type">UIView</span>.animateWithDuration(<span class="hljs-number">1.0</span>, delay: <span class="hljs-number">0.0</span>, options: [.<span class="hljs-type">CurveEaseOut</span>], animations: {
+  f12line.strokeEnd = <span class="hljs-number">1.0</span>
+}, completion: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p><img src="./index_files/draw-line6.gif" alt=""></p>
+
+<p>Your basic firework is ready! Now you can polish it some more to make it look real nice!</p>
+
+<p>Let's make it disappear via a cool animation. Add:</p>
+
+<pre><code class="hljs swift"><span class="hljs-type">UIView</span>.animateWithDuration(<span class="hljs-number">1.0</span>, delay: <span class="hljs-number">1.0</span>, options: [.<span class="hljs-type">CurveEaseIn</span>], animations: {
+  f11line.strokeStart = <span class="hljs-number">1.0</span>
+  f12line.strokeStart = <span class="hljs-number">0.5</span>
+}, completion: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>Just like earlier you animate <code>strokeStart</code> to make the line "undraw" itself:</p>
+
+<p><img src="./index_files/draw-line7.gif" alt=""></p>
+
+<p>Let's add more animations to the final transition - append inside the last <code>animations</code> block you added:</p>
+
+<pre><code class="hljs">f11line.transform = CATransform3DMakeRotation(CGFloat(M_PI_4), 0, 0, 1)
+f12line.transform = CATransform3DMakeRotation(CGFloat(M_PI_4/2), 0, 0, 1)
+
+replicator.opacity = 0.0
+</code></pre>
+
+<p>This code will make the two line patterns rotate and will fade out the whole replicator layer to make it like the explosion fades out naturally.</p>
+
+<p><img src="./index_files/draw-line8.gif" alt=""></p>
+
+<p>Neat! That's a real cool firework and it looks much like the original too.</p>
+
+<p>If you decide to reuse this code in your app don't forget that at the end of the animation, even if the firework and its layer aren't visible they are still in the hierarchy so you need to remove them manually after the explosion has finished.</p>
+
+<h3>Your second firework</h3>
+
+<p>Now, just for fun, you are going to create a second type of firework much like another one of the fireworks you see in the Uber video.</p>
+
+<p>First add a helper method that creates a cyan dot:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">animatedDot</span><span class="hljs-params">(withDistance delta: CGFloat, delay: Double)</span></span> -&gt; <span class="hljs-type">CALayer</span> {
+  <span class="hljs-keyword">let</span> dot = <span class="hljs-type">CALayer</span>()
+  dot.backgroundColor = <span class="hljs-type">UIColor</span>.cyanColor().<span class="hljs-type">CGColor</span>
+  dot.frame = <span class="hljs-type">CGRect</span>(x: <span class="hljs-number">0</span>, y: -<span class="hljs-number">10</span>, width: <span class="hljs-number">1</span>, height: <span class="hljs-number">1</span>)
+
+  <span class="hljs-keyword">return</span> dot
+}
+</code></pre>
+
+<p>Like previously the helper method creates a layer, sets its frame and color and returns it. The two method parameters you are going to use in a bit so we won't discuss them right now.</p>
+
+<p>Now let's lay down the basics of the second firework helper method (again pretty similar to what you did earlier):</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">firework2</span><span class="hljs-params">(at atPoint: CGPoint)</span></span> -&gt; <span class="hljs-type">CAReplicatorLayer</span> {
+  <span class="hljs-keyword">let</span> replicator = <span class="hljs-type">CAReplicatorLayer</span>()
+  replicator.position = atPoint
+
+  replicator.instanceCount = <span class="hljs-number">40</span>
+  replicator.instanceTransform = <span class="hljs-type">CATransform3DMakeRotation</span>(<span class="hljs-type">CGFloat</span>(<span class="hljs-type">M_PI</span>/<span class="hljs-number">20</span>), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>)
+
+  <span class="hljs-keyword">return</span> replicator
+}
+</code></pre>
+
+<p><code>firework2at(at:)</code> creates an empty <code>CAReplicatorLayer</code>, positions it and sets it to 40 instances arranged in a circular shape.</p>
+
+<p>Now just for testing add a cyan dot to the replicator - you will use zeroes as the two parameters since <code>animatedDot(_:delay:)</code> still doesn't make use of them. Insert before <code>return replicator</code>:</p>
+
+<pre><code class="hljs">replicator.addSublayer(
+  animatedDot(withDistance: 0, delay: 0)
+)
+</code></pre>
+
+<p>And to make everything work go to <strong>viewDidLoad()</strong> and replace <code>self.view.layer.addSublayer(self.firework1(at: self.view.center))</code> with:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">self</span>.view.layer.addSublayer(<span class="hljs-keyword">self</span>.firework2(at: <span class="hljs-keyword">self</span>.view.center))
+</code></pre>
+
+<p>The difference is a bit difficult to spot - it's "2" instead of "1" in the method name. You can just replace the number by hand.</p>
+
+<p>This should get you started nicely with your second type of firework:</p>
+
+<p><img src="./index_files/draw-line9.gif" alt=""></p>
+
+<p>Now you can make the dots from the replication animate in a simple explosion by just translating the original dot a bit. Scroll to <strong>animatedDot(_:delay:)</strong> and insert before <code>return dot</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-type">UIView</span>.animateAndChainWithDuration(<span class="hljs-number">1.0</span>, delay: delay, options: [.<span class="hljs-type">CurveEaseOut</span>], animations: {
+  dot.transform = <span class="hljs-type">CATransform3DMakeTranslation</span>(<span class="hljs-number">0</span>, -delta, <span class="hljs-number">0</span>)
+}, completion: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>This animation adjusts the transform of the dot layer by moving it by "delta" points on the Y axis. For this to have any effect you will need to also to provide a value for the delta parameter when you call <code>animatedDot(_:delay:)</code>. In <code>firework2(_:)</code> find <code>animatedDot(withDistance: 0, delay: 0)</code> and replace the first parameter value with 50 like so:</p>
+
+<pre><code class="hljs">animatedDot(withDistance: 50, delay: 0)
+</code></pre>
+
+<p>Now you can enjoy this very simple but neat explosion:</p>
+
+<p><img src="./index_files/draw-line10.gif" alt=""></p>
+
+<p>Okay - you're almost done. It's time to add more animations to the dot.</p>
+
+<p>In <code>animatedDot(_:delay:)</code> add two more animations to the animation sequence - your animation code should look like that:</p>
+
+<pre><code class="hljs swift"><span class="hljs-type">UIView</span>.animateAndChainWithDuration(<span class="hljs-number">1.0</span>, delay: delay, options: [.<span class="hljs-type">CurveEaseOut</span>], animations: {
+  dot.transform = <span class="hljs-type">CATransform3DMakeTranslation</span>(<span class="hljs-number">0</span>, -delta, <span class="hljs-number">0</span>)
+}, completion: <span class="hljs-built_in">nil</span>)
+.animateWithDuration(<span class="hljs-number">2.0</span>, animations: {
+  dot.transform = <span class="hljs-type">CATransform3DConcat</span>(dot.transform, <span class="hljs-type">CATransform3DMakeRotation</span>(<span class="hljs-type">CGFloat</span>(<span class="hljs-type">M_PI_4</span>), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+})
+.animateWithDuration(<span class="hljs-number">1.0</span>, animations: {
+  dot.transform = <span class="hljs-type">CATransform3DConcat</span>(dot.transform, <span class="hljs-type">CATransform3DMakeTranslation</span>(<span class="hljs-number">0</span>, -delta, <span class="hljs-number">0</span>))
+  dot.opacity = <span class="hljs-number">0.1</span>
+})
+</code></pre>
+
+<p>In the first part of the sequence you move the dot vertically to animate the explosion. In the next animation that follows you add a bit of rotation to the dot transform property - that will make all dots rotate once they have "exploded". Finally you move the dots away again and fade them out in the same time. It's a nice little routine for them to perform :]</p>
+
+<p><img src="./index_files/draw-line11.gif" alt=""></p>
+
+<p>Isn't that so cool to watch :]</p>
+
+<p>Okay - now for the final stretch: let's add more than one dots to that explosion and see how that replicates!</p>
+
+<p>Back in <code>firework2At(_:)</code> find this chunk of code:</p>
+
+<pre><code class="hljs">replicator.addSublayer(
+  animatedDot(withDistance: 50, delay: 0)
+)
+</code></pre>
+
+<p>You will replace this code with a loop that will create 10 dots and give them a little bit more delay and offset distance each to create an elaborate replication animation. Replace the code above with:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span>...<span class="hljs-number">10</span> {
+  replicator.addSublayer(
+    animatedDot(withDistance: <span class="hljs-type">CGFloat</span>(i*<span class="hljs-number">10</span>), delay: <span class="hljs-number">1</span>/<span class="hljs-type">Double</span>(i))
+  )
+}
+</code></pre>
+
+<p>This will create 10 dots and add them to the replicator. Each dot will move different distance after a different time delay. Instead of me explaining what will happen you might as well just run the app:</p>
+
+<p><img src="./index_files/draw-line12.gif" alt=""></p>
+
+<p>And that's all for today! I hope you enjoyed creating fireworks and will find them useful in your own apps :]</p>
+
+<p>I captured a video showing an even more polished demo of what you've built today.</p>
+
+<p>The embedded video is rather blurred though - if you want to see a crisp animation featuring the real colors open the video on Vimeo and turn <strong>HD</strong> on.</p>
+
+<iframe src="./index_files/144048701.html" width="500" height="375" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+
+<h3>Where to go from here?</h3>
+
+<p>If you want to learn more about stroke animations, replication animations or EasyAnimation - those are all covered in chapters of iOS Animation by Tutorials. The 2nd edition of the book includes 3 brand new chapters and updates to the existing content.</p>
+
+<p>If you own the first edition of the PDF book - don't forget to visit your raywenderlich.com profile and download the <strong>2nd edition for free</strong>!</p>
+
+<p>If you get to build something interesting based on this article ping me by replying to this email or on Twitter at <a href="http://www.twitter.com/icanzilb">@icanzilb</a>.</p>
+
+
+				
+			</div>
+		</div>
+	</div><!-- container -->
+
+	<div class="clear"> </div>
+
+</div>
+
+<!-- second block -->
+
+<div class="about" id="about">
+	<div class="wrap">
+		
+
+<h2>2D iOS &amp; tvOS Games by Tutorials</h2>
+
+<p><img src="http://cdn1.raywenderlich.com/wp-content/themes/raywenderlich/images/store-2015/igt1_PDFonly@2x.png" alt=""></p>
+
+<p>iOS 9 brought a pretty big update to SpriteKit and introduced a completely new framework called GameKit.</p>
+
+<p>If you always wanted to create an iOS game of your own now is the time :] Learn how to create games for your iPhone, iPad and Apple TV!</p>
+
+<p>Learn more on the <strong><a href="http://www.raywenderlich.com/store/2d-ios-tvos-games-by-tutorials?source=underplot">raywenderlich.com</a></strong> store.</p>
+
+
+	</div>
+</div>
+
+<!-- third block -->
+<div class="contact" id="contact">
+	<div class="wrap" style="margin-bottom: 80px;">
+		
+
+<h2>Cool animation links</h2>
+
+<p>Here it comes the list of animation links I stumbled upon during November:</p>
+
+<ul>
+<li><p><a href="https://github.com/Yalantis/StarWars.iOS">StarWars transition</a> - Another gem coming from Yalantis, check out the README and look for the part when the view controller simply falls apart :)</p></li>
+<li><p><a href="https://github.com/gontovnik/DGElasticPullToRefresh">Elastic pull to refresh</a> - This one of the coolest pull to refresh controls I've seen, looks very ... elastic :)</p></li>
+<li><p><a href="https://github.com/xxycode/UIViewXXYBoom">View explosion</a> - A cool animation that makes a view explode. Note that the exploding particles kind of match the view colors!</p></li>
+<li><p><a href="https://github.com/seedante/SDECollectionViewAlbumTransition">Album collection view transition</a> - This is a view controller transition that transitions between a collection cell that represents an album and its contents. Check the README to see it in action.</p></li>
+<li><p><a href="https://www.cocoacontrols.com/controls/octagontransitioning">Octagon transition</a> - An advanced 3D view controller transition - check the interactive demo on the linked page and click on "Download source" to get to the GitHub repo.</p></li>
+</ul>
+
+		
+		<hr style="margin-top: 60px;">
+		
+		<p style="margin-top:80px;color:#666;font-size:1em;text-align:center!important;" class="editorial">
+			· Do you know of a cool new animation Swift library or interesting blog post?<br>
+			· Do you want to sponsor an issue of iOS Animations by Emails?<br>
+			· Do you want to write an animation tutorial for iOS Animations by Emails?<br>
+			&nbsp; If so check out my contacts in the footer. Thanks!</p>
+	</div>
+
+
+     <div class="footer-bottom">
+	    <div class="bottommenu copy" style="margin-bottom:40px;">
+		    <p class="copy">
+<style>
+	a.icon { width: 44px; border: 0px solid transparent; }
+	a.icon img {border: 0px solid transparent; width:44px;margin-left: 20px!important; }
+	.footer-bottom hr {border:0px solid transparent; border-bottom: 1px solid #999; width: 200px; margin-bottom: 20px;}
+	.wrap hr {border:0px solid transparent; border-bottom: 1px solid #666; width: 200px; margin-bottom: 20px;}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/document.write("<a class='icon' href='mai"+"lto:marin"+"@ios-animations-"+"by-em"+"ails.c"+"om"+"'><img src='../images/email.png'><\/a>");/*]]&gt;*/
+</script><a class="icon" href="mailto:marin@ios-animations-by-emails.com"><img src="./index_files/email.png"></a>
+
+<a class="icon" href="https://twitter.com/icanzilb" target="_blank"><img src="./index_files/twitter.png"></a>
+<a class="icon" href="http://www.linkedin.com/in/marintodorov/" target="_blank"><img src="./index_files/linkedin.png"></a>
+<a class="icon" href="https://github.com/icanzilb" target="_blank"><img src="./index_files/github.png"></a>
+</p><div class="clear"> </div>
+
+		    <p></p>
+		    <hr>
+		    <p class="copy">
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Sponsor%20iOS%20Animations%20by%20Emails">Sponsor</a> · 
+			    <a href="http://www.ios-animations-by-emails.com/">Subscribe to the newsletter</a> · 
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Contact">Contact</a> · 
+			    <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials</a>
+		    </p>
+	    </div>
+     	<div class="wrap">
+        <div class="copy" style="margin-top:60px;">
+		    <p class="copy" style="font-size:0.8em;text-align:center!important;">© 2014 Template by  <a href="http://w3layouts.com/" target="_blank">w3layouts</a> </p>
+		</div>
+		<script type="text/javascript">
+							$(document).ready(function() {
+								
+								var defaults = {
+						  			containerID: 'toTop', // fading element id
+									containerHoverID: 'toTopHover', // fading element hover id
+									scrollSpeed: 1200,
+									easingType: 'linear' 
+						 		};
+								
+								
+								$().UItoTop({ easingType: 'easeOutQuart' });
+								
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+	
+							});
+							
+	$( "#mc-embedded-subscribe" ).click(function() {
+		var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+		if (regexEmail.test($('#mce-EMAIL').val())) {
+	    	$('#mc-embedded-subscribe-form').submit();
+			return
+		} else {
+			alert("Please enter valid email address in the subscription field.")	
+		}
+	});
+
+						</script>
+						
+<script>
+if (document.location.href.indexOf("localhost") == -1) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7623080-20', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+
+<script src="./index_files/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+		</div>
+	</div>
+
+</div></body></html>

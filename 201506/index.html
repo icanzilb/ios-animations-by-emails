@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://ios-animations-by-emails.com/posts/2015-june -->
+<html class="gr__ios-animations-by-emails_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>iOS Animations by Emails | Introducing EasyAnimation</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link href="./index_files/css" rel="stylesheet" type="text/css"><style type="text/css">img[src="http://touch-code-magazine.com/img/banners/banner_300x250.png"]
+{display:none !important;}</style>
+<link href="./index_files/css(1)" rel="stylesheet" type="text/css">
+<link href="./index_files/css(2)" rel="stylesheet" type="text/css">
+
+<meta name="description" content="A Monthly iOS Animations Newsletter. iOS animation showcases and experiments delivered to your inbox monthly. From the author of iOS Animations by Tutorials.">
+<meta name="keywords" content="iOS, Swift, animation, newsletter, magazine, book, Core Animation, CABasicAnimation, Apple, OSX">
+<meta name="author" content="Marin Todorov">
+
+<link href="./index_files/style.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="./index_files/imgeffect.css">
+<script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="./index_files/jquery.min.js"></script>
+
+<link rel="stylesheet" href="./index_files/github.css">
+
+<!-- start gallery Script -->
+	<script type="text/javascript" src="./index_files/jquery.easing.min.js"></script>	
+	<script type="text/javascript" src="./index_files/jquery.mixitup.min.js"></script>
+
+   	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+</head>
+
+<body data-gr-c-s-loaded="true">
+	
+			<div style="width:100%; background: #efefef; color: red; text-align: center; padding:10px;">
+	This is a read-only archive of the iOS Animations by Tutorials newsletter. &raquo;<a href="https://icanzilb.github.io/ios-animations-by-emails">Table of contents</a>
+</div>
+
+<style>
+	.leftnav {float:left;}
+	.wrap {max-width: 900px!important;}
+	.wrap p, .wrap h2 {text-align: left!important;}
+	.wrap ul {margin-left: 40px; margin-bottom: 20px;list-style-type: circle; margin-top: 10px;}
+	.wrap ul li {font-size: 1.1em; margin-bottom: 10px;}
+	.wrap h2 {margin-top: 0px!important; font-size: 2.5em;}
+	img {margin-left: 10%; max-width: 80%; border: 1px solid gray; margin-top: 10px; margin-bottom: 20px;}
+	.wrap h3 {margin-top: 20px; font-size: 1.8em; margin-bottom: 20px;}
+	.wrap code { 
+		background: #efefef; border: 1px solid #ccc; padding:1px; padding-left: 3px; padding-right: 2px; margin-right: 2px;
+		 }
+	pre {
+		background: #efefef; border: 1px solid #ccc;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+	pre code {
+		display: block; 
+		margin-bottom: 5px;
+		background: transparent!important; 
+		border: 0px solid #ccc!important;
+	}
+	.wrap strong {font-weight: bold;}
+	.wrap a {color:#1BBC9B;} 
+	.wrap h4 { margin-top: 10px; font-size: 1.4em; margin-bottom: 10px; margin-left:8px;}
+	.editorial {font-size: 1.2em; color:#666; margin-bottom: 60px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; width: 80%; margin-left:8%; }
+	.editorial p {margin-bottom: 15px; text-align: justify!important;}
+	.about a {color: white; text-decoration: underline;}
+	.about img {border:0px solid transparent;}
+	.about p {padding-bottom: 10px!important;}
+	.bottommenu a {color:#1BBC9B!important;}
+	.contact p {font-size:1.2em;}
+	.contact ul {margin-top:30px!important;}
+</style>
+		<!----start-header----------->
+				<div class="header_bg">
+					<div class="wrap">
+						<div class="header">
+							<!----start-nav-------->	
+							<div class="leftnav nav">
+								<ul>
+								   <li><a href="http://www.ios-animations-by-emails.com/" target="_blank">www.ios-animations-by-emails.com</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<div class="nav">
+								<ul>
+								   <li><a>2015, June</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<!-----end-nav-------->
+							<div class="clear"> </div>
+						</div>
+					</div>
+				</div>
+		<!------end-header------------>
+		<!-- start slider -->
+<div class="slider_bg" id="top">
+		<div class="wrap">
+				<!---start-da-slider----->
+						<div class="da-slide">
+								<h2 style="text-align: center!important;"><span class="classy">Introducing EasyAnimation</span></h2>
+							
+		</div>
+	</div>
+</div>
+<!-----end-slider-------->
+
+<!-- first block -->
+<div class="wrap" id="portfolio">
+	<div class="main">
+
+		<!---start-content----->
+		<div class="gallery" style="padding: 5em 1em">
+			<div class="editorial">
+				<p><strong>Note:</strong> Sep 2015 - This tutorial has been updated for iOS9/Swift2.</p>
+
+<p>Hello from San Francisco! I'm here for the WWDC week and you can find me most of the time hanging around at <a href="http://ios-animations-by-emails.com/posts/AltConf">http://www.altconf.com</a>. Friday the 12th at 9:00AM come and visit my talk "Power up your animations" - the AltConf tickets are free!</p>
+
+<p>This month I finally had the time to sit down and work on an old idea for an open source animation library. Last week I've put online the first beta version and I called it <a href="https://github.com/icanzilb/EasyAnimation"><strong>EasyAnimation</strong></a>. As you gonna see in this tutorial the library really makes some things ... very easy :)</p>
+
+<p>Enjoy!</p>
+
+
+				<p style="margin-top:20px;font-style: italic;text-align:right!important;">- Marin Todorov</p>
+			</div>
+			
+			<div class="clear"> </div>
+			<div class="container">
+				
+				
+
+<h2>Tutorial: Introduction to EasyAnimation</h2>
+
+<p><code>This tutorial is designed for Xcode 7/ Swift 2 or a compatible version.</code></p>
+
+<p>In <strong>Section I , View animations</strong> and later in <strong>Section III, Layer animations</strong> of <em>iOS Animations by Tutorials 2nd Ed.</em> I compare creating animations for your views and then for your layers.</p>
+
+<p>If you put UIKit and CoreAnimation code side by side the former looks really cleaner and more readable. The UIKit animation is a simple code block that "detects" any changes you make to your views and animates from the current values to the desired target values:</p>
+
+<pre><code class="hljs swift"><span class="hljs-comment">//UIKit view animation</span>
+<span class="hljs-type">UIView</span>.animateWithDuration(<span class="hljs-number">2.0</span>, animations: {
+    <span class="hljs-keyword">self</span>.view.center.x = <span class="hljs-number">200.0</span>
+})
+</code></pre>
+
+<p>With CoreAnimation on the other hand you need to create an animation model object, configure it and then send it off to the CoreAnimation server like so:</p>
+
+<pre><code class="hljs swift"><span class="hljs-comment">//CoreAnimation layer animation</span>
+<span class="hljs-keyword">let</span> anim = <span class="hljs-type">CABasicAnimation</span>(keyPath: <span class="hljs-string">"position.x"</span>)
+anim.fromValue = <span class="hljs-number">100.0</span>
+anim.toValue = <span class="hljs-number">200.0</span>
+anim.duration = <span class="hljs-number">2.0</span>
+anim.fillMode = kCAFillModeBackwards
+anim.beginTime = <span class="hljs-type">CACurrentMediaTime</span>() + <span class="hljs-number">2.0</span>
+anim.timingFunction = <span class="hljs-type">CAMediaTimingFunction</span>(name: kCAMediaTimingFunctionEaseOut)
+view.layer.addAnimation(anim, forKey: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p><strong>EasyAnimation</strong> aims to reduce drastically the lines of code you need to write to create layer animations and to extend the existing UIKit animation methods whenever they fall short in doing what you really want them to.</p>
+
+<p>In this tutorial you will learn how to very easily try animations for your layer properties, how to create layer spring animations, and (my favorite) very easily chain animation in sequences and groups.</p>
+
+<p><a name="tutorial"></a></p>
+
+<p>
+</p><div style="background: url(../images/banner.jpg); height: 150px; border:1px solid black; padding-top: 40px; text-align: center;font-size: 16px; color: #efefef;">
+
+Get a cool iOS animation article like this one in your inbox each month - with full Swift source code! <br>By the author of <a href="http://www.ios-animations-by-tutorials.com/" target="_blank">iOS Animations by Tutorials</a>.
+
+<br><br>
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="http://doodledoodle.us2.list-manage.com/subscribe/post?u=09cf12f9fda2bee302951124b&amp;id=c8bcd4cf03" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+<div class="mc-field-group" style="text-align: center;">
+	<input type="email" value="Your email address" name="EMAIL" class="required email" id="mce-EMAIL" onfocus="if(this.value == &#39;Your email address&#39;) { this.value = &#39;&#39;; }" onblur="if(this.value == &#39;&#39;) { this.value = &#39;Your email address&#39;; }">
+	<a href="http://ios-animations-by-emails.com/posts/2015-june#subscribe" id="mc-embedded-subscribe">Subscribe</a>
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_09cf12f9fda2bee302951124b_c8bcd4cf03" tabindex="-1" value=""></div>
+    <div class="clear"></div>
+    <p></p>
+    </div>
+</form>
+</div>
+
+<span style="font-size: 12px;">No spam, ever. Your email address is safe with us and you can unsubscribe at any time.</span>
+
+</div>
+<p></p>
+
+<h3>Getting started</h3>
+
+<p>Do avoid asking you to create an Xcode project and setting up the UI with Auto Layout I’ve prepared a starter project for you.</p>
+
+<p>Download <a href="http://www.ios-animations-by-emails.com/assets/2015-june/EAImagePreview-Starter.zip">EAImagePreview-Starter.zip</a>, extract the contents of the archive, and open <strong>EAImagePreview.xcodeproj</strong>.</p>
+
+<p><strong>EAImagePreview</strong> is a simple project that shows a list of photos and when the user taps on one of them it displays a full size version of the photo.</p>
+
+<p>Click on <strong>Main.storyboard</strong> to see the project setup:</p>
+
+<p><img src="./index_files/storyboard.png" alt=""></p>
+
+<p>There is a single collection view with a cell that displays a photo thumbnail - all the code to feed the collection view with photos is already inlcuded in the <code>ViewController</code> extension at the bottom of <strong>ViewController.swift</strong>.</p>
+
+<p>In fact you can run the project right away to see the starter app:</p>
+
+<p><img src="./index_files/starter-app.jpg" alt=""></p>
+
+<p>Tap on an image and you will see it in full size. Tap on the full size image and it will disappear. The starter app is rather plain and your task will be to jump in and by using EasyAnimation - add some spice to it!</p>
+
+<p>First of all create a <strong>Podfile</strong> and include the EasyAnimation pod to your project:</p>
+
+<pre><code class="hljs">use_frameworks!
+pod 'EasyAnimation'
+</code></pre>
+
+<p>Then install the pod and re-open the Cocoapods powered workspace; you should see the EasyAnimation source files under the <strong>Pods</strong> project in the workspace:</p>
+
+<p><img src="./index_files/pod.png" alt=""></p>
+
+<p>Now you are ready to try out some code!</p>
+
+<p>Open <strong>ViewController.swift</strong> from the starter project (not the Pods project) in the workspace and find the <code>showImage(image:)</code> method. This is the method that shows the full size image on screen. What the existing code does is to create an image view (<code>imgView</code>) and add it to the <code>preview</code> view on screen.</p>
+
+<p>Here you are going to add few animations in order to get a taste of what <strong>EasyAnimation</strong> lets you do.</p>
+
+<p>The first thing you will do is fade out and move away the list of photos <strong>before</strong> you show the full size image. Find this line and delete it:</p>
+
+<p><s>self.preview.addSubview(imgView)</s></p>
+
+<p>In its place insert:</p>
+
+<pre><code class="hljs swift"><span class="hljs-type">UIView</span>.animateWithDuration(<span class="hljs-number">0.25</span>, delay: <span class="hljs-number">0.0</span>, options: .<span class="hljs-type">CurveEaseIn</span>, animations: {
+    <span class="hljs-comment">//animate collection view</span>
+    <span class="hljs-keyword">self</span>.collectionView.transform = <span class="hljs-type">CGAffineTransformMakeTranslation</span>(-<span class="hljs-number">30.0</span>, <span class="hljs-number">0.0</span>)
+    <span class="hljs-keyword">self</span>.collectionView.alpha = <span class="hljs-number">0.5</span>
+
+}, completion: {<span class="hljs-number">_</span> <span class="hljs-keyword">in</span>
+
+    <span class="hljs-comment">//show the image view</span>
+    <span class="hljs-keyword">self</span>.preview.addSubview(imgView)
+})
+</code></pre>
+
+<p>You certainly have used this method many times to animate views in your app. If you give the app a try you will see the animation fade out and translate the photos list and then show the full size image:</p>
+
+<p><img src="./index_files/preview-fade.jpg" alt=""></p>
+
+<p>Now - what to do if you want to add another animation that should start <strong>after</strong> your fist one has completed? The way you would do that is to create another animation inside the <code>completion</code> block of the first one. And if you want a third one - create it inside the <code>completion</code> block of the second one and so forth...</p>
+
+<p>This road will inevitably lead you to code formatting hell since you will have many nested blocks and Xcode isn't all that good in offsetting correctly code blocks as method parameters...</p>
+
+<p>Let's look at what EasyAnimation offers to solve this issue. EasyAnimation adds a new method on the <code>UIView</code> class that lets you easily chain animations in a sequence:</p>
+
+<p><img src="./index_files/chain-method.png" alt=""></p>
+
+<p>Scroll to the top of <strong>ViewController.swift</strong> and import <code>EasyAnimation</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">import</span> <span class="hljs-type">EasyAnimation</span>
+</code></pre>
+
+<p>Now scroll back to <code>showImage(image:)</code> and replace <code>animateWithDuration</code> with <code>animateAndChainWithDuration</code>. Since the chain method takes the same parameters as the original method replacing only the method name should be just fine and you should end up with:</p>
+
+<pre><code class="hljs swift"><span class="hljs-type">UIView</span>.animateAndChainWithDuration(<span class="hljs-number">0.25</span>, delay: <span class="hljs-number">0.0</span>, options: .<span class="hljs-type">CurveEaseIn</span>, animations: {
+   <span class="hljs-comment">//animate collection view</span>
+   ...
+</code></pre>
+
+<p>If you run the app right now it will behave exactly the same way as before.</p>
+
+<p>However if you go back to your code and just put in a "." after the closing bracked of your animation method call Xcode will offer you to chain another animation to it. Like so:</p>
+
+<p><img src="./index_files/chain-second-animation.png" alt=""></p>
+
+<p>I dare say that's pretty "sweet" :)</p>
+
+<p>Add a spring animation to your animation sequence - your complete animation code should look like that:</p>
+
+<pre><code class="hljs swift"><span class="hljs-type">UIView</span>.animateAndChainWithDuration(<span class="hljs-number">0.25</span>, delay: <span class="hljs-number">0.0</span>, options: .<span class="hljs-type">CurveEaseIn</span>, animations: {
+    <span class="hljs-comment">//animate collection view</span>
+    <span class="hljs-keyword">self</span>.collectionView.transform = <span class="hljs-type">CGAffineTransformMakeTranslation</span>(-<span class="hljs-number">30.0</span>, <span class="hljs-number">0.0</span>)
+    <span class="hljs-keyword">self</span>.collectionView.alpha = <span class="hljs-number">0.5</span>
+
+}, completion: {<span class="hljs-number">_</span> <span class="hljs-keyword">in</span>
+
+    <span class="hljs-comment">//show the image view</span>
+    <span class="hljs-keyword">self</span>.preview.addSubview(imgView)
+}).animateWithDuration(<span class="hljs-number">2.0</span>, delay: <span class="hljs-number">0.0</span>, usingSpringWithDamping: <span class="hljs-number">0.25</span>, initialSpringVelocity: <span class="hljs-number">0.0</span>, 
+    options: [], animations: {
+
+    <span class="hljs-comment">//second animation here</span>
+
+}, completion: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>This code will first run your animation, then execute the code in the its <code>completion</code> block, and finally run the animations you are going to add in your second animation call.</p>
+
+<p>Insert just below <code>//second animation here</code> (inside the second animations block):</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">self</span>.collectionView.transform = <span class="hljs-type">CGAffineTransformMakeTranslation</span>(-<span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>)
+</code></pre>
+
+<p>Your second animation just moves the collection a bit more to the left. If you run the app you will see the list bounce a bit as part of the complete sequence. The two animations seamslessly fit together since internally EasyAnimation uses the <code>completion</code> block to chain them together for you.</p>
+
+<p>Now let's use another feature of <strong>EasyAnimation</strong>. How about spicing up things a bit and adding some layer animations?</p>
+
+<p>Just below the last line you add:</p>
+
+<pre><code class="hljs">imgView.layer.borderWidth = 5.0
+</code></pre>
+
+<p>Yes - with EasyAnimation that just works. Instead of having to create a <code>CABasicAnimation</code> object and all that jazz you can just animate layer properties the same way you animate view properties.</p>
+
+<p>Run the app and check out the little border animation that kicks off when full size image pops up. Notice how the border also bounces a bit - it's a spring animation too!</p>
+
+<p><img src="./index_files/border-animation.jpg" alt=""></p>
+
+<p>In fact UIKit takes care of some of the layer animations itself too. For example if you animate the layer <code>transform</code> UIKit takes care of that animation automatically. The best thing is that you don't need to care which animation is picked up by UIKit and which one by EasyAnimation, as long as they all work :) Add:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">var</span> imgFlip = <span class="hljs-type">CATransform3DIdentity</span>
+imgFlip.m34 = -<span class="hljs-number">1.0</span> / <span class="hljs-number">1000</span>
+imgFlip = <span class="hljs-type">CATransform3DRotate</span>(imgFlip, <span class="hljs-type">CGFloat</span>(-<span class="hljs-type">M_PI_4</span>), <span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>)
+imgFlip = <span class="hljs-type">CATransform3DTranslate</span>(imgFlip, <span class="hljs-number">100.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>)
+
+imgView.layer.transform = imgFlip
+</code></pre>
+
+<p>Note: If you need some more explaining about the 3D transform code have a look at <strong>Section IV, 3D Animations</strong> from <em>iOS Animations by Tutorials</em>.</p>
+
+<p>Now the animation looks much better:</p>
+
+<p><img src="./index_files/3d-transform.jpg" alt=""></p>
+
+<p>To wrap up with the animation you will add one more animation to the sequence to show a nice shine around the full size photo.</p>
+
+<p>First scroll up and just before you call <code>UIView.animateAndChainWithDuration</code> insert:</p>
+
+<pre><code class="hljs">    imgView.layer.shadowColor = UIColor.whiteColor().CGColor
+    imgView.layer.shadowOffset = CGSize(width: 0, height: 0)
+    imgView.layer.shadowOpacity = 0.9
+</code></pre>
+
+<p>This code will setup the image view shine (technically it's a white drop shadow, but in practice it looks like a nice white shine). Now add one more animation to the sequence to animate the shine:</p>
+
+<pre><code class="hljs swift">    ...
+    imgView.layer.transform = imgFlip
+
+}, completion: <span class="hljs-built_in">nil</span>).animateWithDuration(<span class="hljs-number">2.0</span>, delay: <span class="hljs-number">0.25</span>, usingSpringWithDamping: <span class="hljs-number">0.25</span>, initialSpringVelocity: <span class="hljs-number">0.0</span>, 
+    options: [], animations: {
+    <span class="hljs-comment">//increase the shadow radius (by default it's 3.0)</span>
+    imgView.layer.shadowRadius = <span class="hljs-number">30.0</span>
+}, completion: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>Run and enjoy the full animation sequence:</p>
+
+<p><img src="./index_files/shine.jpg" alt=""></p>
+
+<p>If you want to polish the effect a little bit more scroll to <code>closeImage(tap:)</code> and wrap the complete method code inside an animation call. Closing the full size image should look much better now.</p>
+
+<p>In this short tutorial you learned how to:</p>
+
+<ul>
+<li>chain animations in a sequence</li>
+<li>group view and layer animations in a single same animation call</li>
+<li>create spring animations for layer properties</li>
+<li>mix UIKit and EasyAnimation animations</li>
+</ul>
+
+<p>If you want to see more EasyAnimation examples clone the repo from GitHub and run the demo app: <a href="https://github.com/icanzilb/EasyAnimation">https://github.com/icanzilb/EasyAnimation</a>.</p>
+
+<p>If you'd like to peak into the bleeding edge code check out the dev-marin branch: <a href="https://github.com/icanzilb/EasyAnimation/tree/dev-marin">https://github.com/icanzilb/EasyAnimation/tree/dev-marin</a>.</p>
+
+<h3>Where to go from here?</h3>
+
+<p>Revisit all chapters in <strong>Section III, Layer animations</strong> from <em>iOS Animations by Tutorials</em> - that ought to give you some ideas how to re-write your layer animations and make the code simpler by using <strong>EasyAnimation</strong>.</p>
+
+<p>If you get to do some work using EasyAnimation or want to talk features/bugs ping me by replying to this email or on Twitter at <a href="http://www.twitter.com/icanzilb">@icanzilb</a>.</p>
+
+
+				
+			</div>
+		</div>
+	</div><!-- container -->
+
+	<div class="clear"> </div>
+
+</div>
+
+<!-- second block -->
+
+<div class="about" id="about">
+	<div class="wrap">
+		
+
+<h2>Come meet me!</h2>
+
+<p><a href="http://www.underplot.com/#speaking"><img src="./index_files/speaking_thumb.jpg" alt="Marin Todorov"></a></p>
+
+<p>Let's meet up and talk/social drink/bash half-baked APIs together! Here's my schedule for the next few months - if you gonna be at one or more or these events let's meet!
+<br><br></p>
+
+<p><a href="http://www.altconf.com/"><strong>AltConf 2015</strong></a>, San Francisco - June 12th, 9:00AM "Power up your animations!"</p>
+
+<p><a href="http://360idev.com/"><strong>360iDev</strong></a>, Denver - August 16-19, workshop and a talk</p>
+
+<p><a href="http://nsspain.com/2015/"><strong>NSSpain</strong></a>, Logroño Spain -  September 15-18, workshop</p>
+
+<p><a href="http://2015.mobiconf.org/"><strong>Mobiconf</strong></a>, Krakow Poland - October 1-2, workshop</p>
+
+<p><a href="http://www.pragmaconference.com/"><strong>Pragma Mark</strong></a>, Florence Italy - October 9-10 workshop</p>
+
+<p><a href="http://www.rwdevcon.com/"><strong>RWDevCon 2016</strong></a>, Washington DC - March 11-12, 2016 workshop</p>
+
+
+	</div>
+</div>
+
+<!-- third block -->
+<div class="contact" id="contact">
+	<div class="wrap" style="margin-bottom: 80px;">
+		
+
+<h2>Cool animation links</h2>
+
+<p>Here it comes the list of animation links I stumbled upon during May:</p>
+
+<ul>
+<li><p><a href="https://github.com/hfossli/AGGeometryKit">AGGeometryKit</a> - It won't be an overstatement to say this library is simply amazing. Watch the two videos included in the repository README to see what this lib allows you to do.</p></li>
+<li><p><a href="https://github.com/Yalantis/PullToMakeSoup">Pull to make soup</a> - Yet another fantastic animation repository from Yalantis. This one features really neat path animations, check out the animated gif in the README.</p></li>
+<li><p><a href="https://github.com/MitchellMalleo/VAProgressCircle">VAProgressCircle</a> - This progress bar made me smile - it's very simple to create but creates such a pleasing visual effect.</p></li>
+<li><p><a href="https://github.com/i-schuetz/SwiftCharts">SwiftCharts</a> - A library for plotting charts. All charts are aniamted though - check the demo app to see the charts in action (err... I mean in motion).</p></li>
+<li><p><a href="https://github.com/andreamazz/BubbleTransition">Bubble Transition</a> - A simple minimal view controller transition starting from a button - looks very slick.</p></li>
+</ul>
+
+		
+		<hr style="margin-top: 60px;">
+		
+		<p style="margin-top:80px;color:#666;font-size:1em;text-align:center!important;" class="editorial">
+			· Do you know of a cool new animation Swift library or interesting blog post?<br>
+			· Do you want to sponsor an issue of iOS Animations by Emails?<br>
+			· Do you want to write an animation tutorial for iOS Animations by Emails?<br>
+			&nbsp; If so check out my contacts in the footer. Thanks!</p>
+	</div>
+
+
+     <div class="footer-bottom">
+	    <div class="bottommenu copy" style="margin-bottom:40px;">
+		    <p class="copy">
+<style>
+	a.icon { width: 44px; border: 0px solid transparent; }
+	a.icon img {border: 0px solid transparent; width:44px;margin-left: 20px!important; }
+	.footer-bottom hr {border:0px solid transparent; border-bottom: 1px solid #999; width: 200px; margin-bottom: 20px;}
+	.wrap hr {border:0px solid transparent; border-bottom: 1px solid #666; width: 200px; margin-bottom: 20px;}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/document.write("<a class='icon' href='mai"+"lto:marin"+"@ios-animations-"+"by-em"+"ails.c"+"om"+"'><img src='../images/email.png'><\/a>");/*]]&gt;*/
+</script><a class="icon" href="mailto:marin@ios-animations-by-emails.com"><img src="./index_files/email.png"></a>
+
+<a class="icon" href="https://twitter.com/icanzilb" target="_blank"><img src="./index_files/twitter.png"></a>
+<a class="icon" href="http://www.linkedin.com/in/marintodorov/" target="_blank"><img src="./index_files/linkedin.png"></a>
+<a class="icon" href="https://github.com/icanzilb" target="_blank"><img src="./index_files/github.png"></a>
+</p><div class="clear"> </div>
+
+		    <p></p>
+		    <hr>
+		    <p class="copy">
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Sponsor%20iOS%20Animations%20by%20Emails">Sponsor</a> · 
+			    <a href="http://www.ios-animations-by-emails.com/">Subscribe to the newsletter</a> · 
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Contact">Contact</a> · 
+			    <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials</a>
+		    </p>
+	    </div>
+     	<div class="wrap">
+        <div class="copy" style="margin-top:60px;">
+		    <p class="copy" style="font-size:0.8em;text-align:center!important;">© 2014 Template by  <a href="http://w3layouts.com/" target="_blank">w3layouts</a> </p>
+		</div>
+		<script type="text/javascript">
+							$(document).ready(function() {
+								
+								var defaults = {
+						  			containerID: 'toTop', // fading element id
+									containerHoverID: 'toTopHover', // fading element hover id
+									scrollSpeed: 1200,
+									easingType: 'linear' 
+						 		};
+								
+								
+								$().UItoTop({ easingType: 'easeOutQuart' });
+								
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+	
+							});
+							
+	$( "#mc-embedded-subscribe" ).click(function() {
+		var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+		if (regexEmail.test($('#mce-EMAIL').val())) {
+	    	$('#mc-embedded-subscribe-form').submit();
+			return
+		} else {
+			alert("Please enter valid email address in the subscription field.")	
+		}
+	});
+
+						</script>
+						
+<script>
+if (document.location.href.indexOf("localhost") == -1) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7623080-20', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+
+<script src="./index_files/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+		</div>
+	</div>
+
+</div></body></html>

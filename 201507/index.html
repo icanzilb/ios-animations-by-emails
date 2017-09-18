@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://ios-animations-by-emails.com/posts/2015-july -->
+<html class="gr__ios-animations-by-emails_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>iOS Animations by Emails | Fun with Gradients and Masks</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link href="./index_files/css" rel="stylesheet" type="text/css">
+<link href="./index_files/css(1)" rel="stylesheet" type="text/css">
+<link href="./index_files/css(2)" rel="stylesheet" type="text/css">
+
+<meta name="description" content="A Monthly iOS Animations Newsletter. iOS animation showcases and experiments delivered to your inbox monthly. From the author of iOS Animations by Tutorials.">
+<meta name="keywords" content="iOS, Swift, animation, newsletter, magazine, book, Core Animation, CABasicAnimation, Apple, OSX">
+<meta name="author" content="Marin Todorov">
+
+<link href="./index_files/style.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="./index_files/imgeffect.css">
+<script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="./index_files/jquery.min.js"></script><style type="text/css">img[src="http://touch-code-magazine.com/img/banners/banner_300x250.png"]
+{display:none !important;}</style>
+
+<link rel="stylesheet" href="./index_files/github.css">
+
+<!-- start gallery Script -->
+	<script type="text/javascript" src="./index_files/jquery.easing.min.js"></script>	
+	<script type="text/javascript" src="./index_files/jquery.mixitup.min.js"></script>
+
+   	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+</head>
+
+<body data-gr-c-s-loaded="true">
+	
+	<div style="width:100%; background: #efefef; color: red; text-align: center; padding:10px;">
+	This is a read-only archive of the iOS Animations by Tutorials newsletter. &raquo;<a href="https://icanzilb.github.io/ios-animations-by-emails">Table of contents</a>
+</div>
+
+<style>
+	.leftnav {float:left;}
+	.wrap {max-width: 900px!important;}
+	.wrap p, .wrap h2 {text-align: left!important;}
+	.wrap ul {margin-left: 40px; margin-bottom: 20px;list-style-type: circle; margin-top: 10px;}
+	.wrap ul li {font-size: 1.1em; margin-bottom: 10px;}
+	.wrap h2 {margin-top: 0px!important; font-size: 2.5em;}
+	img {margin-left: 10%; max-width: 80%; border: 1px solid gray; margin-top: 10px; margin-bottom: 20px;}
+	.wrap h3 {margin-top: 20px; font-size: 1.8em; margin-bottom: 20px;}
+	.wrap code { 
+		background: #efefef; border: 1px solid #ccc; padding:1px; padding-left: 3px; padding-right: 2px; margin-right: 2px;
+		 }
+	pre {
+		background: #efefef; border: 1px solid #ccc;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+	pre code {
+		display: block; 
+		margin-bottom: 5px;
+		background: transparent!important; 
+		border: 0px solid #ccc!important;
+	}
+	.wrap strong {font-weight: bold;}
+	.wrap a {color:#1BBC9B;} 
+	.wrap h4 { margin-top: 10px; font-size: 1.4em; margin-bottom: 10px; margin-left:8px;}
+	.editorial {font-size: 1.2em; color:#666; margin-bottom: 60px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; width: 80%; margin-left:8%; }
+	.editorial p {margin-bottom: 15px; text-align: justify!important;}
+	.about a {color: white; text-decoration: underline;}
+	.about img {border:0px solid transparent;}
+	.about p {padding-bottom: 10px!important;}
+	.bottommenu a {color:#1BBC9B!important;}
+	.contact p {font-size:1.2em;}
+	.contact ul {margin-top:30px!important;}
+</style>
+		<!----start-header----------->
+				<div class="header_bg">
+					<div class="wrap">
+						<div class="header">
+							<!----start-nav-------->	
+							<div class="leftnav nav">
+								<ul>
+								   <li><a href="http://www.ios-animations-by-emails.com/" target="_blank">www.ios-animations-by-emails.com</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<div class="nav">
+								<ul>
+								   <li><a>2015, July</a></li>
+								 <div class="clear"> </div>
+								 </ul>
+							</div>
+							<!-----end-nav-------->
+							<div class="clear"> </div>
+						</div>
+					</div>
+				</div>
+		<!------end-header------------>
+		<!-- start slider -->
+<div class="slider_bg" id="top">
+		<div class="wrap">
+				<!---start-da-slider----->
+						<div class="da-slide">
+								<h2 style="text-align: center!important;"><span class="classy">Fun with Gradients and Masks</span></h2>
+							
+		</div>
+	</div>
+</div>
+<!-----end-slider-------->
+
+<!-- first block -->
+<div class="wrap" id="portfolio">
+	<div class="main">
+
+		<!---start-content----->
+		<div class="gallery" style="padding: 5em 1em">
+			<div class="editorial">
+				<p><strong>Note:</strong> Sep 2015 - This tutorial has been updated for iOS9/Swift2.</p>
+
+<p>Hello everyone!</p>
+
+<p>Currently I’m hard at work on the 2nd edition of <strong>iOS Animations by Tutorials</strong>
+as me and my editors Greg, Rich, and Chris are aiming to release the book as
+soon as iOS 9 is out. As with all books published on raywenderlich.com this
+update is <em>free</em> for all existing PDF customers, so you can buy the book now and
+will still get the Swift 2.0/iOS 9 update for free.</p>
+
+<p>This month’s issue is going to be a lightweight but fun introduction to
+creatively masking gradients.</p>
+
+<p>Enjoy!</p>
+
+
+				<p style="margin-top:20px;font-style: italic;text-align:right!important;">- Marin Todorov</p>
+			</div>
+			
+			<div class="clear"> </div>
+			<div class="container">
+				
+				
+
+<h2>Tutorial: Introduction gradients</h2>
+
+<p><code>This tutorial is designed for Xcode 7 and Swift 2</code></p>
+
+<p>In <strong>Section III, Chapter 14 Gradient Animations</strong> of <em>iOS Animations by
+Tutorials</em> I demonstrate how to animate properties on <code>CAGradientLayer</code> for fun
+and profit. In this month’s issue I’d like to show you how to create animations
+that involve a <code>CAGradientLayer</code> but do not animate that layer itself. Instead
+you will create animations on the gradient’s mask content.</p>
+
+<p>That in fact sound a bit more complicated than it actually is so I’d say let’s
+go ahead and just try out some Swift in Xcode to show you what I have in mind. 
+By the end of the tutorial you will have on your hands a really beautiful animation:</p>
+
+<p><img src="./index_files/final-preview.png" alt=""></p>
+
+<p><a name="tutorial"></a></p>
+
+<p>
+</p><div style="background: url(../images/banner.jpg); height: 150px; border:1px solid black; padding-top: 40px; text-align: center;font-size: 16px; color: #efefef;">
+
+Get a cool iOS animation article like this one in your inbox each month - with full Swift source code! <br>By the author of <a href="http://www.ios-animations-by-tutorials.com/" target="_blank">iOS Animations by Tutorials</a>.
+
+<br><br>
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="http://doodledoodle.us2.list-manage.com/subscribe/post?u=09cf12f9fda2bee302951124b&amp;id=c8bcd4cf03" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+<div class="mc-field-group" style="text-align: center;">
+	<input type="email" value="Your email address" name="EMAIL" class="required email" id="mce-EMAIL" onfocus="if(this.value == &#39;Your email address&#39;) { this.value = &#39;&#39;; }" onblur="if(this.value == &#39;&#39;) { this.value = &#39;Your email address&#39;; }">
+	<a href="http://ios-animations-by-emails.com/posts/2015-july#subscribe" id="mc-embedded-subscribe">Subscribe</a>
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_09cf12f9fda2bee302951124b_c8bcd4cf03" tabindex="-1" value=""></div>
+    <div class="clear"></div>
+    <p></p>
+    </div>
+</form>
+</div>
+
+<span style="font-size: 12px;">No spam, ever. Your email address is safe with us and you can unsubscribe at any time.</span>
+
+</div>
+<p></p>
+
+<h3>Getting started</h3>
+
+<p>To avoid asking you to create an Xcode project and setting up the UI with Auto
+Layout I’ve prepared a starter project for you.</p>
+
+<p>Download
+<a href="http://www.ios-animations-by-emails.com/assets/2015-july/ColorIntroduction-Starter.zip">ColorIntroduction-Starter.zip</a>,
+extract the contents of the archive, and open <strong>ColorIntroduction.xcodeproj</strong>.</p>
+
+<p>The project contains the starting scene of a game based on the fairy tale The
+Frog Prince. You will not code the game itself but you will get to create the
+intro scene where the player gets to read the first few paragraphs of the
+original Grimm story.</p>
+
+<p><strong>Main.storyboard</strong> contains a single view controller, which shows a single
+full-screen text label.</p>
+
+<p>Open <strong>ViewController.swift</strong> and peak inside. You have an outlet to the label
+called simply <code>label</code>; further you have a property called <code>story</code> where you have
+the first few paragraphs of the fairy tale. And that’s pretty much it - let’s get
+to work.</p>
+
+<h3>Adding the gradient</h3>
+
+<p>First you will create a gradient. Add the code to do that in <code>viewDidAppear()</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> gradient = <span class="hljs-type">CAGradientLayer</span>()
+gradient.frame = view.bounds
+gradient.startPoint = <span class="hljs-type">CGPoint</span>(x: <span class="hljs-number">0.0</span>, y: <span class="hljs-number">0.0</span>)
+gradient.endPoint = <span class="hljs-type">CGPoint</span>(x: <span class="hljs-number">1.0</span>, y: <span class="hljs-number">1.0</span>)
+</code></pre>
+
+<p>You create a <code>CAGradientLayer</code> instance and make it full screen by setting its
+<code>frame</code> to the view controller’s view <code>bounds</code>. Then you set the gradient
+direction from the top-left corner (0, 0) to the bottom-right corner (1, 1):</p>
+
+<p><img src="./index_files/gradient.png" alt=""></p>
+
+<p>Before you see anything on screen you need to also set the start and end colors
+of the gradient. Add this code to do that and add the gradient on screen:</p>
+
+<pre><code class="hljs">gradient.colors = [
+&nbsp; &nbsp; UIColor(red: 0.0, green: 1.0, blue: 0.752, alpha: 1.0).CGColor,
+&nbsp; &nbsp; UIColor(red: 0.949, green: 0.03, blue: 0.913, alpha: 1.0).CGColor
+]
+view.layer.addSublayer(gradient)
+</code></pre>
+
+<p>This should successfully display the gradient by adding it to your view
+controller’s view’s layer (bah, that’s a mouth-full). Run the project and make
+sure you see something like that:</p>
+
+<p><img src="./index_files/sim-gradient.png" alt=""></p>
+
+<p><em>Groovy!</em></p>
+
+<p>Okay - now let’s mask the gradient with the label… “What?” some of you are
+certainly saying just now. Well - just give it a try, will you?</p>
+
+<p>Add to <code>viewDidAppear():</code></p>
+
+<pre><code class="hljs">gradient.mask = label.layer
+</code></pre>
+
+<p>This line makes any non-transparent content of the <code>label</code> view to mask the
+contents of the gradient layer.</p>
+
+<p>Run the project again to see the effect - you see the word “Text” appear not in
+its original black color but with the blue tint of the gradient on that exact
+spot. Let’s now add some animation to make this look a bit more interesting.</p>
+
+<h3>The typing animation</h3>
+
+<p>Add this new method that takes the characters one by one from its parameter and
+adds them to <code>label</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">punchText</span><span class="hljs-params">(text: String)</span></span> {
+  <span class="hljs-keyword">if</span> text.characters.<span class="hljs-built_in">count</span> &gt; <span class="hljs-number">0</span> {
+&nbsp;   label.text = <span class="hljs-string">"<span class="hljs-subst">\(label.text!)</span><span class="hljs-subst">\(text.substringToIndex(text.startIndex.successor()</span>))"</span>
+&nbsp; &nbsp; delay(seconds: <span class="hljs-number">0.04</span>, completion: {
+&nbsp; &nbsp;   <span class="hljs-keyword">self</span>.punchText(text.substringFromIndex(text.startIndex.successor()))
+&nbsp; &nbsp; })
+&nbsp; } <span class="hljs-keyword">else</span> {
+&nbsp; &nbsp; <span class="hljs-comment">//finished punching text</span>
+&nbsp; }
+}
+</code></pre>
+
+<p>This method just adds one character every <code>0.04</code> seconds to label until there
+are characters to add. It calls recursively itself so you only need to call it
+once with the full text and then let it do its job.</p>
+
+<p>Go back to <code>viewDidAppear()</code> and add at the end:</p>
+
+<pre><code class="hljs swift">label.text = <span class="hljs-string">""</span>
+punchText(story)
+</code></pre>
+
+<p>Run the app and enjoy the type animation:</p>
+
+<p><img src="./index_files/text-animated.gif" alt=""></p>
+
+<p>Isn’t that just awesome? Yes I thought so :]</p>
+
+<h3>Additional mask animations</h3>
+
+<p>The type animation over the beautiful gradient background makes for a cool game
+into but you don’t need to stop there. You can add more to the gradient mask to
+make the introduction even more appealing.</p>
+
+<p>First - let’s add a simple button-like animation when <code>punchText()</code> finishes
+writing the story to hint the user they need to tap the screen when they are
+ready reading.</p>
+
+<p>You will use a simple shape animation to make three rings scaling up and down
+and teasing the player to touch them.</p>
+
+<p>Let’s make a method that adds a ring shape on screen:</p>
+
+<pre><code class="hljs swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">addButtonRing</span><span class="hljs-params">()</span></span> {
+  <span class="hljs-keyword">let</span> side: <span class="hljs-type">CGFloat</span> = <span class="hljs-number">60.0</span>
+&nbsp; <span class="hljs-keyword">let</span> button = <span class="hljs-type">CAShapeLayer</span>()
+&nbsp; button.position = <span class="hljs-type">CGPoint</span>(x: label.bounds.width * <span class="hljs-number">0.5</span> - side/<span class="hljs-number">2</span>, y: label.bounds.height * <span class="hljs-number">0.85</span>)
+&nbsp; button.strokeColor = <span class="hljs-type">UIColor</span>.blackColor().<span class="hljs-type">CGColor</span>
+&nbsp; button.fillColor = <span class="hljs-type">UIColor</span>.clearColor().<span class="hljs-type">CGColor</span>
+&nbsp; button.path = <span class="hljs-type">UIBezierPath</span>(ovalInRect: <span class="hljs-type">CGRect</span>(x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>, width: side, height: side)).<span class="hljs-type">CGPath</span>
+&nbsp; button.lineWidth = <span class="hljs-number">1.0</span>
+&nbsp; button.opacity = <span class="hljs-number">0.5</span>
+&nbsp; label.layer.addSublayer(button)
+}
+</code></pre>
+
+<p>In <code>addButtonRing()</code> you create a <code>CAShapeLayer</code>, set its position at the bottom
+of the screen (so it appears just under the completed text), and finally you set
+its shape to a hollow oval.</p>
+
+<p>You add the <code>CAShapeLayer</code> to … <code>label</code>? Well - you want the new shape to be a
+part of the mask so you do have to add the new layer to the <code>label</code>, as <code>label</code>
+IS the gradient mask.</p>
+
+<p>You’ll see the result in a moment - let’s first create some of those rings when
+<code>punchText()</code> has finished.</p>
+
+<p>Find the comment saying <code>//finished punching text</code> and add below (inside the
+<code>else</code> block):</p>
+
+<pre><code class="hljs">delay(seconds: 0.1, completion: addButtonRing)
+delay(seconds: 1.2, completion: addButtonRing)
+delay(seconds: 2.4, completion: addButtonRing)
+</code></pre>
+
+<p>Once <code>punchText()</code> runs out of characters it will call <code>addButtonRing</code> three
+times after the respective delays. Let’s check out what will appear on screen
+this time when you run the app (and wait for the complete text to appear):</p>
+
+<p><img src="./index_files/rings-same-position.png" alt=""></p>
+
+<p>You added three rings but you see only one right now. Well - there are in fact
+three shape layers just there but they appear on top of each other so you can’t
+really tell they are there.</p>
+
+<p>You will fix that by adding animations to them all. Scroll to <code>addButtonRing()</code>
+and add at the end:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> scale = <span class="hljs-type">CABasicAnimation</span>(keyPath: <span class="hljs-string">"transform.scale"</span>)
+scale.fromValue = <span class="hljs-number">1.0</span>
+scale.toValue = <span class="hljs-number">0.67</span>
+scale.duration = <span class="hljs-number">2.0</span>
+scale.repeatCount = <span class="hljs-type">Float</span>.infinity
+scale.autoreverses = <span class="hljs-built_in">true</span>
+button.addAnimation(scale, forKey: <span class="hljs-built_in">nil</span>)
+</code></pre>
+
+<p>This simple animation will make each ring scale up and down indefinitely. This
+time around you will see the nice animation - not how all rings show up in the
+gradient colors they mask. So cool:</p>
+
+<p><img src="./index_files/rings-animated.gif" alt=""></p>
+
+<p>A neat little animation!</p>
+
+<p>To make this introduction screen even more beautiful and wrap up with this
+tutorial let’s add a frog image on top of the screen.</p>
+
+<p>You already have a frog image inside <strong>Images.xcassets</strong> (the image is Public
+domain - check the page where I took it from):</p>
+
+<p><img src="./index_files/frog-image.png" alt=""></p>
+
+<p>Back in <strong>ViewController.swift</strong> add to <code>viewDidAppear()</code>:</p>
+
+<pre><code class="hljs swift"><span class="hljs-keyword">let</span> frog = <span class="hljs-type">UIImage</span>(named: <span class="hljs-string">"frog"</span>)
+<span class="hljs-keyword">let</span> frogImage = <span class="hljs-type">UIImageView</span>(image: frog)
+frogImage.center.x = label.bounds.width/<span class="hljs-number">2</span>
+label.addSubview(frogImage)
+</code></pre>
+
+<p>You create an image view with the <em>frog</em> image and center it within the bounds
+of <code>label</code>. Finally you just add the image view as a sub-view of <code>label</code> and you
+are good to go.</p>
+
+<p>Notice how you can build up your mask any way you want - previously you added a
+sub-layer to your mask-view, now you add a sub-view to it - it’s all good thanks
+to Core Animation.</p>
+
+<p>Run the final project and enjoy:</p>
+
+<p><img src="./index_files/final-project.png" alt=""></p>
+
+<h3>Where to go from here?</h3>
+
+<p>If you want to experiment a bit further revisit <strong>Chapter 13, Gradient Animations</strong>
+from <em><a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials</a></em> - think of how you can animate the background
+as well and create and even more psychedelic effect.</p>
+
+<p>If you get to build something interesting based on this article ping me by
+replying to this email or on Twitter at
+<a href="http://www.twitter.com/icanzilb">@icanzilb</a>.</p>
+
+
+				
+			</div>
+		</div>
+	</div><!-- container -->
+
+	<div class="clear"> </div>
+
+</div>
+
+<!-- second block -->
+
+<div class="about" id="about">
+	<div class="wrap">
+		
+
+<h2>Come meet me!</h2>
+
+<p><img src="./index_files/AltConf-Marin.jpg" alt=""></p>
+
+<p><a href="http://www.underplot.com/#speaking">http://www.underplot.com/#speaking</a></p>
+
+<p>Let's meet up and talk/social drink/bash half-baked APIs together! Here's my
+schedule for the next few months - if you gonna be at one or more or these
+events let's meet!</p>
+
+<p><a href="http://360idev.com/">360iDev</a>, Denver - August 16-19, workshop and a talk</p>
+
+<p><a href="http://nsspain.com/2015/">NSSpain</a>, Logroño Spain - September 15-18, workshop</p>
+
+<p><a href="http://2015.mobiconf.org/">Mobiconf</a>, Krakow Poland - October 1-2, workshop</p>
+
+<p><a href="http://www.pragmaconference.com/">Pragma Mark</a>, Florence Italy - October 9-10
+workshop</p>
+
+<p><a href="http://www.rwdevcon.com/">RWDevCon 2016</a>, Washington DC - March 11-12, 2016
+workshop</p>
+
+
+	</div>
+</div>
+
+<!-- third block -->
+<div class="contact" id="contact">
+	<div class="wrap" style="margin-bottom: 80px;">
+		
+
+<h2>Cool animation links</h2>
+
+<p>Here it comes the list of animation links I stumbled upon during June:</p>
+
+<ul>
+<li><p><a href="https://github.com/icanzilb/EasyAnimation">EasyAnimation</a> - version
+<strong>0.7</strong> brings more stability and fixes a lot of edge case crashes. A solid
+iteration of my animation library!</p></li>
+<li><p><a href="https://github.com/vibrazy/WWDC2015IntroPlayground">WWDC2015IntroPlayground</a>
+This little project shows you how to re-create the awesome WWDC2015 intro
+animation by using CAReplicatorLayer - an awesome job by Daniel Tavares.</p></li>
+<li><p><a href="https://github.com/Yalantis/PullToMakeFlight">Pull To Make Flight</a> - Yet
+another fantastic animation repository from Yalantis. This one features
+really neat pull to refresh animation, check out the animated gif in the
+README.</p></li>
+<li><p><a href="https://github.com/machackx/PortalTransition">Portal Transition</a> - I love
+cool view controller transition animations and this one looks just great!</p></li>
+<li><p><a href="https://github.com/zhxnlai/ZLSwipeableViewSwift">Card Deck animation</a> - A
+cool lib that helps you show a deck of swipe-able cards, the animated gifs
+in the README look very good.</p></li>
+</ul>
+
+		
+		<hr style="margin-top: 60px;">
+		
+		<p style="margin-top:80px;color:#666;font-size:1em;text-align:center!important;" class="editorial">
+			· Do you know of a cool new animation Swift library or interesting blog post?<br>
+			· Do you want to sponsor an issue of iOS Animations by Emails?<br>
+			· Do you want to write an animation tutorial for iOS Animations by Emails?<br>
+			&nbsp; If so check out my contacts in the footer. Thanks!</p>
+	</div>
+
+
+     <div class="footer-bottom">
+	    <div class="bottommenu copy" style="margin-bottom:40px;">
+		    <p class="copy">
+<style>
+	a.icon { width: 44px; border: 0px solid transparent; }
+	a.icon img {border: 0px solid transparent; width:44px;margin-left: 20px!important; }
+	.footer-bottom hr {border:0px solid transparent; border-bottom: 1px solid #999; width: 200px; margin-bottom: 20px;}
+	.wrap hr {border:0px solid transparent; border-bottom: 1px solid #666; width: 200px; margin-bottom: 20px;}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/document.write("<a class='icon' href='mai"+"lto:marin"+"@ios-animations-"+"by-em"+"ails.c"+"om"+"'><img src='../images/email.png'><\/a>");/*]]&gt;*/
+</script><a class="icon" href="mailto:marin@ios-animations-by-emails.com"><img src="./index_files/email.png"></a>
+
+<a class="icon" href="https://twitter.com/icanzilb" target="_blank"><img src="./index_files/twitter.png"></a>
+<a class="icon" href="http://www.linkedin.com/in/marintodorov/" target="_blank"><img src="./index_files/linkedin.png"></a>
+<a class="icon" href="https://github.com/icanzilb" target="_blank"><img src="./index_files/github.png"></a>
+</p><div class="clear"> </div>
+
+		    <p></p>
+		    <hr>
+		    <p class="copy">
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Sponsor%20iOS%20Animations%20by%20Emails">Sponsor</a> · 
+			    <a href="http://www.ios-animations-by-emails.com/">Subscribe to the newsletter</a> · 
+			    <a href="mailto:marin@ios-animations-by-emails.com?Subject=Contact">Contact</a> · 
+			    <a href="http://www.ios-animations-by-tutorials.com/">iOS Animations by Tutorials</a>
+		    </p>
+	    </div>
+     	<div class="wrap">
+        <div class="copy" style="margin-top:60px;">
+		    <p class="copy" style="font-size:0.8em;text-align:center!important;">© 2014 Template by  <a href="http://w3layouts.com/" target="_blank">w3layouts</a> </p>
+		</div>
+		<script type="text/javascript">
+							$(document).ready(function() {
+								
+								var defaults = {
+						  			containerID: 'toTop', // fading element id
+									containerHoverID: 'toTopHover', // fading element hover id
+									scrollSpeed: 1200,
+									easingType: 'linear' 
+						 		};
+								
+								
+								$().UItoTop({ easingType: 'easeOutQuart' });
+								
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+	
+							});
+							
+	$( "#mc-embedded-subscribe" ).click(function() {
+		var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+		if (regexEmail.test($('#mce-EMAIL').val())) {
+	    	$('#mc-embedded-subscribe-form').submit();
+			return
+		} else {
+			alert("Please enter valid email address in the subscription field.")	
+		}
+	});
+
+						</script>
+						
+<script>
+if (document.location.href.indexOf("localhost") == -1) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7623080-20', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+
+<script src="./index_files/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+		</div>
+	</div>
+
+</div></body></html>
